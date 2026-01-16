@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* PP Frama - Premium Display Font */
+@font-face {
+  font-family: 'PP Frama';
+  src: url('/PPFrama-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* TT Gentlemens - Script Font */
+@font-face {
+  font-family: 'TT Gentlemens';
+  src: url('/TT_Gentlemens_Trial_Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  
+  /* Brand Colors - Official Palette (Deep Cyan-Navy) */
+  --black: #1E1E1E;
+  --blue: #2D8FB5;
+  --navy: #1E4880;
+  --sky: #5FBDD8;
+  --sand: #EAE5E1;
+  --white: #F7F7F7;
+  --pure-white: #FFFFFF;
+  
+  /* Semantic aliases */
+  --charcoal: #1E1E1E;
+  --accent: #2D8FB5;
+  --accent-dark: #1E4880;
+  --accent-light: #5FBDD8;
+  --warm: #EAE5E1;
+  --dark-grey: #4A4A4A;
+  --mid-grey: #7A7A7A;
+  --light-grey: #E0E0E0;
+  --off-white: #F7F7F7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  background-color: var(--white);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+/* Typography - Clean Swiss Design */
+.font-swiss {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-display {
+  font-family: 'PP Frama', 'DM Sans', -apple-system, sans-serif;
+}
+
+.font-script {
+  font-family: 'TT Gentlemens', cursive;
+}
+
+/* Oversized Swiss Headlines - Clean and Bold */
+.headline-hero {
+  font-family: 'PP Frama', 'DM Sans', -apple-system, sans-serif;
+  font-size: clamp(3.5rem, 12vw, 11rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.headline-xl {
+  font-family: 'PP Frama', 'DM Sans', -apple-system, sans-serif;
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.headline-lg {
+  font-family: 'PP Frama', 'DM Sans', -apple-system, sans-serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+.headline-md {
+  font-family: 'PP Frama', 'DM Sans', -apple-system, sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.headline-sm {
+  font-family: 'PP Frama', 'DM Sans', -apple-system, sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+/* Script accent - large and expressive */
+.headline-script {
+  font-family: 'TT Gentlemens', cursive;
+  font-size: clamp(4rem, 14vw, 12rem);
+  line-height: 1.4;
+  letter-spacing: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.3em;
+}
+
+/* Script inline - for use within headlines */
+.script-inline {
+  font-family: 'TT Gentlemens', cursive;
+  line-height: 1.4;
+}
+
+/* Script large - standalone large script */
+.script-lg {
+  font-family: 'TT Gentlemens', cursive;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1.4;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+/* Script medium */
+.script-md {
+  font-family: 'TT Gentlemens', cursive;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.4;
+}
+
+.label-sm {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.label-md {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.body-text {
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.7;
+  color: var(--dark-grey);
+  font-weight: 400;
+}
+
+.body-lg {
+  font-size: clamp(17px, 1.3vw, 20px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Link animations */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.4s var(--ease-premium);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Container */
+.container-custom {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* Grid system - Swiss 12-column */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .grid-12 {
+    gap: 2rem;
+  }
+}
+
+/* Smooth transitions */
+.transition-premium {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 400ms;
+}
+
+/* Text reveal container */
+.text-reveal {
+  overflow: hidden;
+}
+
+/* Accent elements */
+.accent-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 0;
+  background-color: var(--accent);
+}
+
+.accent-line {
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent);
+}
+
+/* Swiss geometric divider */
+.divider-swiss {
+  height: 1px;
+  background: var(--charcoal);
+}
+
+/* Blue accent block */
+.accent-block {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+/* Grid overlay for debugging */
+.grid-overlay {
+  background-image: 
+    linear-gradient(90deg, rgba(59, 155, 217, 0.1) 1px, transparent 1px);
+  background-size: calc(100% / 12) 100%;
+}
