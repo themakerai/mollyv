@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import html2canvas from 'html2canvas'
 import Logo from '@/components/Logo'
 
 export default function BrandAssetsPage() {
@@ -10,6 +11,17 @@ export default function BrandAssetsPage() {
   const [password, setPassword] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [error, setError] = useState('')
+  const [downloading, setDownloading] = useState<string | null>(null)
+  
+  // Refs for downloadable elements
+  const logoRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+  const businessCardFrontRef = useRef<HTMLDivElement>(null)
+  const businessCardBackRef = useRef<HTMLDivElement>(null)
+  const letterheadRef = useRef<HTMLDivElement>(null)
+  const instagramSquareRef = useRef<HTMLDivElement>(null)
+  const linkedinTwitterRef = useRef<HTMLDivElement>(null)
+  const instagramStoryRef = useRef<HTMLDivElement>(null)
+  const linkedinCoverRef = useRef<HTMLDivElement>(null)
   
   const bgColor = darkMode ? '#1E1E1E' : '#F7F7F7'
   const textColor = darkMode ? '#F7F7F7' : '#1E1E1E'
@@ -111,6 +123,27 @@ export default function BrandAssetsPage() {
     a.download = `mollyv-logo-${type}-${variant}.svg`
     a.click()
     URL.revokeObjectURL(url)
+  }
+
+  const downloadPNG = async (element: HTMLElement | null, filename: string, scale: number = 2) => {
+    if (!element) return
+    setDownloading(filename)
+    try {
+      const canvas = await html2canvas(element, {
+        scale: scale,
+        useCORS: true,
+        backgroundColor: null,
+        logging: false,
+      })
+      const link = document.createElement('a')
+      link.download = `${filename}.png`
+      link.href = canvas.toDataURL('image/png')
+      link.click()
+    } catch (err) {
+      console.error('Error generating PNG:', err)
+    } finally {
+      setDownloading(null)
+    }
   }
 
   const emailSignatureHTML = `
@@ -227,17 +260,25 @@ export default function BrandAssetsPage() {
                     style={{ borderColor, backgroundColor: cardBg }}
                   >
                     <div className="grid grid-cols-2">
-                      <div className="p-8 flex items-center justify-center min-h-[120px]" style={{ backgroundColor: '#F7F7F7' }}>
+                      <div 
+                        ref={(el) => { logoRefs.current[`${logo.type}-dark`] = el }}
+                        className="p-8 flex items-center justify-center min-h-[120px]" 
+                        style={{ backgroundColor: '#F7F7F7' }}
+                      >
                         <Logo variant={logo.type === 'mark' ? 'mark' : logo.type === 'horizontal' ? 'mark-horizontal' : logo.type === 'badge' ? 'mark-badge' : 'full'} size="md" color="dark" />
                       </div>
-                      <div className="p-8 flex items-center justify-center min-h-[120px]" style={{ backgroundColor: '#1E1E1E' }}>
+                      <div 
+                        ref={(el) => { logoRefs.current[`${logo.type}-light`] = el }}
+                        className="p-8 flex items-center justify-center min-h-[120px]" 
+                        style={{ backgroundColor: '#1E1E1E' }}
+                      >
                         <Logo variant={logo.type === 'mark' ? 'mark' : logo.type === 'horizontal' ? 'mark-horizontal' : logo.type === 'badge' ? 'mark-badge' : 'full'} size="md" color="light" />
                       </div>
                     </div>
                     <div className="p-6">
                       <h3 className="font-semibold text-lg mb-1 font-swiss">{logo.name}</h3>
                       <p className="text-sm mb-4" style={{ color: mutedColor }}>{logo.description}</p>
-                      <div className="flex gap-3">
+                      <div className="flex flex-wrap gap-3">
                         <button
                           onClick={() => downloadSVG('dark', logo.type)}
                           className="px-4 py-2 text-xs font-semibold uppercase tracking-wider border transition-all hover:bg-[#1E1E1E] hover:text-white"
@@ -251,6 +292,22 @@ export default function BrandAssetsPage() {
                           style={{ borderColor: '#1E1E1E', color: darkMode ? '#F7F7F7' : '#1E1E1E' }}
                         >
                           SVG Light
+                        </button>
+                        <button
+                          onClick={() => downloadPNG(logoRefs.current[`${logo.type}-dark`], `mollyv-${logo.type}-dark`)}
+                          disabled={downloading === `mollyv-${logo.type}-dark`}
+                          className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
+                          style={{ backgroundColor: accentColor, color: '#fff' }}
+                        >
+                          {downloading === `mollyv-${logo.type}-dark` ? '...' : 'PNG Dark'}
+                        </button>
+                        <button
+                          onClick={() => downloadPNG(logoRefs.current[`${logo.type}-light`], `mollyv-${logo.type}-light`)}
+                          disabled={downloading === `mollyv-${logo.type}-light`}
+                          className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
+                          style={{ backgroundColor: accentColor, color: '#fff' }}
+                        >
+                          {downloading === `mollyv-${logo.type}-light` ? '...' : 'PNG Light'}
                         </button>
                       </div>
                     </div>
@@ -334,8 +391,19 @@ export default function BrandAssetsPage() {
               <div className="grid lg:grid-cols-2 gap-8">
                 {/* Front */}
                 <div>
-                  <p className="text-xs tracking-[0.15em] uppercase mb-4 font-medium" style={{ color: mutedColor }}>Front</p>
+                  <div className="flex justify-between items-center mb-4">
+                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>Front</p>
+                    <button
+                      onClick={() => downloadPNG(businessCardFrontRef.current, 'business-card-front', 3)}
+                      disabled={downloading === 'business-card-front'}
+                      className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
+                      style={{ backgroundColor: accentColor, color: '#fff' }}
+                    >
+                      {downloading === 'business-card-front' ? 'Downloading...' : '↓ PNG'}
+                    </button>
+                  </div>
                   <div 
+                    ref={businessCardFrontRef}
                     className="relative w-full aspect-[3.5/2] shadow-2xl"
                     style={{ backgroundColor: '#F7F7F7' }}
                   >
@@ -365,8 +433,19 @@ export default function BrandAssetsPage() {
 
                 {/* Back */}
                 <div>
-                  <p className="text-xs tracking-[0.15em] uppercase mb-4 font-medium" style={{ color: mutedColor }}>Back</p>
+                  <div className="flex justify-between items-center mb-4">
+                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>Back</p>
+                    <button
+                      onClick={() => downloadPNG(businessCardBackRef.current, 'business-card-back', 3)}
+                      disabled={downloading === 'business-card-back'}
+                      className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
+                      style={{ backgroundColor: accentColor, color: '#fff' }}
+                    >
+                      {downloading === 'business-card-back' ? 'Downloading...' : '↓ PNG'}
+                    </button>
+                  </div>
                   <div 
+                    ref={businessCardBackRef}
                     className="relative w-full aspect-[3.5/2] shadow-2xl flex items-center justify-center"
                     style={{ backgroundColor: '#1E1E1E' }}
                   >
@@ -394,10 +473,21 @@ export default function BrandAssetsPage() {
               <h2 className="text-xs tracking-[0.2em] uppercase mb-8 font-swiss font-semibold" style={{ color: accentColor }}>
                 Letterhead
               </h2>
-              <p className="text-sm mb-8" style={{ color: mutedColor }}>
-                US Letter (8.5" × 11") • 1" margins • Print on premium uncoated stock
-              </p>
+              <div className="flex justify-between items-center mb-8">
+                <p className="text-sm" style={{ color: mutedColor }}>
+                  US Letter (8.5" × 11") • 1" margins • Print on premium uncoated stock
+                </p>
+                <button
+                  onClick={() => downloadPNG(letterheadRef.current, 'letterhead', 2)}
+                  disabled={downloading === 'letterhead'}
+                  className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
+                  style={{ backgroundColor: accentColor, color: '#fff' }}
+                >
+                  {downloading === 'letterhead' ? 'Downloading...' : '↓ Download PNG'}
+                </button>
+              </div>
               <div 
+                ref={letterheadRef}
                 className="relative w-full max-w-[700px] mx-auto aspect-[8.5/11] shadow-2xl"
                 style={{ backgroundColor: '#FFFFFF' }}
               >
@@ -467,10 +557,21 @@ export default function BrandAssetsPage() {
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* Instagram Square */}
                 <div>
-                  <p className="text-xs tracking-[0.15em] uppercase mb-4 font-medium" style={{ color: mutedColor }}>
-                    Instagram (1:1)
-                  </p>
+                  <div className="flex justify-between items-center mb-4">
+                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>
+                      Instagram (1:1)
+                    </p>
+                    <button
+                      onClick={() => downloadPNG(instagramSquareRef.current, 'instagram-square', 2)}
+                      disabled={downloading === 'instagram-square'}
+                      className="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
+                      style={{ backgroundColor: accentColor, color: '#fff' }}
+                    >
+                      {downloading === 'instagram-square' ? '...' : '↓ PNG'}
+                    </button>
+                  </div>
                   <div 
+                    ref={instagramSquareRef}
                     className="relative w-full aspect-square shadow-2xl overflow-hidden"
                     style={{ backgroundColor: '#1E1E1E' }}
                   >
@@ -514,10 +615,21 @@ export default function BrandAssetsPage() {
 
                 {/* LinkedIn/Twitter Landscape */}
                 <div className="lg:col-span-2">
-                  <p className="text-xs tracking-[0.15em] uppercase mb-4 font-medium" style={{ color: mutedColor }}>
-                    LinkedIn / Twitter (1.91:1)
-                  </p>
+                  <div className="flex justify-between items-center mb-4">
+                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>
+                      LinkedIn / Twitter (1.91:1)
+                    </p>
+                    <button
+                      onClick={() => downloadPNG(linkedinTwitterRef.current, 'linkedin-twitter', 2)}
+                      disabled={downloading === 'linkedin-twitter'}
+                      className="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
+                      style={{ backgroundColor: accentColor, color: '#fff' }}
+                    >
+                      {downloading === 'linkedin-twitter' ? '...' : '↓ PNG'}
+                    </button>
+                  </div>
                   <div 
+                    ref={linkedinTwitterRef}
                     className="relative w-full aspect-[1.91/1] shadow-2xl overflow-hidden"
                     style={{ backgroundColor: '#F7F7F7' }}
                   >
@@ -559,10 +671,21 @@ export default function BrandAssetsPage() {
 
                 {/* Instagram Story */}
                 <div>
-                  <p className="text-xs tracking-[0.15em] uppercase mb-4 font-medium" style={{ color: mutedColor }}>
-                    Instagram Story (9:16)
-                  </p>
+                  <div className="flex justify-between items-center mb-4">
+                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>
+                      Instagram Story (9:16)
+                    </p>
+                    <button
+                      onClick={() => downloadPNG(instagramStoryRef.current, 'instagram-story', 2)}
+                      disabled={downloading === 'instagram-story'}
+                      className="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
+                      style={{ backgroundColor: accentColor, color: '#fff' }}
+                    >
+                      {downloading === 'instagram-story' ? '...' : '↓ PNG'}
+                    </button>
+                  </div>
                   <div 
+                    ref={instagramStoryRef}
                     className="relative w-full max-w-[250px] aspect-[9/16] shadow-2xl overflow-hidden mx-auto"
                     style={{ backgroundColor: '#1E1E1E' }}
                   >
@@ -600,10 +723,21 @@ export default function BrandAssetsPage() {
 
                 {/* LinkedIn Cover */}
                 <div className="lg:col-span-2">
-                  <p className="text-xs tracking-[0.15em] uppercase mb-4 font-medium" style={{ color: mutedColor }}>
-                    LinkedIn Cover (4:1)
-                  </p>
+                  <div className="flex justify-between items-center mb-4">
+                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>
+                      LinkedIn Cover (4:1)
+                    </p>
+                    <button
+                      onClick={() => downloadPNG(linkedinCoverRef.current, 'linkedin-cover', 2)}
+                      disabled={downloading === 'linkedin-cover'}
+                      className="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
+                      style={{ backgroundColor: accentColor, color: '#fff' }}
+                    >
+                      {downloading === 'linkedin-cover' ? '...' : '↓ PNG'}
+                    </button>
+                  </div>
                   <div 
+                    ref={linkedinCoverRef}
                     className="relative w-full aspect-[4/1] shadow-2xl overflow-hidden"
                     style={{ backgroundColor: '#1E1E1E' }}
                   >

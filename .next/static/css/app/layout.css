@@ -1309,6 +1309,14 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 .pb-10{
   padding-bottom: 2.5rem;
 }
@@ -1962,6 +1970,9 @@ body {
 .hover\:opacity-90:hover{
   opacity: 0.9;
 }
+.hover\:opacity-80:hover{
+  opacity: 0.8;
+}
 .hover\:shadow-xl:hover{
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -1978,6 +1989,9 @@ body {
 .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+.disabled\:opacity-50:disabled{
+  opacity: 0.5;
 }
 .group\/link:hover .group-hover\/link\:translate-x-1{
   --tw-translate-x: 0.25rem;
