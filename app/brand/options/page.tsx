@@ -136,11 +136,10 @@ export default function BrandOptionsPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className={`border transition-all cursor-pointer ${selectedOption === option.id ? 'ring-2 ring-offset-2' : ''}`}
+                  className={`border transition-all cursor-pointer ${selectedOption === option.id ? 'ring-2 ring-offset-2 ring-[#2D8FB5]' : ''}`}
                   style={{ 
                     borderColor: selectedOption === option.id ? accentColor : borderColor, 
                     backgroundColor: cardBg,
-                    ringColor: accentColor,
                   }}
                   onClick={() => setSelectedOption(selectedOption === option.id ? null : option.id)}
                 >
