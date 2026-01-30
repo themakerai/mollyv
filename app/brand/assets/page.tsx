@@ -194,6 +194,7 @@ export default function BrandAssetsPage() {
   ]
 
   const sections = [
+    { id: 'quick-links', label: 'Quick Links', icon: '🔗' },
     { id: 'brand-overview', label: 'Brand Overview', icon: '📖' },
     { id: 'logos', label: 'Logos', icon: '◇' },
     { id: 'print', label: 'Print Assets', icon: '🖨' },
@@ -254,6 +255,68 @@ export default function BrandAssetsPage() {
       <main className="py-12 px-6 lg:px-12">
         <div className="max-w-[1400px] mx-auto space-y-20">
 
+          {/* ==================== QUICK LINKS ==================== */}
+          <section id="quick-links" className="mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-2xl">🔗</span>
+                <h2 className="text-lg font-bold tracking-tight font-swiss">Quick Links</h2>
+              </div>
+              <p className="text-sm mb-6" style={{ color: mutedColor }}>
+                Navigate to all brand resources and website pages
+              </p>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Brand Resources */}
+                <div className="p-5 border" style={{ borderColor, backgroundColor: cardBg }}>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: accentColor }}>Brand Resources</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li><a href="/brand" className="hover:opacity-70 transition-opacity">→ Brand Guidelines</a></li>
+                    <li><a href="/brand/options" className="hover:opacity-70 transition-opacity">→ Typography Options</a></li>
+                    <li><a href="/Molly_V_Maker_Manual_Update.pdf" download className="hover:opacity-70 transition-opacity">→ Maker Manual (PDF)</a></li>
+                    <li><a href="/maker-manual.html" target="_blank" className="hover:opacity-70 transition-opacity">→ Digital Maker Manual</a></li>
+                  </ul>
+                </div>
+
+                {/* Main Website */}
+                <div className="p-5 border" style={{ borderColor, backgroundColor: cardBg }}>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: accentColor }}>Main Website</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li><a href="/" className="hover:opacity-70 transition-opacity">→ Home</a></li>
+                    <li><a href="/about" className="hover:opacity-70 transition-opacity">→ About Molly</a></li>
+                    <li><a href="/services" className="hover:opacity-70 transition-opacity">→ Services</a></li>
+                    <li><a href="/contact" className="hover:opacity-70 transition-opacity">→ Contact</a></li>
+                  </ul>
+                </div>
+
+                {/* Lead Gen & Sales */}
+                <div className="p-5 border" style={{ borderColor, backgroundColor: cardBg }}>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: accentColor }}>Lead Gen & Sales</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li><a href="/decision-room" className="hover:opacity-70 transition-opacity">→ The Decision Room</a></li>
+                    <li><a href="/guide" className="hover:opacity-70 transition-opacity">→ Guide Download Page</a></li>
+                    <li><a href="/decision-clarity-guide.html" target="_blank" className="hover:opacity-70 transition-opacity">→ Clarity Guide (PDF)</a></li>
+                  </ul>
+                </div>
+
+                {/* Media Assets */}
+                <div className="p-5 border" style={{ borderColor, backgroundColor: cardBg }}>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: accentColor }}>Media Assets</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li><a href="/molly-v.png" download className="hover:opacity-70 transition-opacity">→ Headshot (molly-v.png)</a></li>
+                    <li><a href="/leona.png" download className="hover:opacity-70 transition-opacity">→ Leona Persona Image</a></li>
+                    <li><a href="#logos" className="hover:opacity-70 transition-opacity">→ Logo Downloads</a></li>
+                    <li><a href="#social" className="hover:opacity-70 transition-opacity">→ Social Templates</a></li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </section>
+
           {/* ==================== SECTION 1: BRAND OVERVIEW ==================== */}
           <section id="brand-overview">
             <motion.div
@@ -270,7 +333,7 @@ export default function BrandAssetsPage() {
               </p>
               
               {/* Maker Manual */}
-              <div className="p-8 border" style={{ borderColor, backgroundColor: cardBg }}>
+              <div className="p-8 border mb-6" style={{ borderColor, backgroundColor: cardBg }}>
                 <div className="flex flex-col lg:flex-row items-start gap-8">
                   <div className="w-full lg:w-48 h-60 flex-shrink-0 flex items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#1E1E1E' }}>
                     <div className="absolute left-0 top-0 bottom-0 w-1.5" style={{ backgroundColor: accentColor }} />
@@ -311,6 +374,90 @@ export default function BrandAssetsPage() {
                         <span key={tag} className="px-3 py-1 text-xs border" style={{ borderColor, color: mutedColor }}>{tag}</span>
                       ))}
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Brand Guidelines & Typography */}
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                {/* Brand Guidelines */}
+                <a href="/brand" className="p-6 border transition-all hover:shadow-lg group" style={{ borderColor, backgroundColor: cardBg }}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: '#1E1E1E' }}>
+                      <Logo variant="mark" size="sm" color="light" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 font-swiss group-hover:opacity-80 transition-opacity">Brand Guidelines</h3>
+                      <p className="text-xs mb-3" style={{ color: mutedColor }}>Logo usage, color palette, typography rules, and brand values</p>
+                      <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: accentColor }}>View Guidelines →</span>
+                    </div>
+                  </div>
+                </a>
+
+                {/* Typography Options */}
+                <a href="/brand/options" className="p-6 border transition-all hover:shadow-lg group" style={{ borderColor, backgroundColor: cardBg }}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: accentColor }}>
+                      <span className="text-white font-bold text-lg font-swiss">Aa</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 font-swiss group-hover:opacity-80 transition-opacity">Typography Options</h3>
+                      <p className="text-xs mb-3" style={{ color: mutedColor }}>Compare font pairings: Lettra Mono, Gentleman's, Cormorant</p>
+                      <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: accentColor }}>View Options →</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              {/* Headshots & Images */}
+              <div className="p-6 border" style={{ borderColor, backgroundColor: cardBg }}>
+                <h3 className="font-bold text-lg mb-4 font-swiss">Headshots & Images</h3>
+                <p className="text-sm mb-6" style={{ color: mutedColor }}>High-resolution images for press, marketing, and social media use</p>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {/* Molly Headshot */}
+                  <div className="text-center">
+                    <div className="aspect-square relative overflow-hidden mb-3" style={{ backgroundColor: '#F7F7F7' }}>
+                      <img src="/molly-v.png" alt="Molly Varangkounh" className="w-full h-full object-cover" />
+                    </div>
+                    <p className="text-xs font-medium mb-2">Molly V. Headshot</p>
+                    <a
+                      href="/molly-v.png"
+                      download="molly-varangkounh-headshot.png"
+                      className="inline-block px-4 py-2 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80"
+                      style={{ backgroundColor: accentColor, color: '#fff' }}
+                    >
+                      ↓ Download PNG
+                    </a>
+                  </div>
+                  {/* Molly Laughing (Supabase) */}
+                  <div className="text-center">
+                    <div className="aspect-square relative overflow-hidden mb-3" style={{ backgroundColor: '#F7F7F7' }}>
+                      <img src="https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-laughing.png" alt="Molly Varangkounh Laughing" className="w-full h-full object-cover" />
+                    </div>
+                    <p className="text-xs font-medium mb-2">Molly V. Candid</p>
+                    <a
+                      href="https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-laughing.png"
+                      download="molly-varangkounh-candid.png"
+                      className="inline-block px-4 py-2 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80"
+                      style={{ backgroundColor: accentColor, color: '#fff' }}
+                    >
+                      ↓ Download PNG
+                    </a>
+                  </div>
+                  {/* Leona Persona */}
+                  <div className="text-center">
+                    <div className="aspect-square relative overflow-hidden mb-3" style={{ backgroundColor: '#F7F7F7' }}>
+                      <img src="/leona.png" alt="Leona - Target Persona" className="w-full h-full object-cover" />
+                    </div>
+                    <p className="text-xs font-medium mb-2">Leona (Target Persona)</p>
+                    <a
+                      href="/leona.png"
+                      download="leona-target-persona.png"
+                      className="inline-block px-4 py-2 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80"
+                      style={{ backgroundColor: accentColor, color: '#fff' }}
+                    >
+                      ↓ Download PNG
+                    </a>
                   </div>
                 </div>
               </div>
