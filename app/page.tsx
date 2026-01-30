@@ -3,7 +3,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import Approach from '@/components/Approach'
-import Mission from '@/components/Mission'
 import Services from '@/components/Services'
 import FounderStory from '@/components/FounderStory'
 import Values from '@/components/Values'
@@ -18,7 +17,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Approach />
-      <Mission />
       <Services />
       <FounderStory />
       <Framework />

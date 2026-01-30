@@ -47,8 +47,29 @@ const services = [
     outcome: 'A clear path forward that protects relationships and legacy'
   },
   {
-    id: 'speaking',
+    id: 'financial',
     number: '03',
+    title: 'Understanding Your Financial Story',
+    subtitle: 'Clarity Beyond the Numbers',
+    description: 'Your financials tell a story—about where you\'ve been, what you\'ve built, and what\'s possible. Learn to read that story with confidence and use it to make better decisions.',
+    painPoints: [
+      'Financial reports feel overwhelming or confusing',
+      'Disconnected from the numbers that drive your business',
+      'Decisions feel like guesswork without financial clarity',
+      'Want to understand, not just delegate, your finances'
+    ],
+    details: [
+      'Financial literacy coaching',
+      'Reading your P&L, balance sheet, and cash flow',
+      'Connecting numbers to business decisions',
+      'Building financial confidence'
+    ],
+    audience: 'Leaders and business owners who want to understand their numbers, not just receive reports',
+    outcome: 'Confidence in financial conversations and decisions'
+  },
+  {
+    id: 'speaking',
+    number: '04',
     title: 'Speaking & Workshops',
     subtitle: 'Keynotes That Move Leaders',
     description: 'Engaging presentations on leadership clarity, succession planning, and making bold decisions when stakes are high. Rooted in lived experience, not theory.',
@@ -83,7 +104,7 @@ export default function Services() {
         className="absolute right-0 top-0 pointer-events-none select-none"
       >
         <span className="font-swiss text-[50vw] font-black text-charcoal leading-none">
-          03
+          04
         </span>
       </motion.div>
 
@@ -98,7 +119,7 @@ export default function Services() {
           >
             <div className="flex items-center gap-4">
               <span className="accent-dot" />
-              <span className="label-sm text-dark-grey">03</span>
+              <span className="label-sm text-dark-grey">04</span>
             </div>
           </motion.div>
 
@@ -219,7 +240,7 @@ export default function Services() {
                             whileHover={{ x: 4 }}
                             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                           >
-                            <span>Start a conversation</span>
+                            <span>Enter The Decision Room</span>
                             <span className="group-hover/link:translate-x-1 transition-transform duration-300">→</span>
                           </motion.a>
                         </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
 import Logo from './Logo'
 
@@ -32,40 +33,46 @@ export default function Navbar() {
         <div className="container-custom">
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo - Official MV. mark */}
-            <motion.a
-              href="#"
-              className="relative group"
-              whileHover={{ x: 2 }}
-              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <Logo variant="mark" size="md" color="dark" />
-            </motion.a>
+            <Link href="/" className="relative group">
+              <motion.div
+                whileHover={{ x: 2 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Logo variant="mark" size="md" color="dark" />
+              </motion.div>
+            </Link>
 
             {/* Navigation Links - Swiss style */}
             <div className="hidden md:flex items-center gap-10">
-              {['About', 'Services', 'Approach', 'Contact'].map((item) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+              {[
+                { label: 'About', href: '/about' },
+                { label: 'Services', href: '/services' },
+                { label: 'Contact', href: '/contact' },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
                   className="text-[13px] tracking-wider uppercase text-dark-grey hover:text-charcoal transition-colors duration-300"
-                  whileHover={{ y: -2 }}
-                  transition={{ duration: 0.2 }}
                 >
-                  {item}
-                </motion.a>
+                  <motion.span
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: 0.2 }}
+                    className="inline-block"
+                  >
+                    {item.label}
+                  </motion.span>
+                </Link>
               ))}
             </div>
 
-            {/* CTA Button - Geometric Swiss style */}
-            <motion.a
-              href="#contact"
-              className="hidden lg:flex items-center gap-3 px-5 py-2.5 bg-charcoal text-white text-[12px] tracking-widest uppercase font-medium hover:bg-accent transition-colors duration-300"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
+            {/* CTA Button - Decision Room */}
+            <Link
+              href="/decision-room"
+              className="hidden lg:flex items-center gap-3 px-5 py-2.5 bg-accent text-white text-[12px] tracking-widest uppercase font-medium hover:bg-charcoal transition-colors duration-300"
             >
-              <span>Begin</span>
-              <span className="text-accent group-hover:text-white">→</span>
-            </motion.a>
+              <span>Decision Room</span>
+              <span>→</span>
+            </Link>
 
             {/* Mobile Menu Button - Clean lines */}
             <button className="md:hidden flex flex-col gap-2 p-2">

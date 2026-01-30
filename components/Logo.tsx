@@ -294,14 +294,14 @@ export default function Logo({
         >
           MOLLY V.
         </text>
-        {/* Make bold moves. - using italic DM Sans for better readability */}
+        {/* Make bold moves. — Frama tagline */}
         <text 
           x="160" 
           y="78" 
-          fontFamily="'DM Sans', system-ui, sans-serif" 
+          fontFamily="'PP Frama', 'DM Sans', system-ui, sans-serif" 
           fontSize="18" 
           fontWeight="500"
-          fontStyle="italic"
+          letterSpacing="0.02em"
           fill={accentBlue}
         >
           Make bold moves.
@@ -325,10 +325,10 @@ export default function Logo({
         <text 
           x="0" 
           y="28" 
-          fontFamily="'DM Sans', system-ui, sans-serif" 
+          fontFamily="'PP Frama', 'DM Sans', system-ui, sans-serif" 
           fontSize="20" 
           fontWeight="500"
-          fontStyle="italic"
+          letterSpacing="0.02em"
           fill={accentBlue}
         >
           Make bold moves.

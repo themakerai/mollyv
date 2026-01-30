@@ -5,22 +5,28 @@ import { motion, useInView } from 'framer-motion'
 
 const framework = [
   {
-    letter: 'A',
-    title: 'Accountability',
-    description: 'Taking responsibility for the decisions that shape your future. No more avoiding the hard conversations or delaying the inevitable.',
-    detail: 'Who owns the decision? Who needs to be at the table?'
+    letter: 'B',
+    title: 'Be Clear Before You Act',
+    description: 'Bold leadership starts with clarity. Clear direction, clear priorities, clear expectations. Define where you\'re going before asking people to follow.',
+    detail: 'Clarity reduces friction and speeds decisions.'
   },
   {
-    letter: 'C',
-    title: 'Clarity',
-    description: 'Understanding what you truly want and why. Cutting through the noise of family dynamics, emotions, and assumptions to see reality clearly.',
-    detail: 'What does success actually look like? What are you really trying to accomplish?'
+    letter: 'O',
+    title: 'Own the Hard Things',
+    description: 'Bold leaders step into difficult conversations, accountability issues, and unpopular decisions when the business needs it. Ownership replaces blame and excuses.',
+    detail: 'Leadership is taking responsibility, even when uncomfortable.'
   },
   {
-    letter: 'T',
-    title: 'Trade-offs',
-    description: 'Every decision has consequences. Understanding what you gain and what you give up empowers you to make choices you can stand behind.',
-    detail: 'What are you willing to accept? What is non-negotiable?'
+    letter: 'L',
+    title: 'Listen to Understand',
+    description: 'Bold leadership doesn\'t mean being loud. It means creating space for dissent, perspective, and truth. Leaders who listen well make better decisions and earn trust.',
+    detail: 'You don\'t have to agree to be aligned, but you do have to listen.'
+  },
+  {
+    letter: 'D',
+    title: 'Decide and Move Forward',
+    description: 'Bold leaders decide. They recognize that indecision is still a decision—often the most expensive one. Gather input, weigh risk, then move forward.',
+    detail: 'Decisions made with clarity and courage build momentum.'
   }
 ]
 
@@ -61,17 +67,17 @@ export default function Framework() {
           >
             <span className="label-md text-accent tracking-widest mb-4 block">The Framework</span>
             <h2 className="headline-md text-charcoal">
-              The <span className="text-accent font-bold">ACT</span> Framework
+              The <span className="text-accent font-bold">BOLD</span> Leadership Framework
             </h2>
             <p className="body-text text-dark-grey mt-6 max-w-2xl">
-              A simple yet powerful approach to navigating complex decisions. Because clarity 
-              changes the quality of your decisions.
+              A framework for leading with clarity, courage, and conviction. Because bold leadership 
+              requires both peace in yourself and strength to act decisively.
             </p>
           </motion.div>
         </div>
 
         {/* Framework cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
           {framework.map((item, i) => (
             <motion.div
               key={item.letter}
@@ -118,7 +124,7 @@ export default function Framework() {
           className="mt-16 lg:mt-24 text-center"
         >
           <p className="body-lg text-dark-grey mb-8 max-w-2xl mx-auto">
-            Ready to apply the ACT Framework to your situation?
+            Have a decision you're wrestling with?
           </p>
           <motion.a
             href="#contact"
@@ -126,7 +132,7 @@ export default function Framework() {
             whileHover={{ x: 4 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="font-medium">Start with a conversation</span>
+            <span className="font-medium">Enter The Decision Room</span>
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </motion.a>
         </motion.div>

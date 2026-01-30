@@ -274,10 +274,10 @@ export default function BrandPage() {
                 <p className="text-sm font-swiss" style={{ color: mutedColor }}>Clean, modern, highly readable. Used for body copy, navigation, buttons, and labels.</p>
               </div>
               <div className="p-8 border" style={{ borderColor: darkMode ? '#333' : '#E0E0E0' }}>
-                <p className="text-xs tracking-[0.15em] uppercase mb-4 font-swiss" style={{ color: mutedColor }}>Accent — TT Gentlemens</p>
-                <p className="font-script text-5xl mb-4" style={{ color: accentColor }}>feels uncertain.</p>
-                <p className="font-script text-3xl mb-4">Make bold moves.</p>
-                <p className="text-sm font-swiss" style={{ color: mutedColor }}>Personal, warm, signature feel. Used sparingly for emotional emphasis and taglines.</p>
+                <p className="text-xs tracking-[0.15em] uppercase mb-4 font-swiss" style={{ color: mutedColor }}>Accent — PP Lettra Mono</p>
+                <p className="font-script text-5xl mb-4 lowercase" style={{ color: accentColor }}>feels uncertain.</p>
+                <p className="text-sm font-swiss mb-4" style={{ color: mutedColor }}>Heavier weight, close spacing. Used sparingly for emotional accent (e.g. “feels uncertain.”, “now guiding.”).</p>
+                <p className="text-xs font-swiss mt-4" style={{ color: mutedColor }}>Taglines (“Make bold moves.”) use Frama above.</p>
               </div>
             </div>
             
@@ -296,9 +296,9 @@ export default function BrandPage() {
                   <p className="text-xs mt-1" style={{ color: mutedColor }}>Body text, UI elements</p>
                 </div>
                 <div>
-                  <p className="font-medium font-swiss mb-1">TT Gentlemens</p>
-                  <p style={{ color: mutedColor }}>Google Fonts (Regular)</p>
-                  <p className="text-xs mt-1" style={{ color: mutedColor }}>Script accents, taglines</p>
+                  <p className="font-medium font-swiss mb-1">PP Lettra Mono</p>
+                  <p style={{ color: mutedColor }}>lettra/ (Medium, Ultrabold)</p>
+                  <p className="text-xs mt-1" style={{ color: mutedColor }}>Accent only — close spacing</p>
                 </div>
               </div>
             </div>
@@ -429,8 +429,8 @@ export default function BrandPage() {
           <section className="mb-24">
             <h2 className="text-xs tracking-[0.2em] uppercase mb-8 font-swiss font-semibold" style={{ color: accentColor }}>Tagline</h2>
             <div className="p-12 text-center" style={{ backgroundColor: darkMode ? '#262626' : '#fff' }}>
-              <p className="text-3xl font-display tracking-tight mb-4">Lead with clarity.</p>
-              <p className="font-script text-5xl" style={{ color: accentColor }}>Make bold moves.</p>
+              <p className="font-tagline text-3xl mb-4" style={{ color: textColor }}>Lead with clarity.</p>
+              <p className="font-tagline text-3xl" style={{ color: accentColor }}>Make bold moves.</p>
             </div>
           </section>
           

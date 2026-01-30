@@ -1,0 +1,2292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Molly Varangkounh | Maker Manual V.2</title>
+  <style>
+    /* Font Definitions - PP Frama (Primary) */
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-Thin.woff2') format('woff2'),
+           url('/PPFrama-Thin.woff') format('woff');
+      font-weight: 100;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-ThinItalic.woff2') format('woff2'),
+           url('/PPFrama-ThinItalic.woff') format('woff');
+      font-weight: 100;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-Extralight.woff2') format('woff2'),
+           url('/PPFrama-Extralight.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-ExtralightItalic.woff2') format('woff2'),
+           url('/PPFrama-ExtralightItalic.woff') format('woff');
+      font-weight: 200;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-Light.woff2') format('woff2'),
+           url('/PPFrama-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-LightItalic.woff2') format('woff2'),
+           url('/PPFrama-LightItalic.woff') format('woff');
+      font-weight: 300;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-Regular.woff2') format('woff2'),
+           url('/PPFrama-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-RegularItalic.woff2') format('woff2'),
+           url('/PPFrama-RegularItalic.woff') format('woff');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-Medium.woff2') format('woff2'),
+           url('/PPFrama-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-MediumItalic.woff2') format('woff2'),
+           url('/PPFrama-MediumItalic.woff') format('woff');
+      font-weight: 500;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-Bold.woff2') format('woff2'),
+           url('/PPFrama-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-BoldItalic.woff2') format('woff2'),
+           url('/PPFrama-BoldItalic.woff') format('woff');
+      font-weight: 700;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-Black.woff2') format('woff2'),
+           url('/PPFrama-Black.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama';
+      src: url('/PPFrama-BlackItalic.woff2') format('woff2'),
+           url('/PPFrama-BlackItalic.woff') format('woff');
+      font-weight: 900;
+      font-style: italic;
+    }
+
+    /* Font Definitions - PP Frama Text (Body) */
+    @font-face {
+      font-family: 'PP Frama Text';
+      src: url('/PPFramaText-Light.woff2') format('woff2'),
+           url('/PPFramaText-Light.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama Text';
+      src: url('/PPFramaText-LightItalic.woff2') format('woff2'),
+           url('/PPFramaText-LightItalic.woff') format('woff');
+      font-weight: 300;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'PP Frama Text';
+      src: url('/PPFramaText-Regular.woff2') format('woff2'),
+           url('/PPFramaText-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama Text';
+      src: url('/PPFramaText-RegularItalic.woff2') format('woff2'),
+           url('/PPFramaText-RegularItalic.woff') format('woff');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'PP Frama Text';
+      src: url('/PPFramaText-Bold.woff2') format('woff2'),
+           url('/PPFramaText-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Frama Text';
+      src: url('/PPFramaText-BoldItalic.woff2') format('woff2'),
+           url('/PPFramaText-BoldItalic.woff') format('woff');
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    /* Font Definitions - PP Lettra Mono (Accent Only) */
+    @font-face {
+      font-family: 'PP Lettra Mono';
+      src: url('/lettra/PPLettraMono-Ultralight.woff2') format('woff2'),
+           url('/lettra/PPLettraMono-Ultralight.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Lettra Mono';
+      src: url('/lettra/PPLettraMono-Regular.woff2') format('woff2'),
+           url('/lettra/PPLettraMono-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Lettra Mono';
+      src: url('/lettra/PPLettraMono-Medium.woff2') format('woff2'),
+           url('/lettra/PPLettraMono-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'PP Lettra Mono';
+      src: url('/lettra/PPLettraMono-Ultrabold.woff2') format('woff2'),
+           url('/lettra/PPLettraMono-Ultrabold.woff') format('woff');
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    /* CSS Variables */
+    :root {
+      --black: #1E1E1E;
+      --blue: #40A5D1;
+      --sky: #ACE1FC;
+      --sand: #EAE5E1;
+      --white: #F7F7F7;
+      --font-primary: 'PP Frama', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'PP Frama Text', 'PP Frama', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'PP Lettra Mono', monospace;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--black);
+      background-color: var(--white);
+      font-size: 1.0625rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* Typography - Refined hierarchy */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; letter-spacing: 0.05em; }
+    h2 { font-size: clamp(1.875rem, 3.5vw, 2.75rem); font-weight: 500; margin-bottom: 2rem; }
+    h3 { font-size: clamp(1.375rem, 2.5vw, 1.625rem); font-weight: 500; margin-top: 3rem; margin-bottom: 1.25rem; color: var(--blue); }
+    h4 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem; }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      max-width: 65ch;
+    }
+
+    /* Lead paragraphs */
+    .lead, section > .container > p:first-of-type {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #333;
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    /* Subtle emphasis */
+    em {
+      font-style: italic;
+      color: #555;
+    }
+
+    /* Accent Font - Used sparingly */
+    .accent-font {
+      font-family: var(--font-accent);
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    section {
+      padding: 7rem 0;
+      position: relative;
+    }
+
+    /* Elegant section divider */
+    section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+      opacity: 0.4;
+    }
+
+    section:last-of-type::after,
+    .cover::after,
+    footer::after {
+      display: none;
+    }
+
+    /* Two-column text layout for better readability */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* Pull quotes */
+    .pull-quote {
+      font-family: var(--font-primary);
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--blue);
+      border-left: 3px solid var(--sky);
+      padding-left: 2rem;
+      margin: 3rem 0;
+      max-width: 100%;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(172, 225, 252, 0.15) 0%, rgba(64, 165, 209, 0.08) 100%);
+      border-left: 4px solid var(--blue);
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+    }
+
+    /* Cover Page */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, var(--blue) 0%, transparent 70%);
+      opacity: 0.1;
+    }
+
+    .cover h1 {
+      font-family: var(--font-primary);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 200;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .cover h1 span {
+      display: block;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .cover .subtitle {
+      font-family: var(--font-accent);
+      font-size: 0.875rem;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-top: 2rem;
+    }
+
+    .cover .version {
+      font-family: var(--font-accent);
+      position: absolute;
+      bottom: 3rem;
+      font-size: 0.75rem;
+      font-weight: 200;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-number {
+      font-family: var(--font-accent);
+      font-size: 0.75rem;
+      font-weight: 200;
+      color: var(--blue);
+      letter-spacing: 0.1em;
+    }
+
+    .section-label {
+      font-family: var(--font-accent);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    /* Cards - Refined */
+    .card {
+      background: var(--sand);
+      padding: 2.5rem 3rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      border-radius: 2px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+    }
+
+    .card p {
+      max-width: none;
+    }
+
+    .card.blue {
+      background: linear-gradient(135deg, var(--blue) 0%, #2D8FB5 100%);
+      color: var(--white);
+    }
+
+    .card.blue strong {
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .card.dark {
+      background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
+      color: var(--white);
+    }
+
+    .card.dark strong {
+      color: var(--sky);
+    }
+
+    /* Subtle card variant */
+    .card.subtle {
+      background: transparent;
+      border: 1px solid rgba(64, 165, 209, 0.2);
+      box-shadow: none;
+    }
+
+    /* Framework Section */
+    .framework-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .framework-card {
+      background: var(--sand);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .framework-card .letter {
+      font-family: var(--font-primary);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .framework-card h4 {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .framework-card .key-idea {
+      font-family: var(--font-accent);
+      font-size: 0.8rem;
+      font-style: normal;
+      color: var(--blue);
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(64, 165, 209, 0.3);
+    }
+
+    /* Leona outcomes refined */
+    .leona-outcomes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .leona-outcomes .outcome {
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .leona-outcomes .outcome strong {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Values Grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .value-card {
+      padding: 2rem;
+      border-left: 3px solid var(--blue);
+    }
+
+    .value-card h4 {
+      font-weight: 500;
+      color: var(--blue);
+    }
+
+    /* Leona Section */
+    .leona-outcomes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .outcome {
+      background: var(--sky);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .outcome strong {
+      display: block;
+      font-size: 1.25rem;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Pain Points */
+    .pain-point {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .pain-point:last-child {
+      border-bottom: none;
+    }
+
+    .pain-point .number {
+      font-family: var(--font-accent);
+      font-size: 1.5rem;
+      font-weight: 200;
+      color: var(--blue);
+    }
+
+    /* Language Lists */
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .language-item {
+      font-family: var(--font-accent);
+      padding: 0.5rem 1rem;
+      background: var(--sand);
+      font-size: 0.8rem;
+    }
+
+    .language-item.caution {
+      background: transparent;
+      border: 1px solid var(--sand);
+      color: #666;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+    /* Tone Section */
+    .tone-card {
+      background: var(--sand);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tone-card h4 {
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .tone-card .style {
+      font-family: var(--font-accent);
+      font-size: 0.8rem;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+
+    .tone-card .example {
+      font-family: var(--font-primary);
+      font-style: italic;
+      font-weight: 300;
+      padding: 1rem;
+      background: var(--white);
+      margin-top: 1rem;
+    }
+
+    /* Journey Steps */
+    .journey-step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .journey-step .step-number {
+      font-family: var(--font-accent);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--blue);
+    }
+
+    .journey-step h4 {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Quote Block */
+    .quote-block {
+      background: var(--blue);
+      color: var(--white);
+      padding: 3rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .quote-block p {
+      font-family: var(--font-primary);
+      font-size: 1.5rem;
+      font-weight: 300;
+      font-style: italic;
+      margin: 0;
+    }
+
+    /* Microscripts */
+    .microscripts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .microscript {
+      font-family: var(--font-primary);
+      background: var(--sand);
+      padding: 1rem 1.5rem;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+
+    /* Financial Story Section */
+    .financial-story {
+      background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
+      color: var(--white);
+      padding: 4rem;
+      margin: 3rem 0;
+    }
+
+    .financial-story h3 {
+      color: var(--sky);
+    }
+
+    .financial-story strong {
+      color: var(--sky);
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--sand);
+      padding: 2rem;
+    }
+
+    .service-card h4 {
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .service-card .tagline {
+      font-family: var(--font-accent);
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: var(--sand);
+      margin: 4rem 0;
+    }
+
+    /* Table of Contents */
+    .toc {
+      background: var(--sand);
+      padding: 3rem;
+      margin: 2rem 0;
+    }
+
+    .toc h3 {
+      margin-bottom: 2rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .toc-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .toc-list .num {
+      font-family: var(--font-accent);
+      font-size: 0.75rem;
+      color: var(--blue);
+      font-weight: 200;
+    }
+
+    .toc-list a {
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .toc-list a:hover {
+      color: var(--blue);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    footer .tagline {
+      font-family: var(--font-primary);
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    footer .tagline strong {
+      font-weight: 700;
+      color: var(--sky);
+    }
+
+    footer .version-info {
+      font-family: var(--font-accent);
+      font-size: 0.75rem;
+      opacity: 0.5;
+      margin-top: 2rem;
+    }
+
+    /* Image styles */
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .leona-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      section {
+        padding: 4rem 0;
+      }
+
+      .leona-outcomes {
+        grid-template-columns: 1fr;
+      }
+
+      .pain-point {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-step {
+        grid-template-columns: 1fr;
+      }
+
+      .framework-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-grid,
+      .leona-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .leona-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .leona-grid > div:last-child {
+        order: -1;
+        max-width: 200px;
+        margin: 0 auto 2rem;
+      }
+
+    }
+
+    /* Download Button */
+    .download-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 1rem 1.5rem;
+      font-family: var(--font-accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: var(--black);
+      transform: translateY(-2px);
+    }
+
+    .download-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Framework Graphic */
+    .framework-graphic {
+      background: var(--white);
+      padding: 3rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .framework-graphic svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Brand Guidelines */
+    .color-swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .color-swatch {
+      text-align: center;
+    }
+
+    .color-swatch .swatch {
+      width: 100%;
+      height: 120px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .color-swatch .name {
+      font-family: var(--font-primary);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .color-swatch .hex {
+      font-family: var(--font-accent);
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .color-swatch .codes {
+      font-family: var(--font-accent);
+      font-size: 0.7rem;
+      color: #999;
+      margin-top: 0.5rem;
+    }
+
+    .typography-sample {
+      padding: 2rem;
+      background: var(--sand);
+      margin-bottom: 1.5rem;
+    }
+
+    .typography-sample .label {
+      font-family: var(--font-accent);
+      font-size: 0.75rem;
+      color: var(--blue);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .typography-sample .sample-primary {
+      font-family: var(--font-primary);
+    }
+
+    .typography-sample .sample-body {
+      font-family: var(--font-body);
+    }
+
+    .typography-sample .sample-accent {
+      font-family: var(--font-accent);
+    }
+
+    .font-weights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .font-weight-item {
+      font-family: var(--font-accent);
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    /* Print Styles */
+    @media print {
+      .download-btn {
+        display: none !important;
+      }
+
+      .cover {
+        min-height: auto;
+        padding: 4rem 0;
+        page-break-after: always;
+      }
+
+      section {
+        page-break-inside: avoid;
+        padding: 2rem 0;
+      }
+
+      .card, .framework-card, .tone-card, .framework-graphic {
+        break-inside: avoid;
+      }
+
+      body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .card.blue, .card.dark, section[style*="background"] {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Download Button -->
+  <button class="download-btn" onclick="window.print()">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    Download PDF
+  </button>
+
+  <!-- Cover -->
+  <section class="cover">
+    <!-- MV Logo Mark -->
+    <svg width="120" height="77" viewBox="0 0 430 276" fill="none" style="margin-bottom: 2rem;">
+      <path fill="#F7F7F7" d="M222.367706,234.938370 C220.405823,227.060471 218.457321,219.526154 217.143509,211.882767 C207.824615,157.668030 198.636719,103.430763 189.403961,49.201199 C188.322113,42.846828 190.220596,40.511639 196.655640,40.464931 C202.986359,40.418980 209.322144,40.599537 215.647141,40.404003 C219.695663,40.278851 222.059082,41.815235 223.651093,45.620007 C244.699921,95.924660 265.850403,146.186783 286.990326,196.453293 C291.245209,206.570496 295.580414,216.653885 299.843781,226.767548 C302.441193,232.929153 300.406250,236.218506 293.900635,236.229828 C271.742004,236.268341 249.583206,236.264542 227.424683,236.199875 C225.840485,236.195236 224.258087,235.568802 222.367706,234.938370z"/>
+      <path fill="#F7F7F7" d="M351.540466,90.564682 C344.184326,108.983765 337.104462,127.100716 329.674561,145.072952 C328.767303,147.267471 325.989807,150.068359 324.063751,150.080109 C322.075500,150.092239 319.097382,147.436050 318.218506,145.270859 C308.343750,120.943436 298.795319,96.483604 289.148163,72.063690 C286.156464,64.490822 283.181793,56.910553 280.104370,49.372437 C277.947906,44.090336 279.779602,40.540268 285.332611,40.513504 C311.148468,40.389091 336.965485,40.398487 362.781494,40.508274 C368.126007,40.531002 370.075684,43.918831 368.080292,48.961662 C362.636566,62.719082 357.168671,76.466934 351.540466,90.564682z"/>
+      <path fill="#F7F7F7" d="M62.020603,46.058628 C62.500854,41.734257 64.992996,40.434837 68.633881,40.439350 C88.630119,40.464138 108.626564,40.407948 128.622589,40.477852 C134.379745,40.497974 136.577225,43.512955 134.611893,48.879398 C127.981255,66.984825 121.198761,85.034698 114.458076,103.099739 C111.029327,112.288803 107.747269,121.540695 103.969162,130.584671 C103.188316,132.453857 100.490883,134.666168 98.699219,134.646774 C96.917801,134.627518 94.254539,132.343918 93.535698,130.459137 C82.878853,102.517097 72.481400,74.476120 62.020603,46.058628z"/>
+      <path fill="#ACE1FC" d="M395.345032,174.561111 C407.104126,182.444931 412.317657,193.349152 410.774384,206.861465 C409.299255,219.777115 402.083893,229.121811 389.901031,233.935974 C377.546295,238.818115 365.819305,236.892471 355.797302,228.239136 C345.111816,219.012924 341.462494,206.930679 345.462006,193.454483 C349.258209,180.663498 358.251251,172.626999 371.551056,169.997421 C379.902405,168.346237 387.757721,169.947525 395.345032,174.561111z"/>
+      <path fill="#F7F7F7" d="M123.752533,196.758636 C131.214005,178.743408 138.537903,161.087540 145.789886,143.402176 C147.005966,140.436508 148.711456,137.222061 152.054092,138.446106 C154.221069,139.239609 156.522797,142.461426 156.910034,144.890732 C161.278336,172.295151 165.296555,199.755447 169.386627,227.204056 C170.480118,234.542465 169.025436,236.241348 161.733749,236.246887 C147.077652,236.258011 132.421524,236.268829 117.765472,236.241104 C110.973801,236.228271 108.973885,233.375137 111.447182,227.177567 C115.453743,217.137909 119.538864,207.129639 123.752533,196.758636z"/>
+      <path fill="#F7F7F7" d="M68.676086,188.245529 C73.940529,201.753937 79.086349,214.892517 84.217888,228.036667 C86.044273,232.714859 84.031532,236.162430 79.103897,236.200500 C63.796017,236.318832 48.486538,236.271866 33.177887,236.223694 C28.491982,236.208954 27.209999,233.328705 27.805830,229.213928 C29.994091,214.102142 32.208584,198.994095 34.438068,183.888321 C36.158367,172.232513 37.915035,160.582077 39.657902,148.929611 C39.903881,147.285034 39.709988,145.356873 40.523106,144.066086 C41.733727,142.144272 43.535488,139.527283 45.316711,139.333893 C47.084282,139.142014 50.078938,141.151962 50.900631,142.945312 C54.215195,150.179367 56.921646,157.693680 59.807381,165.122101 C62.749866,172.696625 65.639214,180.291779 68.676086,188.245529z"/>
+    </svg>
+    <h1>Molly<span>Varangkounh</span></h1>
+    <div class="subtitle">The Maker Manual</div>
+    <div class="version">Brand Guidelines V.2</div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section id="toc">
+    <div class="container">
+      <div class="toc">
+        <h3>Contents</h3>
+        <ul class="toc-list">
+          <li><span class="num">01</span><a href="#build">B.U.I.L.D Framework</a></li>
+          <li><span class="num">02</span><a href="#vision">Vision + Mission</a></li>
+          <li><span class="num">03</span><a href="#founder">Founder Story</a></li>
+          <li><span class="num">04</span><a href="#leona">Who Is Leona?</a></li>
+          <li><span class="num">05</span><a href="#archetypes">Brand Archetypes</a></li>
+          <li><span class="num">06</span><a href="#audience">Target Audience</a></li>
+          <li><span class="num">07</span><a href="#pain-points">Pain Points</a></li>
+          <li><span class="num">08</span><a href="#positioning">Unique Positioning</a></li>
+          <li><span class="num">09</span><a href="#values">Brand Values</a></li>
+          <li><span class="num">10</span><a href="#bold">BOLD Framework</a></li>
+          <li><span class="num">11</span><a href="#messaging">Messaging Strategy</a></li>
+          <li><span class="num">12</span><a href="#tone">Brand Tone</a></li>
+          <li><span class="num">13</span><a href="#language">Language Strategy</a></li>
+          <li><span class="num">14</span><a href="#financial">Financial Story</a></li>
+          <li><span class="num">14</span><a href="#marketing">Marketing Strategy</a></li>
+          <li><span class="num">15</span><a href="#journey">Customer Journey</a></li>
+          <li><span class="num">16</span><a href="#services">Service Offerings</a></li>
+          <li><span class="num">17</span><a href="#brand-guidelines">Brand Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- B.U.I.L.D Framework -->
+  <section id="build">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <span class="section-label">Introduction</span>
+      </div>
+      <h2>B.U.I.L.D Framework</h2>
+      <p>The B.U.I.L.D. Framework for Molly Varangkounh establishes the strategic foundation for a personal brand that supports complex, high-stakes leadership work. This brand is designed to hold multiple lines of business while maintaining clarity, credibility, and trust.</p>
+      
+      <div class="card blue">
+        <p style="margin-bottom: 0;"><strong>Most importantly, view this through the lens of your ideal client, Leona.</strong> It is her perspective and experience that we are focusing on.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 2rem;">
+        <div class="framework-card">
+          <div class="letter">B</div>
+          <h4>Branding with Purpose</h4>
+        </div>
+        <div class="framework-card">
+          <div class="letter">U</div>
+          <h4>Unification of Marketing & Audience</h4>
+        </div>
+        <div class="framework-card">
+          <div class="letter">I</div>
+          <h4>Innovation Creative Marketing</h4>
+        </div>
+        <div class="framework-card">
+          <div class="letter">L</div>
+          <h4>Leadership in Thought & Engagement</h4>
+        </div>
+        <div class="framework-card">
+          <div class="letter">D</div>
+          <h4>Delivery of Value</h4>
+        </div>
+      </div>
+
+      <!-- B.U.I.L.D Framework Graphic -->
+      <div class="framework-graphic">
+        <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background circles -->
+          <circle cx="100" cy="150" r="60" fill="#ACE1FC" opacity="0.3"/>
+          <circle cx="250" cy="150" r="60" fill="#40A5D1" opacity="0.3"/>
+          <circle cx="400" cy="150" r="60" fill="#ACE1FC" opacity="0.3"/>
+          <circle cx="550" cy="150" r="60" fill="#40A5D1" opacity="0.3"/>
+          <circle cx="700" cy="150" r="60" fill="#ACE1FC" opacity="0.3"/>
+          
+          <!-- Letters -->
+          <text x="100" y="165" font-family="PP Frama, sans-serif" font-size="48" font-weight="700" fill="#1E1E1E" text-anchor="middle">B</text>
+          <text x="250" y="165" font-family="PP Frama, sans-serif" font-size="48" font-weight="700" fill="#1E1E1E" text-anchor="middle">U</text>
+          <text x="400" y="165" font-family="PP Frama, sans-serif" font-size="48" font-weight="700" fill="#1E1E1E" text-anchor="middle">I</text>
+          <text x="550" y="165" font-family="PP Frama, sans-serif" font-size="48" font-weight="700" fill="#1E1E1E" text-anchor="middle">L</text>
+          <text x="700" y="165" font-family="PP Frama, sans-serif" font-size="48" font-weight="700" fill="#1E1E1E" text-anchor="middle">D</text>
+          
+          <!-- Connecting lines -->
+          <line x1="160" y1="150" x2="190" y2="150" stroke="#40A5D1" stroke-width="2" stroke-dasharray="5,5"/>
+          <line x1="310" y1="150" x2="340" y2="150" stroke="#40A5D1" stroke-width="2" stroke-dasharray="5,5"/>
+          <line x1="460" y1="150" x2="490" y2="150" stroke="#40A5D1" stroke-width="2" stroke-dasharray="5,5"/>
+          <line x1="610" y1="150" x2="640" y2="150" stroke="#40A5D1" stroke-width="2" stroke-dasharray="5,5"/>
+          
+          <!-- Labels -->
+          <text x="100" y="240" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">Branding</text>
+          <text x="100" y="255" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">with Purpose</text>
+          
+          <text x="250" y="240" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">Unification</text>
+          <text x="250" y="255" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">of Marketing</text>
+          
+          <text x="400" y="240" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">Innovation</text>
+          <text x="400" y="255" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">Creative Marketing</text>
+          
+          <text x="550" y="240" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">Leadership</text>
+          <text x="550" y="255" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">in Thought</text>
+          
+          <text x="700" y="240" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">Delivery</text>
+          <text x="700" y="255" font-family="PP Frama Text, sans-serif" font-size="11" fill="#666" text-anchor="middle">of Value</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision + Mission -->
+  <section id="vision" style="background: var(--sand);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Vision + Mission</h2>
+      
+      <h3>Brand Overview</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 3rem;">
+        <div>
+          <p>Molly Varangkounh is a trusted advisor who supports leaders navigating complex, emotionally charged decisions with long-term implications.</p>
+          <p>Her brand is grounded in <em>clarity, responsibility, and lived experience</em>—particularly within family-owned and legacy-driven businesses where she served as president and led operations, people, and P&L accountability.</p>
+        </div>
+        <div class="highlight-box" style="background: rgba(255,255,255,0.7);">
+          <p style="font-size: 1.1rem; line-height: 1.7; margin: 0;">Rather than focusing on urgency or motivation, Molly's brand emphasizes the emotional outcome her clients need most: <strong>a sense of peace in themselves, paired with the strength and confidence to move forward decisively.</strong></p>
+        </div>
+      </div>
+
+      <p class="pull-quote">When leaders finish a conversation with Molly, they feel calmer in their body, clearer in their thinking, and strong enough to lead without second-guessing themselves.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem;">
+        <div class="card dark" style="margin-bottom: 0;">
+          <h4 style="color: var(--sky); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem;">Mission</h4>
+          <p style="font-size: 1.05rem; line-height: 1.8;">Molly Varangkounh helps leaders find <strong>peace in themselves</strong> while gaining the <strong>strength and clarity</strong> to make bold, grounded decisions when the stakes are high.</p>
+          <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 0;">She serves as a trusted guide—providing perspective, structure, and support so clients can move forward with confidence rather than hesitation.</p>
+        </div>
+
+        <div class="card blue" style="margin-bottom: 0;">
+          <h4 style="color: var(--sky); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem;">Vision</h4>
+          <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 0;">A world where leaders hold open, proactive conversations and approach difficult decisions with clarity, confidence, and inner peace—strengthening both their <strong>businesses</strong> and their <strong>relationships</strong> through change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Story -->
+  <section id="founder">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Founder Story</h2>
+      
+      <div style="display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; margin-bottom: 3rem;">
+        <div style="position: relative;">
+          <img src="https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-headshot-navy.png" alt="Molly Varangkounh" style="width: 100%; object-fit: cover; box-shadow: 0 30px 60px rgba(0,0,0,0.12);">
+          <div style="position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--blue); color: white; padding: 1.25rem 1.5rem; font-family: var(--font-accent); font-size: 0.7rem; letter-spacing: 0.05em; line-height: 1.6;">
+            <span style="font-size: 1.5rem; font-family: var(--font-primary); font-weight: 700; display: block;">20+</span>
+            Years Leading Business
+          </div>
+        </div>
+        <div>
+          <p style="font-size: 1.15rem; line-height: 1.9; margin-bottom: 1.75rem;">After more than two decades <strong>leading</strong> a family-owned manufacturing business—where she served as president with full responsibility for performance, P&L, and strategic direction—Molly Varangkounh saw firsthand how often difficult conversations were delayed and clarity was avoided.</p>
+          <p style="color: #555;">Navigating succession that did not unfold as hoped, shifting authority, and identity change from the inside revealed a consistent pattern: <em>the greatest risks were rarely operational, but emotional.</em></p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 4rem 0;">
+        <div class="card" style="margin-bottom: 0;">
+          <h4 style="color: var(--blue); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.25rem;">A Rare Combination</h4>
+          <p style="font-size: 1.05rem; line-height: 1.85;"><strong>Business acumen meets emotional intelligence.</strong></p>
+          <p style="font-size: 0.95rem; color: #555; margin-bottom: 0;">A former CPA with CFO-level experience, Molly understands what numbers tell you about a business's health—and more importantly, what they reveal about the people and decisions behind them.</p>
+        </div>
+
+        <div class="card blue" style="margin-bottom: 0;">
+          <h4 style="color: var(--sky); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.25rem;">Beyond Business</h4>
+          <p style="font-size: 0.95rem; line-height: 1.85; margin-bottom: 0;">Molly has navigated deeply personal leadership challenges: working alongside her spouse, raising daughters while modeling confidence, and caring for a parent with dementia—all while continuing to lead.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p style="font-size: 1.05rem; line-height: 1.8;">Her experience extends across <strong>male-dominated environments</strong> in manufacturing and agriculture, where she learned to hold authority, direct strategy, and deliver results while navigating the realities of being a woman in rooms where that strength was often misunderstood or undervalued.</p>
+      </div>
+
+      <p class="pull-quote">She has been labeled bossy, difficult, and demanding—while still delivering results. She has been in their shoes.</p>
+
+      <p style="max-width: 100%; text-align: center; font-size: 1.1rem; margin-top: 3rem; padding: 0 4rem;">Today, Molly works as a steady, experienced guide for leaders facing high-stakes decisions they cannot afford to get wrong. Her work is grounded in lived experience, open communication, and the belief that <strong>proactive conversations lead to stronger businesses, healthier leadership, and fewer regrets.</strong></p>
+    </div>
+  </section>
+
+  <!-- Who Is Leona -->
+  <section id="leona" style="background: var(--black); color: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <span class="section-label" style="color: var(--sky);">Ideal Client Profile</span>
+      </div>
+      <h2>Who Is Leona?</h2>
+      
+      <div style="display: grid; grid-template-columns: 1fr 220px; gap: 4rem; align-items: center; margin-bottom: 3rem;">
+        <div>
+          <p style="font-size: 1.2rem; line-height: 1.9; margin-bottom: 1.5rem;">Leona is the leader Molly serves.</p>
+          <p style="font-size: 1.05rem; line-height: 1.85; color: rgba(255,255,255,0.8);">She is capable, accomplished, and carrying a tremendous amount of responsibility across leadership, family, and life. She is often <em style="color: var(--sky);">the strong one in the room</em>—even when that strength is misunderstood or undervalued.</p>
+        </div>
+        <div style="position: relative; text-align: center;">
+          <img src="/leona.png" alt="Leona - The Ideal Client" style="width: 200px; height: 200px; border-radius: 50%; border: 3px solid var(--sky); box-shadow: 0 0 80px rgba(172, 225, 252, 0.25); object-fit: cover;">
+          <div style="margin-top: 1rem; font-family: var(--font-accent); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--sky);">
+            Meet Leona
+          </div>
+        </div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, var(--sky) 0%, #7FCCE8 100%); color: var(--black); padding: 3rem; margin: 4rem 0; text-align: center;">
+        <p style="font-size: 1.15rem; line-height: 1.8; margin: 0; max-width: 700px; margin: 0 auto;"><strong>What Leona needs most is not motivation or more information.</strong><br><span style="font-size: 1rem; opacity: 0.85;">She needs a steady sense of peace in herself and the strength to take the next hard step with confidence.</span></p>
+      </div>
+
+      <h3 style="color: var(--sky); text-align: center; margin-bottom: 2.5rem; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;">The Emotional Outcome</h3>
+      <p style="text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 2rem;">When Leona finishes a conversation or experience with Molly, she feels:</p>
+
+      <div class="leona-outcomes">
+        <div class="outcome" style="background: var(--sky); color: var(--black);">
+          <strong style="color: var(--black);">Calmer</strong>
+          <span style="display: block; font-size: 0.9rem; opacity: 0.7; margin-top: 0.25rem;">in her body</span>
+        </div>
+        <div class="outcome" style="background: var(--blue); color: var(--white);">
+          <strong style="color: var(--white);">Clearer</strong>
+          <span style="display: block; font-size: 0.9rem; opacity: 0.8; margin-top: 0.25rem;">in her thinking</span>
+        </div>
+        <div class="outcome" style="background: var(--sky); color: var(--black);">
+          <strong style="color: var(--black);">Strong Enough</strong>
+          <span style="display: block; font-size: 0.9rem; opacity: 0.7; margin-top: 0.25rem;">to lead without second-guessing</span>
+        </div>
+      </div>
+
+      <!-- Leona Transformation Graphic -->
+      <div class="framework-graphic" style="background: rgba(255,255,255,0.05); margin: 3rem 0;">
+        <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Before state -->
+          <rect x="20" y="50" width="180" height="100" rx="10" fill="none" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+          <text x="110" y="90" font-family="PP Frama, sans-serif" font-size="14" fill="#666" text-anchor="middle">Before</text>
+          <text x="110" y="115" font-family="PP Frama Text, sans-serif" font-size="11" fill="#999" text-anchor="middle">Carrying the weight</text>
+          <text x="110" y="130" font-family="PP Frama Text, sans-serif" font-size="11" fill="#999" text-anchor="middle">Second-guessing</text>
+          
+          <!-- Arrow -->
+          <path d="M220 100 L280 100" stroke="#ACE1FC" stroke-width="3" fill="none"/>
+          <polygon points="280,95 295,100 280,105" fill="#ACE1FC"/>
+          <text x="257" y="85" font-family="PP Lettra Mono, monospace" font-size="10" fill="#ACE1FC" text-anchor="middle">WITH MOLLY</text>
+          
+          <!-- Transformation circle -->
+          <circle cx="370" cy="100" r="60" fill="#40A5D1"/>
+          <text x="370" y="95" font-family="PP Frama, sans-serif" font-size="14" font-weight="500" fill="#F7F7F7" text-anchor="middle">Peace +</text>
+          <text x="370" y="115" font-family="PP Frama, sans-serif" font-size="14" font-weight="500" fill="#F7F7F7" text-anchor="middle">Strength</text>
+          
+          <!-- Arrow -->
+          <path d="M450 100 L510 100" stroke="#ACE1FC" stroke-width="3" fill="none"/>
+          <polygon points="510,95 525,100 510,105" fill="#ACE1FC"/>
+          
+          <!-- After state -->
+          <rect x="540" y="50" width="140" height="100" rx="10" fill="#ACE1FC"/>
+          <text x="610" y="90" font-family="PP Frama, sans-serif" font-size="14" font-weight="500" fill="#1E1E1E" text-anchor="middle">After</text>
+          <text x="610" y="115" font-family="PP Frama Text, sans-serif" font-size="11" fill="#1E1E1E" text-anchor="middle">Calmer, Clearer</text>
+          <text x="610" y="130" font-family="PP Frama Text, sans-serif" font-size="11" fill="#1E1E1E" text-anchor="middle">Strong Enough</text>
+        </svg>
+      </div>
+
+      <p style="text-align: center; margin-top: 3rem; font-size: 1.25rem; font-weight: 200;">This combination—<strong style="color: var(--sky);">peace in herself paired with strength and confidence to move forward decisively</strong>—is the emotional outcome the Molly V brand delivers.</p>
+    </div>
+  </section>
+
+  <!-- Brand Archetypes -->
+  <section id="archetypes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Brand Archetypes</h2>
+      
+      <p style="max-width: 600px;">Archetypes characterize universal patterns of behavior all instinctively understand. Based on Swiss psychologist Carl Jung's theory, these help define and bring the brand to life.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem;">
+        <div class="card" style="padding: 3rem;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+            <div style="width: 60px; height: 60px; background: var(--sky); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E1E1E" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </div>
+            <h3 style="margin: 0; font-size: 1.5rem;">The Sage</h3>
+          </div>
+          <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem;">The Sage seeks truth, understanding, and clarity. This archetype values wisdom gained through experience and helps others see situations more clearly.</p>
+          
+          <div style="border-top: 1px solid rgba(64,165,209,0.2); padding-top: 1.5rem;">
+            <p style="margin-bottom: 1rem;"><span style="font-family: var(--font-accent); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--blue);">GOAL</span><br><span style="font-size: 0.95rem;">Help leaders make decisions grounded in truth rather than fear.</span></p>
+            <p style="margin-bottom: 1rem;"><span style="font-family: var(--font-accent); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--blue);">TRAITS</span><br><span style="font-size: 0.95rem;">Calm · Thoughtful · Analytical · Honest · Grounded</span></p>
+            <p style="margin-bottom: 0;"><span style="font-family: var(--font-accent); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--blue);">NICHE</span><br><span style="font-size: 0.95rem;">Trusted advisor, strategic guide</span></p>
+          </div>
+        </div>
+        
+        <div class="card blue" style="padding: 3rem;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+            <div style="width: 60px; height: 60px; background: var(--sky); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E1E1E" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 style="margin: 0; font-size: 1.5rem; color: white;">The Caregiver</h3>
+          </div>
+          <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem;">The Caregiver prioritizes support, protection, and responsibility. This archetype creates a safe environment for difficult conversations.</p>
+          
+          <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem;">
+            <p style="margin-bottom: 1rem;"><span style="font-family: var(--font-accent); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--sky);">GOAL</span><br><span style="font-size: 0.95rem;">Create trusted space for peace and strength.</span></p>
+            <p style="margin-bottom: 1rem;"><span style="font-family: var(--font-accent); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--sky);">TRAITS</span><br><span style="font-size: 0.95rem;">Supportive · Protective · Steady · Nurturing</span></p>
+            <p style="margin-bottom: 0;"><span style="font-family: var(--font-accent); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--sky);">NICHE</span><br><span style="font-size: 0.95rem;">Safe space for honest conversation</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audience -->
+  <section id="audience" style="background: var(--sand);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Target Audience</h2>
+
+      <!-- Demographics Grid -->
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 4rem;">
+        <div style="background: white; padding: 1.5rem; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <span style="font-family: var(--font-accent); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--blue); display: block; margin-bottom: 0.5rem;">GENDER</span>
+          <span style="font-weight: 600; font-size: 0.95rem;">Primarily Female</span>
+        </div>
+        <div style="background: white; padding: 1.5rem; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <span style="font-family: var(--font-accent); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--blue); display: block; margin-bottom: 0.5rem;">AGE</span>
+          <span style="font-weight: 600; font-size: 0.95rem;">40–55</span>
+        </div>
+        <div style="background: white; padding: 1.5rem; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <span style="font-family: var(--font-accent); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--blue); display: block; margin-bottom: 0.5rem;">LOCATION</span>
+          <span style="font-weight: 600; font-size: 0.95rem;">Midwest</span>
+        </div>
+        <div style="background: white; padding: 1.5rem; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <span style="font-family: var(--font-accent); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--blue); display: block; margin-bottom: 0.5rem;">INCOME</span>
+          <span style="font-weight: 600; font-size: 0.95rem;">$150K+</span>
+        </div>
+        <div style="background: white; padding: 1.5rem; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <span style="font-family: var(--font-accent); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--blue); display: block; margin-bottom: 0.5rem;">STATUS</span>
+          <span style="font-weight: 600; font-size: 0.95rem;">Often Married</span>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="background: rgba(255,255,255,0.8); margin-bottom: 4rem;">
+        <p style="font-size: 1.05rem; line-height: 1.8; margin: 0;"><strong>Industry:</strong> Senior leaders, executives, and business owners in manufacturing and operationally complex businesses, often within family-owned or legacy-driven organizations.</p>
+      </div>
+
+      <!-- Two Column Layout for Problems/Goals -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+        <div>
+          <h4 style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.5rem;">Problems</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="padding: 1rem 0; border-bottom: 1px solid rgba(64,165,209,0.15); font-size: 0.95rem; line-height: 1.7;">Carrying increasing responsibility without a trusted space to think openly</li>
+            <li style="padding: 1rem 0; border-bottom: 1px solid rgba(64,165,209,0.15); font-size: 0.95rem; line-height: 1.7;">Leading through growth pressure while navigating identity shifts</li>
+            <li style="padding: 1rem 0; border-bottom: 1px solid rgba(64,165,209,0.15); font-size: 0.95rem; line-height: 1.7;">Being the strong one without anyone to support them</li>
+            <li style="padding: 1rem 0; font-size: 0.95rem; line-height: 1.7;">Often misunderstood despite delivering results</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.5rem;">Goals</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="padding: 1rem 0; border-bottom: 1px solid rgba(64,165,209,0.15); font-size: 0.95rem; line-height: 1.7;">Make bold decisions that move the business forward</li>
+            <li style="padding: 1rem 0; border-bottom: 1px solid rgba(64,165,209,0.15); font-size: 0.95rem; line-height: 1.7;">Build a resilient organization with strong culture</li>
+            <li style="padding: 1rem 0; border-bottom: 1px solid rgba(64,165,209,0.15); font-size: 0.95rem; line-height: 1.7;">Gain clarity around succession or transition</li>
+            <li style="padding: 1rem 0; font-size: 0.95rem; line-height: 1.7;"><strong>Feel peace while leading with strength</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Motivations & Beliefs -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;">
+        <div style="background: white; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <h4 style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.25rem;">Motivations</h4>
+          <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem;">• Lead with intention, courage, and calm</p>
+          <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem;">• Responsibility to people, culture, and legacy</p>
+          <p style="font-size: 0.95rem; line-height: 1.8; margin: 0;"><strong>• Needs someone to tumble ideas with</strong></p>
+        </div>
+        <div style="background: white; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <h4 style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.25rem;">Beliefs</h4>
+          <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem;">• Strong leadership requires clarity and conviction</p>
+          <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem;">• Values responsibility, hard work, loyalty</p>
+          <p style="font-size: 0.95rem; line-height: 1.8; margin: 0;">• Willing to engage in difficult conversations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section id="pain-points">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">07</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Customer Pain Points</h2>
+
+      <div class="pain-point">
+        <div class="number">01</div>
+        <div>
+          <h4>Leading a Business That Has Outgrown Its Systems</h4>
+          <p>Business leaders are navigating real pressure from growth stagnation, talent turnover, and systems that no longer support where the organization needs to go. The business requires change, but infrastructure and people are not aligned to move forward smoothly.</p>
+        </div>
+      </div>
+
+      <div class="pain-point">
+        <div class="number">02</div>
+        <div>
+          <h4>Carrying the Weight Alone</h4>
+          <p style="margin-bottom: 1rem;">Business leaders often carry significant responsibility without a trusted space to think or speak openly.</p>
+          <p style="font-size: 0.95rem; color: #555;"><strong style="color: var(--blue);">They need someone to tumble with</strong>—to ask the hard questions and help them face the harsh realities.</p>
+        </div>
+      </div>
+
+      <div class="pain-point">
+        <div class="number">03</div>
+        <div>
+          <h4>Identity Shifts and Leadership Uncertainty</h4>
+          <p style="margin-bottom: 1rem;">As roles expand, business leaders experience identity shifts tied to leadership expectations, generational dynamics, and personal life transitions.</p>
+          <p style="font-size: 0.95rem; color: #555;"><strong style="color: var(--blue);">Being labeled as bossy or difficult</strong> while delivering results adds another layer of complexity.</p>
+        </div>
+      </div>
+
+      <div class="pain-point">
+        <div class="number">04</div>
+        <div>
+          <h4>Navigating Complex Personal Realities</h4>
+          <p style="margin-bottom: 1rem;">Leaders often face challenges that extend beyond the business:</p>
+          <p style="font-size: 0.95rem; color: #555; margin-bottom: 0;">Working alongside a spouse · Raising children while modeling confidence · Caring for aging parents · These realities compound the weight of leadership.</p>
+        </div>
+      </div>
+
+      <div class="pain-point">
+        <div class="number">05</div>
+        <div>
+          <h4>The Cost of Delay</h4>
+          <p style="margin-bottom: 1rem;">When decisions are postponed, business leaders risk burnout, regret, and unintended consequences.</p>
+          <p style="font-size: 0.95rem; color: #555; margin-bottom: 0;">Without support, leadership becomes isolating—increasing emotional exhaustion and strained relationships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unique Positioning -->
+  <section id="positioning" style="background: var(--sand);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">08</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Unique Positioning</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 4rem;">
+        <div class="card dark" style="margin-bottom: 0; padding: 2.5rem;">
+          <h4 style="color: var(--sky); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem;">Dominant Selling Idea</h4>
+          <p style="font-size: 1.1rem; line-height: 1.85; margin-bottom: 1.5rem;">Molly Varangkounh helps business leaders find <strong>peace in themselves</strong> while gaining the <strong>strength and clarity</strong> to make confident decisions.</p>
+          <p style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 0;">A trusted space for honest conversation—helping leaders move through complexity with calm, courage, and intention.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 0; padding: 2.5rem; background: white;">
+          <h4 style="color: var(--blue); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem;">Competitive Positioning</h4>
+          <p style="font-size: 1rem; line-height: 1.85; margin-bottom: 1.5rem;">While many advisors focus on strategy alone, Molly combines <em>lived experience, emotional intelligence, and business acumen</em>.</p>
+          <p style="font-size: 0.95rem; color: #555; margin-bottom: 0;"><strong style="color: var(--blue);">She has been in their shoes</strong>—leading a family-owned business, navigating succession, making the hard calls.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 2rem;">Facts of Difference</h3>
+      
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+        <div style="background: white; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <div style="width: 40px; height: 3px; background: var(--blue); margin-bottom: 1.25rem;"></div>
+          <p style="font-size: 0.95rem; line-height: 1.75; margin-bottom: 0;"><strong>Led as president</strong> with full P&L responsibility—not just external theory. She has been in their shoes.</p>
+        </div>
+        <div style="background: white; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <div style="width: 40px; height: 3px; background: var(--sky); margin-bottom: 1.25rem;"></div>
+          <p style="font-size: 0.95rem; line-height: 1.75; margin-bottom: 0;"><strong>Financial background</strong> (former CPA, CFO experience) paired with deep emotional intelligence—a rare combination.</p>
+        </div>
+        <div style="background: white; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <div style="width: 40px; height: 3px; background: var(--blue); margin-bottom: 1.25rem;"></div>
+          <p style="font-size: 0.95rem; line-height: 1.75; margin-bottom: 0;"><strong>Male-dominated environments</strong> in manufacturing and agriculture. Holding authority while being labeled bossy.</p>
+        </div>
+        <div style="background: white; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <div style="width: 40px; height: 3px; background: var(--sky); margin-bottom: 1.25rem;"></div>
+          <p style="font-size: 0.95rem; line-height: 1.75; margin-bottom: 0;"><strong>Personal realities</strong>—working with spouse, raising daughters, navigating succession, caring for aging parents.</p>
+        </div>
+        <div style="background: white; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
+          <div style="width: 40px; height: 3px; background: var(--blue); margin-bottom: 1.25rem;"></div>
+          <p style="font-size: 0.95rem; line-height: 1.75; margin-bottom: 0;"><strong>Proactive conversations</strong> that create clarity and momentum—not reactive problem-solving.</p>
+        </div>
+        <div style="background: var(--blue); padding: 2rem; color: white;">
+          <div style="width: 40px; height: 3px; background: var(--sky); margin-bottom: 1.25rem;"></div>
+          <p style="font-size: 0.95rem; line-height: 1.75; margin-bottom: 0;"><strong style="color: white;">Peace + Strength</strong>—leaders leave calmer, clearer, and strong enough to lead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Values -->
+  <section id="values">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">09</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Brand Values</h2>
+
+      <div class="values-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem;">
+        <div class="value-card" style="background: var(--sand); padding: 2rem; text-align: center;">
+          <div style="width: 50px; height: 50px; background: var(--sky); border-radius: 50%; margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E1E1E" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">Loving</h4>
+          <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 0;">Care for people, relationships, and the long-term impact of decisions. Delivers hard truths with compassion.</p>
+        </div>
+        <div class="value-card" style="background: var(--sand); padding: 2rem; text-align: center;">
+          <div style="width: 50px; height: 50px; background: var(--blue); border-radius: 50%; margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F7F7" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">Brave</h4>
+          <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 0;">Face reality honestly, name what others avoid. Choosing clarity over comfort and action over hesitation.</p>
+        </div>
+        <div class="value-card" style="background: var(--sand); padding: 2rem; text-align: center;">
+          <div style="width: 50px; height: 50px; background: var(--sky); border-radius: 50%; margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E1E1E" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">Positive</h4>
+          <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 0;">Grounded optimism. See possibility without ignoring reality. Stay steady during change.</p>
+        </div>
+        <div class="value-card" style="background: var(--sand); padding: 2rem; text-align: center;">
+          <div style="width: 50px; height: 50px; background: var(--blue); border-radius: 50%; margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F7F7" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">Inspiring</h4>
+          <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 0;">Inspires confidence, not dependency. Empowers leaders to trust themselves and step into their role.</p>
+        </div>
+        <div class="value-card" style="background: var(--sand); padding: 2rem; text-align: center;">
+          <div style="width: 50px; height: 50px; background: var(--sky); border-radius: 50%; margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E1E1E" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">Authentic</h4>
+          <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 0;">Honesty, transparency, real conversations. Show up as you are—not who you think you should be.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOLD Framework -->
+  <section id="bold" style="background: var(--blue); color: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number" style="color: var(--white);">10</span>
+        <span class="section-label" style="color: var(--sky);">The Framework</span>
+      </div>
+      <h2>The BOLD Leadership Framework</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;">
+        <div class="framework-card" style="background: rgba(255,255,255,0.1); color: var(--white);">
+          <div class="letter" style="color: var(--sky);">B</div>
+          <h4>Be Clear Before You Act</h4>
+          <p style="font-size: 0.9rem;">Bold leadership starts with clarity. Clear direction, clear priorities, clear expectations.</p>
+          <div class="key-idea" style="color: var(--sky); border-color: var(--sky); font-size: 0.75rem;">Clarity reduces friction.</div>
+        </div>
+        <div class="framework-card" style="background: rgba(255,255,255,0.1); color: var(--white);">
+          <div class="letter" style="color: var(--sky);">O</div>
+          <h4>Own the Hard Things</h4>
+          <p style="font-size: 0.9rem;">Bold leaders step into difficult conversations and unpopular decisions when needed.</p>
+          <div class="key-idea" style="color: var(--sky); border-color: var(--sky); font-size: 0.75rem;">Take responsibility.</div>
+        </div>
+        <div class="framework-card" style="background: rgba(255,255,255,0.1); color: var(--white);">
+          <div class="letter" style="color: var(--sky);">L</div>
+          <h4>Listen to Understand</h4>
+          <p style="font-size: 0.9rem;">Create space for dissent, perspective, and truth. Leaders who listen well earn trust.</p>
+          <div class="key-idea" style="color: var(--sky); border-color: var(--sky); font-size: 0.75rem;">Listen, don't just hear.</div>
+        </div>
+        <div class="framework-card" style="background: rgba(255,255,255,0.1); color: var(--white);">
+          <div class="letter" style="color: var(--sky);">D</div>
+          <h4>Decide & Move Forward</h4>
+          <p style="font-size: 0.9rem;">Indecision is still a decision. Gather input, weigh risk, then move the organization forward.</p>
+          <div class="key-idea" style="color: var(--sky); border-color: var(--sky); font-size: 0.75rem;">Decisions build momentum.</div>
+        </div>
+      </div>
+
+      <!-- BOLD Framework Graphic -->
+      <div class="framework-graphic" style="background: rgba(255,255,255,0.05); margin-top: 3rem; padding: 2rem;">
+        <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Horizontal layout: B - O - L - D -->
+          <!-- B -->
+          <circle cx="100" cy="80" r="50" fill="#ACE1FC"/>
+          <text x="100" y="95" font-family="PP Frama, sans-serif" font-size="42" font-weight="700" fill="#1E1E1E" text-anchor="middle">B</text>
+          <text x="100" y="160" font-family="PP Frama Text, sans-serif" font-size="12" fill="#F7F7F7" text-anchor="middle">Be Clear</text>
+          <text x="100" y="175" font-family="PP Frama Text, sans-serif" font-size="10" fill="#ACE1FC" text-anchor="middle">Before You Act</text>
+          
+          <!-- Connector -->
+          <line x1="160" y1="80" x2="230" y2="80" stroke="#ACE1FC" stroke-width="2" stroke-dasharray="6,4"/>
+          
+          <!-- O -->
+          <circle cx="300" cy="80" r="50" fill="#40A5D1"/>
+          <text x="300" y="95" font-family="PP Frama, sans-serif" font-size="42" font-weight="700" fill="#F7F7F7" text-anchor="middle">O</text>
+          <text x="300" y="160" font-family="PP Frama Text, sans-serif" font-size="12" fill="#F7F7F7" text-anchor="middle">Own</text>
+          <text x="300" y="175" font-family="PP Frama Text, sans-serif" font-size="10" fill="#ACE1FC" text-anchor="middle">the Hard Things</text>
+          
+          <!-- Connector -->
+          <line x1="360" y1="80" x2="430" y2="80" stroke="#ACE1FC" stroke-width="2" stroke-dasharray="6,4"/>
+          
+          <!-- L -->
+          <circle cx="500" cy="80" r="50" fill="#ACE1FC"/>
+          <text x="500" y="95" font-family="PP Frama, sans-serif" font-size="42" font-weight="700" fill="#1E1E1E" text-anchor="middle">L</text>
+          <text x="500" y="160" font-family="PP Frama Text, sans-serif" font-size="12" fill="#F7F7F7" text-anchor="middle">Listen</text>
+          <text x="500" y="175" font-family="PP Frama Text, sans-serif" font-size="10" fill="#ACE1FC" text-anchor="middle">to Understand</text>
+          
+          <!-- Connector -->
+          <line x1="560" y1="80" x2="630" y2="80" stroke="#ACE1FC" stroke-width="2" stroke-dasharray="6,4"/>
+          
+          <!-- D -->
+          <circle cx="700" cy="80" r="50" fill="#40A5D1"/>
+          <text x="700" y="95" font-family="PP Frama, sans-serif" font-size="42" font-weight="700" fill="#F7F7F7" text-anchor="middle">D</text>
+          <text x="700" y="160" font-family="PP Frama Text, sans-serif" font-size="12" fill="#F7F7F7" text-anchor="middle">Decide</text>
+          <text x="700" y="175" font-family="PP Frama Text, sans-serif" font-size="10" fill="#ACE1FC" text-anchor="middle">& Move Forward</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Messaging Strategy -->
+  <section id="messaging">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">11</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Messaging Strategy</h2>
+
+      <h3>Overall Messaging</h3>
+      <p>Molly Varangkounh's messaging centers on peace, strength, clarity, and courage in moments that matter most. Her voice speaks directly to business leaders navigating complexity, transition, and high-stakes decisions without a clear path forward.</p>
+      <p>Rather than offering prescriptive answers or surface-level motivation, Molly's messaging reinforces the emotional outcome leaders need: <strong>feeling calmer, clearer, and strong enough to lead without second-guessing themselves.</strong></p>
+
+      <div class="card dark" style="margin: 3rem 0;">
+        <h3 style="color: var(--sky);">Tagline</h3>
+        <p style="font-size: 2rem; font-weight: 200; margin-bottom: 0;">Lead with clarity. <strong style="color: var(--sky);">Make bold moves.</strong></p>
+      </div>
+
+      <h4>Alternative Taglines</h4>
+      <div class="microscripts">
+        <div class="microscript">Peace in yourself. Strength to lead.</div>
+        <div class="microscript">Clarity changes everything.</div>
+        <div class="microscript">Lead boldly, decide confidently.</div>
+      </div>
+
+      <h4 style="margin-top: 3rem;">Microscripts</h4>
+      <div class="microscripts">
+        <div class="microscript">"Find peace in yourself. Find strength to lead."</div>
+        <div class="microscript">"You don't have to lead in isolation."</div>
+        <div class="microscript">"Where difficult conversations lead to better outcomes."</div>
+        <div class="microscript">"Learn how to make decisions you can stand behind."</div>
+        <div class="microscript">"Your bravest decisions shape resilient businesses."</div>
+        <div class="microscript">"Be a confident leader in uncertain moments."</div>
+        <div class="microscript">"You can lead with conviction while caring for people."</div>
+        <div class="microscript">"Clarity changes the quality of your decisions."</div>
+        <div class="microscript">"Feel calmer. Think clearer. Lead stronger."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Tone -->
+  <section id="tone" style="background: var(--sand);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">12</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Brand Tone</h2>
+
+      <div class="tone-card">
+        <h4>Empowered and Confident</h4>
+        <div class="style">Language Style: Confident, empowering, steady, clear, decisive.</div>
+        <p>Molly's tone reinforces a leader's capability, agency, and authority. It speaks in a way that reminds leaders they are allowed to trust themselves, make decisions, and move forward without waiting for permission. This tone is confident without being forceful, empowering without being prescriptive, and supportive of bold action grounded in values.</p>
+        <div class="example">"Make decisions you can stand behind."</div>
+      </div>
+
+      <div class="tone-card">
+        <h4>Authentic and Brave</h4>
+        <div class="style">Language Style: Authentic, honest, plainspoken, sincere.</div>
+        <p>Molly's tone is real, transparent, and rooted in lived experience. It avoids polish, posturing, or performance—favoring language that sounds human and true. This tone creates connection by acknowledging uncertainty, pressure, and growth without judgment, and by encouraging leaders to show up as they are.</p>
+        <div class="example">"You don't have to lead in isolation."</div>
+      </div>
+
+      <div class="tone-card">
+        <h4>Grounded and Caring</h4>
+        <div class="style">Language Style: Grounded, caring, calm, supportive.</div>
+        <p>Molly's tone reflects deep care for the well-being of leaders and the people they lead. It emphasizes steadiness, self-awareness, and sustainability—reinforcing that leadership is not just about outcomes, but about how leaders care for themselves and others along the way. This tone is calm, thoughtful, and quietly encouraging.</p>
+        <div class="example">"Clarity changes the quality of your decisions."</div>
+      </div>
+
+      <div class="tone-card" style="background: var(--blue); color: var(--white);">
+        <h4 style="color: var(--sky);">Peaceful and Strengthening</h4>
+        <div class="style" style="color: var(--sky);">Language Style: Peaceful, strengthening, anchoring, warm.</div>
+        <p>Molly's tone creates the feeling of coming home to yourself. It reminds leaders that they can be at peace AND be strong—that calm and conviction are not opposites. This tone is steady, warm, and anchoring.</p>
+        <div class="example" style="background: rgba(255,255,255,0.1); color: var(--white);">"Feel calmer in your body. Clearer in your thinking. Strong enough to lead."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Language Strategy -->
+  <section id="language">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">13</span>
+        <span class="section-label">Brand Strategy</span>
+      </div>
+      <h2>Language Strategy</h2>
+
+      <h3>Language to Use</h3>
+      <div class="language-grid">
+        <div class="language-item">Clarity</div>
+        <div class="language-item">Strength</div>
+        <div class="language-item">Peace</div>
+        <div class="language-item">Empowerment</div>
+        <div class="language-item">Courage</div>
+        <div class="language-item">Responsibility</div>
+        <div class="language-item">Longevity</div>
+        <div class="language-item">Sustainability</div>
+        <div class="language-item">Stewardship</div>
+        <div class="language-item">Transition</div>
+        <div class="language-item">Generational leadership</div>
+        <div class="language-item">Decision-making</div>
+        <div class="language-item">Accountability</div>
+        <div class="language-item">Trusted advisor</div>
+        <div class="language-item">Real conversations</div>
+        <div class="language-item">Difficult conversations</div>
+        <div class="language-item">Healthy culture</div>
+        <div class="language-item">People and performance</div>
+        <div class="language-item">Long-term impact</div>
+        <div class="language-item">Leadership capacity</div>
+        <div class="language-item">Carrying the weight</div>
+        <div class="language-item">Navigating complexity</div>
+        <div class="language-item">Business health</div>
+        <div class="language-item">Personal sustainability</div>
+        <div class="language-item">Resilient business</div>
+        <div class="language-item">Thoughtful leadership</div>
+        <div class="language-item">Trusted space</div>
+        <div class="language-item">Clear direction</div>
+        <div class="language-item">Values-based decisions</div>
+        <div class="language-item">Calm confidence</div>
+        <div class="language-item">Protecting relationships</div>
+        <div class="language-item">Inner strength</div>
+        <div class="language-item">Grounded</div>
+        <div class="language-item">Bold moves</div>
+        <div class="language-item">Bravest decisions</div>
+      </div>
+
+      <h3 style="margin-top: 3rem;">Language to Use with Caution</h3>
+      <div class="language-grid">
+        <div class="language-item caution">Hustle</div>
+        <div class="language-item caution">Grind</div>
+        <div class="language-item caution">Dominate</div>
+        <div class="language-item caution">Crush</div>
+        <div class="language-item caution">Hack</div>
+        <div class="language-item caution">Fast growth</div>
+        <div class="language-item caution">Quick wins</div>
+        <div class="language-item caution">Pressure language</div>
+        <div class="language-item caution">Overly therapeutic language</div>
+        <div class="language-item caution">Corporate buzzwords</div>
+        <div class="language-item caution">Performative empowerment</div>
+        <div class="language-item caution">Alignment over consensus (use sparingly)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financial Story -->
+  <section id="financial">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">14</span>
+        <span class="section-label">Service Offering</span>
+      </div>
+      <h2>Understand Your Financial Story</h2>
+
+      <div class="financial-story">
+        <h3>The Concept</h3>
+        <p style="font-size: 1.5rem; font-weight: 200;">"Understand Your Financial Story and <strong>Write Your Own Ending</strong>"</p>
+        <p>The numbers tell a story about your business's health—but it's the people who make them change. This offering bridges Molly's financial expertise (former CPA, CFO-level experience) with her deep understanding of change management and leadership.</p>
+      </div>
+
+      <h3>What It Is</h3>
+      <p>A structured engagement where Molly helps leaders:</p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 2rem;">
+        <li><strong>Understand what their numbers are telling them</strong> about the health of their business</li>
+        <li><strong>See the story behind the financials</strong>—what's working, what's at risk, what needs to change</li>
+        <li><strong>Face the harsh realities</strong> the numbers reveal with a trusted partner</li>
+        <li><strong>Build a support system</strong> for making the changes required</li>
+        <li><strong>Surround themselves with the right people and team</strong> to write a new ending</li>
+      </ul>
+
+      <div class="card blue">
+        <h4>Why It Matters</h4>
+        <p>Many women entrepreneurs and leaders are entrepreneurial but don't know what their numbers are telling them. They need someone to help paint the picture—to translate the data into a story they can understand and act upon.</p>
+        <p style="margin-bottom: 0;"><strong>This is not a CFO role.</strong> It's change management. Leona needs someone to tumble with, someone to ask the hard questions, help her face the harsh realities, and then provide a support system for making the changes. It often starts with surrounding yourself with the right people and team.</p>
+      </div>
+
+      <h3 style="margin-top: 2rem;">The Outcome</h3>
+      <p>Leaders leave with:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        <div class="card" style="text-align: center;">Clarity on what their financial story is saying</div>
+        <div class="card" style="text-align: center;">Confidence to face the realities it reveals</div>
+        <div class="card" style="text-align: center;">A path forward to write their own ending</div>
+        <div class="card" style="text-align: center;">The peace and strength to make the changes required</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Journey -->
+  <section id="journey" style="background: var(--sand);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">15</span>
+        <span class="section-label">Brand Marketing</span>
+      </div>
+      <h2>Customer Journey</h2>
+
+      <div class="journey-step">
+        <div class="step-number">01</div>
+        <div>
+          <h4>Awareness</h4>
+          <p>Leaders first encounter Molly through thoughtful content, her book, speaking engagements, referrals, or insights that articulate the weight of leadership and decision-making. They recognize their own experience in the challenges she names and begin to feel less alone in carrying responsibility. <strong>They sense that this is someone who has been in their shoes.</strong></p>
+        </div>
+      </div>
+
+      <div class="journey-step">
+        <div class="step-number">02</div>
+        <div>
+          <h4>Consideration</h4>
+          <p>As leaders engage more deeply with Molly's ideas through articles, workshops, podcasts, or her book-related content, they begin to trust her perspective. They see that her work blends practical leadership experience with care for the human side of business. <strong>They start to feel that peace and strength might be possible.</strong></p>
+        </div>
+      </div>
+
+      <div class="journey-step">
+        <div class="step-number">03</div>
+        <div>
+          <h4>Engagement</h4>
+          <p>Leaders take a low-pressure next step by downloading a resource, attending a workshop, or booking a free discovery call. This interaction reinforces that Molly offers a thoughtful, supportive space to think clearly and talk openly about real decisions. <strong>They begin to feel calmer and clearer.</strong></p>
+        </div>
+      </div>
+
+      <div class="journey-step">
+        <div class="step-number">04</div>
+        <div>
+          <h4>Commitment</h4>
+          <p>Through a personalized plan, leaders choose the level of support that fits their needs—whether keynote speaking, a workshop series, 1:1 coaching and consulting, or the "Understand Your Financial Story" engagement. Together, they turn uncertainty into clear, actionable next steps rooted in clarity and conviction.</p>
+        </div>
+      </div>
+
+      <div class="journey-step" style="border-bottom: none;">
+        <div class="step-number">05</div>
+        <div>
+          <h4>Transformation</h4>
+          <p>Leaders feel grounded, supported, and confident in their decisions. <strong>They experience peace in themselves AND strength to lead.</strong> They lead with conviction and care, strengthen culture, and gain clarity around the future of their business—whether that means growth, transition, or succession—without burning out or leading in isolation. <strong>They walk back into the room strong enough to lead without second-guessing themselves.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Offerings -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">16</span>
+        <span class="section-label">Brand Marketing</span>
+      </div>
+      <h2>Service Offerings</h2>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h4>Speaking & Keynotes</h4>
+          <p class="tagline">Inspiring Talks for Organizations</p>
+          <p>Inspiring talks for organizations and events on bold leadership, decision-making, and leading through change with clarity and courage.</p>
+        </div>
+        <div class="service-card">
+          <h4>Workshops</h4>
+          <p class="tagline">Interactive Team Sessions</p>
+          <p>Interactive sessions for leadership teams focused on the BOLD Leadership Framework, navigating difficult conversations, and building aligned, resilient cultures.</p>
+        </div>
+        <div class="service-card">
+          <h4>1:1 Coaching & Advisory</h4>
+          <p class="tagline">Personalized Leadership Support</p>
+          <p>Personalized support for leaders navigating high-stakes decisions, transitions, and the personal weight of leadership.</p>
+        </div>
+        <div class="service-card" style="background: var(--blue); color: var(--white);">
+          <h4 style="color: var(--sky);">Understand Your Financial Story</h4>
+          <p class="tagline" style="color: var(--sky);">Write Your Own Ending</p>
+          <p>A unique engagement that combines Molly's financial expertise with change management—helping leaders understand what their numbers are telling them and write their own ending.</p>
+        </div>
+        <div class="service-card">
+          <h4>Book (Forthcoming)</h4>
+          <p class="tagline">Me & Steve — A Memoir</p>
+          <p>Molly's book will extend these ideas to a broader audience, providing frameworks and insights for leaders who want to lead with clarity, courage, and care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketing Strategy -->
+  <section id="marketing" style="background: linear-gradient(135deg, var(--blue) 0%, #1a5a75 100%); color: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number" style="color: var(--sky);">14</span>
+        <span class="section-label" style="color: var(--sky);">Marketing Strategy</span>
+      </div>
+      <h2>Unified Marketing Strategy</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; align-items: center;">
+        <div>
+          <p style="font-size: 1.1rem; line-height: 1.8;">Molly's marketing strategy is built around <strong>consistency, clarity, and trust</strong>. Rather than chasing attention or relying on high-volume tactics, her approach focuses on meeting business leaders where they already are and speaking to the real decisions they are facing.</p>
+          <p style="margin-top: 1.5rem;">Every message reinforces the same core themes: <strong style="color: var(--sky);">peace and strength, clear decision-making, and leadership that is both human and responsible.</strong></p>
+        </div>
+        <div style="position: relative;">
+          <img src="https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-headshot-landscape.png" alt="Molly Varangkounh" style="width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+        </div>
+      </div>
+
+      <div class="divider" style="background: rgba(255,255,255,0.2);"></div>
+
+      <h3 style="color: var(--sky);">Marketing Philosophy</h3>
+      <p>Whether through speaking, writing, workshops, or one-on-one engagements, the goal is not to persuade through pressure, but to <strong>build credibility through resonance</strong>. When leaders encounter Molly's work, they should recognize their own experience reflected back to them and feel confident that this is a space where thoughtful, lasting decisions are supported.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem;">
+        <div class="card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+          <h4 style="color: var(--sky); margin-bottom: 1rem;">Email Marketing</h4>
+          <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">Use email sequences that feel personal, thoughtful, and steady. Offer perspective and practical insight rather than constant calls to action.</p>
+        </div>
+        <div class="card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+          <h4 style="color: var(--sky); margin-bottom: 1rem;">Content Strategy</h4>
+          <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">Share insights through articles, podcasts, and speaking engagements that articulate the weight of leadership.</p>
+        </div>
+        <div class="card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+          <h4 style="color: var(--sky); margin-bottom: 1rem;">Thought Leadership</h4>
+          <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">Position Molly as a trusted voice through her book, frameworks, and authentic storytelling.</p>
+        </div>
+      </div>
+
+      <div class="divider" style="background: rgba(255,255,255,0.2);"></div>
+
+      <h3 style="color: var(--sky);">Email Subject Line Themes</h3>
+      <p>Subject lines should invite curiosity and self-reflection, guiding readers toward a discovery conversation when the time feels right.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;">
+        <div style="background: rgba(255,255,255,0.05); padding: 1rem 1.25rem; border-left: 3px solid var(--sky);">
+          <span style="font-family: var(--font-accent); font-size: 0.8rem; color: var(--sky);">"When leadership feels heavy"</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 1rem 1.25rem; border-left: 3px solid var(--sky);">
+          <span style="font-family: var(--font-accent); font-size: 0.8rem; color: var(--sky);">"Making decisions you can live with"</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 1rem 1.25rem; border-left: 3px solid var(--sky);">
+          <span style="font-family: var(--font-accent); font-size: 0.8rem; color: var(--sky);">"Clarity before the next move"</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 1rem 1.25rem; border-left: 3px solid var(--sky);">
+          <span style="font-family: var(--font-accent); font-size: 0.8rem; color: var(--sky);">"The peace you've been looking for"</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 1rem 1.25rem; border-left: 3px solid var(--sky);">
+          <span style="font-family: var(--font-accent); font-size: 0.8rem; color: var(--sky);">"What your numbers are telling you"</span>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 1rem 1.25rem; border-left: 3px solid var(--sky);">
+          <span style="font-family: var(--font-accent); font-size: 0.8rem; color: var(--sky);">"Strong enough to lead"</span>
+        </div>
+      </div>
+
+      <div class="divider" style="background: rgba(255,255,255,0.2);"></div>
+
+      <h3 style="color: var(--sky);">Channel Strategy</h3>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem;">
+        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 4px;">
+          <h4 style="color: var(--sky); font-size: 0.95rem; margin-bottom: 0.75rem;">Speaking & Events</h4>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; margin: 0;">Keynotes at leadership conferences and women's business events.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 4px;">
+          <h4 style="color: var(--sky); font-size: 0.95rem; margin-bottom: 0.75rem;">Book & Publishing</h4>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; margin: 0;">Molly's book extends her frameworks to a broader audience.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 4px;">
+          <h4 style="color: var(--sky); font-size: 0.95rem; margin-bottom: 0.75rem;">Referral Network</h4>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; margin: 0;">Build relationships with advisors, attorneys, and CPAs.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 4px;">
+          <h4 style="color: var(--sky); font-size: 0.95rem; margin-bottom: 0.75rem;">LinkedIn</h4>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; margin: 0;">Share insights and engage with leaders navigating decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Guidelines -->
+  <section id="brand-guidelines">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">17</span>
+        <span class="section-label">Visual Identity</span>
+      </div>
+      <h2>Brand Guidelines</h2>
+
+      <h3>Color Palette</h3>
+      <p>These colors form the foundation of the Molly V visual identity. Use them consistently across all brand materials to maintain cohesion and recognition.</p>
+
+      <div class="color-swatches">
+        <div class="color-swatch">
+          <div class="swatch" style="background: #1E1E1E;"></div>
+          <div class="name">Black</div>
+          <div class="hex">#1E1E1E</div>
+          <div class="codes">RGB: 30, 30, 30<br>CMYK: 72, 66, 65, 75</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch" style="background: #40A5D1;"></div>
+          <div class="name">Blue</div>
+          <div class="hex">#40A5D1</div>
+          <div class="codes">RGB: 64, 165, 209<br>CMYK: 69, 19, 7, 0</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch" style="background: #ACE1FC;"></div>
+          <div class="name">Sky</div>
+          <div class="hex">#ACE1FC</div>
+          <div class="codes">RGB: 172, 225, 252<br>CMYK: 29, 0, 0, 0</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch" style="background: #EAE5E1;"></div>
+          <div class="name">Sand</div>
+          <div class="hex">#EAE5E1</div>
+          <div class="codes">RGB: 234, 229, 225<br>CMYK: 7, 7, 9, 0</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch" style="background: #F7F7F7; border: 1px solid #ddd;"></div>
+          <div class="name">White</div>
+          <div class="hex">#F7F7F7</div>
+          <div class="codes">RGB: 247, 247, 247<br>CMYK: 2, 1, 1, 0</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>Typography</h3>
+      <p>The brand uses three typefaces that work together to create a refined, professional, and approachable visual language.</p>
+
+      <div class="typography-sample">
+        <div class="label">Primary Font — PP Frama</div>
+        <div class="sample-primary" style="font-size: 2.5rem; font-weight: 300; margin-bottom: 1rem;">Lead with clarity. Make bold moves.</div>
+        <p class="sample-primary" style="margin-bottom: 0;">Used for headlines, display text, quotes, and key statements. PP Frama brings elegance and authority to the brand voice.</p>
+        <div class="font-weights">
+          <span class="font-weight-item" style="font-family: var(--font-primary); font-weight: 100;">Thin 100</span>
+          <span class="font-weight-item" style="font-family: var(--font-primary); font-weight: 200;">Extralight 200</span>
+          <span class="font-weight-item" style="font-family: var(--font-primary); font-weight: 300;">Light 300</span>
+          <span class="font-weight-item" style="font-family: var(--font-primary); font-weight: 400;">Regular 400</span>
+          <span class="font-weight-item" style="font-family: var(--font-primary); font-weight: 500;">Medium 500</span>
+          <span class="font-weight-item" style="font-family: var(--font-primary); font-weight: 700;">Bold 700</span>
+          <span class="font-weight-item" style="font-family: var(--font-primary); font-weight: 900;">Black 900</span>
+        </div>
+      </div>
+
+      <div class="typography-sample">
+        <div class="label">Body Font — PP Frama Text</div>
+        <div class="sample-body" style="font-size: 1rem; line-height: 1.7;">
+          Molly Varangkounh helps leaders find peace in themselves while gaining the strength and clarity to make bold, grounded decisions when the stakes are high and the path forward feels uncertain. She serves as a trusted guide—providing perspective, structure, and support so clients can move forward with confidence rather than hesitation.
+        </div>
+        <div class="font-weights">
+          <span class="font-weight-item" style="font-family: var(--font-body); font-weight: 300;">Light 300</span>
+          <span class="font-weight-item" style="font-family: var(--font-body); font-weight: 400;">Regular 400</span>
+          <span class="font-weight-item" style="font-family: var(--font-body); font-weight: 700;">Bold 700</span>
+        </div>
+      </div>
+
+      <div class="typography-sample" style="background: var(--black); color: var(--white);">
+        <div class="label" style="color: var(--sky);">Accent Font — PP Lettra Mono</div>
+        <div class="sample-accent" style="font-size: 0.9rem; letter-spacing: 0.1em; margin-bottom: 1rem;">
+          01 — BRAND STRATEGY | 02 — VISUAL IDENTITY | 03 — MESSAGING
+        </div>
+        <p class="sample-accent" style="font-size: 0.85rem; margin-bottom: 0; opacity: 0.8;">Used sparingly for section numbers, labels, metadata, and technical information. Creates visual hierarchy and adds a refined, editorial quality.</p>
+        <div class="font-weights">
+          <span class="font-weight-item" style="font-family: var(--font-accent); font-weight: 200; color: var(--sky);">Ultralight 200</span>
+          <span class="font-weight-item" style="font-family: var(--font-accent); font-weight: 400; color: var(--sky);">Regular 400</span>
+          <span class="font-weight-item" style="font-family: var(--font-accent); font-weight: 500; color: var(--sky);">Medium 500</span>
+          <span class="font-weight-item" style="font-family: var(--font-accent); font-weight: 800; color: var(--sky);">Ultrabold 800</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>Logo Usage</h3>
+      <p>The Molly V logo should be used consistently across all brand touchpoints. Maintain clear space around the logo and ensure adequate contrast with backgrounds.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div class="card" style="text-align: center; padding: 3rem;">
+          <!-- Official MV. Logo Mark - Light Background -->
+          <svg width="150" height="96" viewBox="0 0 430 276" fill="none">
+            <path fill="#1E1E1E" d="M222.367706,234.938370 C220.405823,227.060471 218.457321,219.526154 217.143509,211.882767 C207.824615,157.668030 198.636719,103.430763 189.403961,49.201199 C188.322113,42.846828 190.220596,40.511639 196.655640,40.464931 C202.986359,40.418980 209.322144,40.599537 215.647141,40.404003 C219.695663,40.278851 222.059082,41.815235 223.651093,45.620007 C244.699921,95.924660 265.850403,146.186783 286.990326,196.453293 C291.245209,206.570496 295.580414,216.653885 299.843781,226.767548 C302.441193,232.929153 300.406250,236.218506 293.900635,236.229828 C271.742004,236.268341 249.583206,236.264542 227.424683,236.199875 C225.840485,236.195236 224.258087,235.568802 222.367706,234.938370z"/>
+            <path fill="#1E1E1E" d="M351.540466,90.564682 C344.184326,108.983765 337.104462,127.100716 329.674561,145.072952 C328.767303,147.267471 325.989807,150.068359 324.063751,150.080109 C322.075500,150.092239 319.097382,147.436050 318.218506,145.270859 C308.343750,120.943436 298.795319,96.483604 289.148163,72.063690 C286.156464,64.490822 283.181793,56.910553 280.104370,49.372437 C277.947906,44.090336 279.779602,40.540268 285.332611,40.513504 C311.148468,40.389091 336.965485,40.398487 362.781494,40.508274 C368.126007,40.531002 370.075684,43.918831 368.080292,48.961662 C362.636566,62.719082 357.168671,76.466934 351.540466,90.564682z"/>
+            <path fill="#1E1E1E" d="M62.020603,46.058628 C62.500854,41.734257 64.992996,40.434837 68.633881,40.439350 C88.630119,40.464138 108.626564,40.407948 128.622589,40.477852 C134.379745,40.497974 136.577225,43.512955 134.611893,48.879398 C127.981255,66.984825 121.198761,85.034698 114.458076,103.099739 C111.029327,112.288803 107.747269,121.540695 103.969162,130.584671 C103.188316,132.453857 100.490883,134.666168 98.699219,134.646774 C96.917801,134.627518 94.254539,132.343918 93.535698,130.459137 C82.878853,102.517097 72.481400,74.476120 62.020603,46.058628z"/>
+            <path fill="#40A5D1" d="M395.345032,174.561111 C407.104126,182.444931 412.317657,193.349152 410.774384,206.861465 C409.299255,219.777115 402.083893,229.121811 389.901031,233.935974 C377.546295,238.818115 365.819305,236.892471 355.797302,228.239136 C345.111816,219.012924 341.462494,206.930679 345.462006,193.454483 C349.258209,180.663498 358.251251,172.626999 371.551056,169.997421 C379.902405,168.346237 387.757721,169.947525 395.345032,174.561111z"/>
+            <path fill="#1E1E1E" d="M123.752533,196.758636 C131.214005,178.743408 138.537903,161.087540 145.789886,143.402176 C147.005966,140.436508 148.711456,137.222061 152.054092,138.446106 C154.221069,139.239609 156.522797,142.461426 156.910034,144.890732 C161.278336,172.295151 165.296555,199.755447 169.386627,227.204056 C170.480118,234.542465 169.025436,236.241348 161.733749,236.246887 C147.077652,236.258011 132.421524,236.268829 117.765472,236.241104 C110.973801,236.228271 108.973885,233.375137 111.447182,227.177567 C115.453743,217.137909 119.538864,207.129639 123.752533,196.758636z"/>
+            <path fill="#1E1E1E" d="M68.676086,188.245529 C73.940529,201.753937 79.086349,214.892517 84.217888,228.036667 C86.044273,232.714859 84.031532,236.162430 79.103897,236.200500 C63.796017,236.318832 48.486538,236.271866 33.177887,236.223694 C28.491982,236.208954 27.209999,233.328705 27.805830,229.213928 C29.994091,214.102142 32.208584,198.994095 34.438068,183.888321 C36.158367,172.232513 37.915035,160.582077 39.657902,148.929611 C39.903881,147.285034 39.709988,145.356873 40.523106,144.066086 C41.733727,142.144272 43.535488,139.527283 45.316711,139.333893 C47.084282,139.142014 50.078938,141.151962 50.900631,142.945312 C54.215195,150.179367 56.921646,157.693680 59.807381,165.122101 C62.749866,172.696625 65.639214,180.291779 68.676086,188.245529z"/>
+          </svg>
+          <p style="margin-top: 1rem; font-family: var(--font-accent); font-size: 0.75rem; color: #666;">Primary Logo Mark — Light Background</p>
+        </div>
+        <div class="card dark" style="text-align: center; padding: 3rem;">
+          <!-- Official MV. Logo Mark - Dark Background -->
+          <svg width="150" height="96" viewBox="0 0 430 276" fill="none">
+            <path fill="#F7F7F7" d="M222.367706,234.938370 C220.405823,227.060471 218.457321,219.526154 217.143509,211.882767 C207.824615,157.668030 198.636719,103.430763 189.403961,49.201199 C188.322113,42.846828 190.220596,40.511639 196.655640,40.464931 C202.986359,40.418980 209.322144,40.599537 215.647141,40.404003 C219.695663,40.278851 222.059082,41.815235 223.651093,45.620007 C244.699921,95.924660 265.850403,146.186783 286.990326,196.453293 C291.245209,206.570496 295.580414,216.653885 299.843781,226.767548 C302.441193,232.929153 300.406250,236.218506 293.900635,236.229828 C271.742004,236.268341 249.583206,236.264542 227.424683,236.199875 C225.840485,236.195236 224.258087,235.568802 222.367706,234.938370z"/>
+            <path fill="#F7F7F7" d="M351.540466,90.564682 C344.184326,108.983765 337.104462,127.100716 329.674561,145.072952 C328.767303,147.267471 325.989807,150.068359 324.063751,150.080109 C322.075500,150.092239 319.097382,147.436050 318.218506,145.270859 C308.343750,120.943436 298.795319,96.483604 289.148163,72.063690 C286.156464,64.490822 283.181793,56.910553 280.104370,49.372437 C277.947906,44.090336 279.779602,40.540268 285.332611,40.513504 C311.148468,40.389091 336.965485,40.398487 362.781494,40.508274 C368.126007,40.531002 370.075684,43.918831 368.080292,48.961662 C362.636566,62.719082 357.168671,76.466934 351.540466,90.564682z"/>
+            <path fill="#F7F7F7" d="M62.020603,46.058628 C62.500854,41.734257 64.992996,40.434837 68.633881,40.439350 C88.630119,40.464138 108.626564,40.407948 128.622589,40.477852 C134.379745,40.497974 136.577225,43.512955 134.611893,48.879398 C127.981255,66.984825 121.198761,85.034698 114.458076,103.099739 C111.029327,112.288803 107.747269,121.540695 103.969162,130.584671 C103.188316,132.453857 100.490883,134.666168 98.699219,134.646774 C96.917801,134.627518 94.254539,132.343918 93.535698,130.459137 C82.878853,102.517097 72.481400,74.476120 62.020603,46.058628z"/>
+            <path fill="#ACE1FC" d="M395.345032,174.561111 C407.104126,182.444931 412.317657,193.349152 410.774384,206.861465 C409.299255,219.777115 402.083893,229.121811 389.901031,233.935974 C377.546295,238.818115 365.819305,236.892471 355.797302,228.239136 C345.111816,219.012924 341.462494,206.930679 345.462006,193.454483 C349.258209,180.663498 358.251251,172.626999 371.551056,169.997421 C379.902405,168.346237 387.757721,169.947525 395.345032,174.561111z"/>
+            <path fill="#F7F7F7" d="M123.752533,196.758636 C131.214005,178.743408 138.537903,161.087540 145.789886,143.402176 C147.005966,140.436508 148.711456,137.222061 152.054092,138.446106 C154.221069,139.239609 156.522797,142.461426 156.910034,144.890732 C161.278336,172.295151 165.296555,199.755447 169.386627,227.204056 C170.480118,234.542465 169.025436,236.241348 161.733749,236.246887 C147.077652,236.258011 132.421524,236.268829 117.765472,236.241104 C110.973801,236.228271 108.973885,233.375137 111.447182,227.177567 C115.453743,217.137909 119.538864,207.129639 123.752533,196.758636z"/>
+            <path fill="#F7F7F7" d="M68.676086,188.245529 C73.940529,201.753937 79.086349,214.892517 84.217888,228.036667 C86.044273,232.714859 84.031532,236.162430 79.103897,236.200500 C63.796017,236.318832 48.486538,236.271866 33.177887,236.223694 C28.491982,236.208954 27.209999,233.328705 27.805830,229.213928 C29.994091,214.102142 32.208584,198.994095 34.438068,183.888321 C36.158367,172.232513 37.915035,160.582077 39.657902,148.929611 C39.903881,147.285034 39.709988,145.356873 40.523106,144.066086 C41.733727,142.144272 43.535488,139.527283 45.316711,139.333893 C47.084282,139.142014 50.078938,141.151962 50.900631,142.945312 C54.215195,150.179367 56.921646,157.693680 59.807381,165.122101 C62.749866,172.696625 65.639214,180.291779 68.676086,188.245529z"/>
+          </svg>
+          <p style="margin-top: 1rem; font-family: var(--font-accent); font-size: 0.75rem; color: var(--sky);">Primary Logo Mark — Dark Background</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>Brand Mark Variations</h3>
+      <p>The MV. mark can be used in various contexts. Always ensure the blue accent dot is visible.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <!-- Full Color MV Logo Mark -->
+          <svg width="80" height="51" viewBox="0 0 430 276" fill="none">
+            <path fill="#1E1E1E" d="M222.367706,234.938370 C220.405823,227.060471 218.457321,219.526154 217.143509,211.882767 C207.824615,157.668030 198.636719,103.430763 189.403961,49.201199 C188.322113,42.846828 190.220596,40.511639 196.655640,40.464931 C202.986359,40.418980 209.322144,40.599537 215.647141,40.404003 C219.695663,40.278851 222.059082,41.815235 223.651093,45.620007 C244.699921,95.924660 265.850403,146.186783 286.990326,196.453293 C291.245209,206.570496 295.580414,216.653885 299.843781,226.767548 C302.441193,232.929153 300.406250,236.218506 293.900635,236.229828 C271.742004,236.268341 249.583206,236.264542 227.424683,236.199875 C225.840485,236.195236 224.258087,235.568802 222.367706,234.938370z"/>
+            <path fill="#1E1E1E" d="M351.540466,90.564682 C344.184326,108.983765 337.104462,127.100716 329.674561,145.072952 C328.767303,147.267471 325.989807,150.068359 324.063751,150.080109 C322.075500,150.092239 319.097382,147.436050 318.218506,145.270859 C308.343750,120.943436 298.795319,96.483604 289.148163,72.063690 C286.156464,64.490822 283.181793,56.910553 280.104370,49.372437 C277.947906,44.090336 279.779602,40.540268 285.332611,40.513504 C311.148468,40.389091 336.965485,40.398487 362.781494,40.508274 C368.126007,40.531002 370.075684,43.918831 368.080292,48.961662 C362.636566,62.719082 357.168671,76.466934 351.540466,90.564682z"/>
+            <path fill="#1E1E1E" d="M62.020603,46.058628 C62.500854,41.734257 64.992996,40.434837 68.633881,40.439350 C88.630119,40.464138 108.626564,40.407948 128.622589,40.477852 C134.379745,40.497974 136.577225,43.512955 134.611893,48.879398 C127.981255,66.984825 121.198761,85.034698 114.458076,103.099739 C111.029327,112.288803 107.747269,121.540695 103.969162,130.584671 C103.188316,132.453857 100.490883,134.666168 98.699219,134.646774 C96.917801,134.627518 94.254539,132.343918 93.535698,130.459137 C82.878853,102.517097 72.481400,74.476120 62.020603,46.058628z"/>
+            <path fill="#40A5D1" d="M395.345032,174.561111 C407.104126,182.444931 412.317657,193.349152 410.774384,206.861465 C409.299255,219.777115 402.083893,229.121811 389.901031,233.935974 C377.546295,238.818115 365.819305,236.892471 355.797302,228.239136 C345.111816,219.012924 341.462494,206.930679 345.462006,193.454483 C349.258209,180.663498 358.251251,172.626999 371.551056,169.997421 C379.902405,168.346237 387.757721,169.947525 395.345032,174.561111z"/>
+            <path fill="#1E1E1E" d="M123.752533,196.758636 C131.214005,178.743408 138.537903,161.087540 145.789886,143.402176 C147.005966,140.436508 148.711456,137.222061 152.054092,138.446106 C154.221069,139.239609 156.522797,142.461426 156.910034,144.890732 C161.278336,172.295151 165.296555,199.755447 169.386627,227.204056 C170.480118,234.542465 169.025436,236.241348 161.733749,236.246887 C147.077652,236.258011 132.421524,236.268829 117.765472,236.241104 C110.973801,236.228271 108.973885,233.375137 111.447182,227.177567 C115.453743,217.137909 119.538864,207.129639 123.752533,196.758636z"/>
+            <path fill="#1E1E1E" d="M68.676086,188.245529 C73.940529,201.753937 79.086349,214.892517 84.217888,228.036667 C86.044273,232.714859 84.031532,236.162430 79.103897,236.200500 C63.796017,236.318832 48.486538,236.271866 33.177887,236.223694 C28.491982,236.208954 27.209999,233.328705 27.805830,229.213928 C29.994091,214.102142 32.208584,198.994095 34.438068,183.888321 C36.158367,172.232513 37.915035,160.582077 39.657902,148.929611 C39.903881,147.285034 39.709988,145.356873 40.523106,144.066086 C41.733727,142.144272 43.535488,139.527283 45.316711,139.333893 C47.084282,139.142014 50.078938,141.151962 50.900631,142.945312 C54.215195,150.179367 56.921646,157.693680 59.807381,165.122101 C62.749866,172.696625 65.639214,180.291779 68.676086,188.245529z"/>
+          </svg>
+          <p style="margin-top: 0.5rem; font-family: var(--font-accent); font-size: 0.7rem; color: #666;">Full Color</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 2rem; background: var(--black);">
+          <svg width="80" height="51" viewBox="0 0 430 276" fill="none">
+            <path fill="#F7F7F7" d="M222.367706,234.938370 C220.405823,227.060471 218.457321,219.526154 217.143509,211.882767 C207.824615,157.668030 198.636719,103.430763 189.403961,49.201199 C188.322113,42.846828 190.220596,40.511639 196.655640,40.464931 C202.986359,40.418980 209.322144,40.599537 215.647141,40.404003 C219.695663,40.278851 222.059082,41.815235 223.651093,45.620007 C244.699921,95.924660 265.850403,146.186783 286.990326,196.453293 C291.245209,206.570496 295.580414,216.653885 299.843781,226.767548 C302.441193,232.929153 300.406250,236.218506 293.900635,236.229828 C271.742004,236.268341 249.583206,236.264542 227.424683,236.199875 C225.840485,236.195236 224.258087,235.568802 222.367706,234.938370z"/>
+            <path fill="#F7F7F7" d="M351.540466,90.564682 C344.184326,108.983765 337.104462,127.100716 329.674561,145.072952 C328.767303,147.267471 325.989807,150.068359 324.063751,150.080109 C322.075500,150.092239 319.097382,147.436050 318.218506,145.270859 C308.343750,120.943436 298.795319,96.483604 289.148163,72.063690 C286.156464,64.490822 283.181793,56.910553 280.104370,49.372437 C277.947906,44.090336 279.779602,40.540268 285.332611,40.513504 C311.148468,40.389091 336.965485,40.398487 362.781494,40.508274 C368.126007,40.531002 370.075684,43.918831 368.080292,48.961662 C362.636566,62.719082 357.168671,76.466934 351.540466,90.564682z"/>
+            <path fill="#F7F7F7" d="M62.020603,46.058628 C62.500854,41.734257 64.992996,40.434837 68.633881,40.439350 C88.630119,40.464138 108.626564,40.407948 128.622589,40.477852 C134.379745,40.497974 136.577225,43.512955 134.611893,48.879398 C127.981255,66.984825 121.198761,85.034698 114.458076,103.099739 C111.029327,112.288803 107.747269,121.540695 103.969162,130.584671 C103.188316,132.453857 100.490883,134.666168 98.699219,134.646774 C96.917801,134.627518 94.254539,132.343918 93.535698,130.459137 C82.878853,102.517097 72.481400,74.476120 62.020603,46.058628z"/>
+            <path fill="#ACE1FC" d="M395.345032,174.561111 C407.104126,182.444931 412.317657,193.349152 410.774384,206.861465 C409.299255,219.777115 402.083893,229.121811 389.901031,233.935974 C377.546295,238.818115 365.819305,236.892471 355.797302,228.239136 C345.111816,219.012924 341.462494,206.930679 345.462006,193.454483 C349.258209,180.663498 358.251251,172.626999 371.551056,169.997421 C379.902405,168.346237 387.757721,169.947525 395.345032,174.561111z"/>
+            <path fill="#F7F7F7" d="M123.752533,196.758636 C131.214005,178.743408 138.537903,161.087540 145.789886,143.402176 C147.005966,140.436508 148.711456,137.222061 152.054092,138.446106 C154.221069,139.239609 156.522797,142.461426 156.910034,144.890732 C161.278336,172.295151 165.296555,199.755447 169.386627,227.204056 C170.480118,234.542465 169.025436,236.241348 161.733749,236.246887 C147.077652,236.258011 132.421524,236.268829 117.765472,236.241104 C110.973801,236.228271 108.973885,233.375137 111.447182,227.177567 C115.453743,217.137909 119.538864,207.129639 123.752533,196.758636z"/>
+            <path fill="#F7F7F7" d="M68.676086,188.245529 C73.940529,201.753937 79.086349,214.892517 84.217888,228.036667 C86.044273,232.714859 84.031532,236.162430 79.103897,236.200500 C63.796017,236.318832 48.486538,236.271866 33.177887,236.223694 C28.491982,236.208954 27.209999,233.328705 27.805830,229.213928 C29.994091,214.102142 32.208584,198.994095 34.438068,183.888321 C36.158367,172.232513 37.915035,160.582077 39.657902,148.929611 C39.903881,147.285034 39.709988,145.356873 40.523106,144.066086 C41.733727,142.144272 43.535488,139.527283 45.316711,139.333893 C47.084282,139.142014 50.078938,141.151962 50.900631,142.945312 C54.215195,150.179367 56.921646,157.693680 59.807381,165.122101 C62.749866,172.696625 65.639214,180.291779 68.676086,188.245529z"/>
+          </svg>
+          <p style="margin-top: 0.5rem; font-family: var(--font-accent); font-size: 0.7rem; color: var(--sky);">White + Accent</p>
+        </div>
+        <div class="card blue" style="text-align: center; padding: 2rem;">
+          <svg width="80" height="51" viewBox="0 0 430 276" fill="none">
+            <path fill="#F7F7F7" d="M222.367706,234.938370 C220.405823,227.060471 218.457321,219.526154 217.143509,211.882767 C207.824615,157.668030 198.636719,103.430763 189.403961,49.201199 C188.322113,42.846828 190.220596,40.511639 196.655640,40.464931 C202.986359,40.418980 209.322144,40.599537 215.647141,40.404003 C219.695663,40.278851 222.059082,41.815235 223.651093,45.620007 C244.699921,95.924660 265.850403,146.186783 286.990326,196.453293 C291.245209,206.570496 295.580414,216.653885 299.843781,226.767548 C302.441193,232.929153 300.406250,236.218506 293.900635,236.229828 C271.742004,236.268341 249.583206,236.264542 227.424683,236.199875 C225.840485,236.195236 224.258087,235.568802 222.367706,234.938370z"/>
+            <path fill="#F7F7F7" d="M351.540466,90.564682 C344.184326,108.983765 337.104462,127.100716 329.674561,145.072952 C328.767303,147.267471 325.989807,150.068359 324.063751,150.080109 C322.075500,150.092239 319.097382,147.436050 318.218506,145.270859 C308.343750,120.943436 298.795319,96.483604 289.148163,72.063690 C286.156464,64.490822 283.181793,56.910553 280.104370,49.372437 C277.947906,44.090336 279.779602,40.540268 285.332611,40.513504 C311.148468,40.389091 336.965485,40.398487 362.781494,40.508274 C368.126007,40.531002 370.075684,43.918831 368.080292,48.961662 C362.636566,62.719082 357.168671,76.466934 351.540466,90.564682z"/>
+            <path fill="#F7F7F7" d="M62.020603,46.058628 C62.500854,41.734257 64.992996,40.434837 68.633881,40.439350 C88.630119,40.464138 108.626564,40.407948 128.622589,40.477852 C134.379745,40.497974 136.577225,43.512955 134.611893,48.879398 C127.981255,66.984825 121.198761,85.034698 114.458076,103.099739 C111.029327,112.288803 107.747269,121.540695 103.969162,130.584671 C103.188316,132.453857 100.490883,134.666168 98.699219,134.646774 C96.917801,134.627518 94.254539,132.343918 93.535698,130.459137 C82.878853,102.517097 72.481400,74.476120 62.020603,46.058628z"/>
+            <path fill="#ACE1FC" d="M395.345032,174.561111 C407.104126,182.444931 412.317657,193.349152 410.774384,206.861465 C409.299255,219.777115 402.083893,229.121811 389.901031,233.935974 C377.546295,238.818115 365.819305,236.892471 355.797302,228.239136 C345.111816,219.012924 341.462494,206.930679 345.462006,193.454483 C349.258209,180.663498 358.251251,172.626999 371.551056,169.997421 C379.902405,168.346237 387.757721,169.947525 395.345032,174.561111z"/>
+            <path fill="#F7F7F7" d="M123.752533,196.758636 C131.214005,178.743408 138.537903,161.087540 145.789886,143.402176 C147.005966,140.436508 148.711456,137.222061 152.054092,138.446106 C154.221069,139.239609 156.522797,142.461426 156.910034,144.890732 C161.278336,172.295151 165.296555,199.755447 169.386627,227.204056 C170.480118,234.542465 169.025436,236.241348 161.733749,236.246887 C147.077652,236.258011 132.421524,236.268829 117.765472,236.241104 C110.973801,236.228271 108.973885,233.375137 111.447182,227.177567 C115.453743,217.137909 119.538864,207.129639 123.752533,196.758636z"/>
+            <path fill="#F7F7F7" d="M68.676086,188.245529 C73.940529,201.753937 79.086349,214.892517 84.217888,228.036667 C86.044273,232.714859 84.031532,236.162430 79.103897,236.200500 C63.796017,236.318832 48.486538,236.271866 33.177887,236.223694 C28.491982,236.208954 27.209999,233.328705 27.805830,229.213928 C29.994091,214.102142 32.208584,198.994095 34.438068,183.888321 C36.158367,172.232513 37.915035,160.582077 39.657902,148.929611 C39.903881,147.285034 39.709988,145.356873 40.523106,144.066086 C41.733727,142.144272 43.535488,139.527283 45.316711,139.333893 C47.084282,139.142014 50.078938,141.151962 50.900631,142.945312 C54.215195,150.179367 56.921646,157.693680 59.807381,165.122101 C62.749866,172.696625 65.639214,180.291779 68.676086,188.245529z"/>
+          </svg>
+          <p style="margin-top: 0.5rem; font-family: var(--font-accent); font-size: 0.7rem; color: var(--sky);">On Brand Blue</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <svg width="80" height="51" viewBox="0 0 430 276" fill="none">
+            <path stroke="#1E1E1E" stroke-width="4" fill="none" d="M222.367706,234.938370 C220.405823,227.060471 218.457321,219.526154 217.143509,211.882767 C207.824615,157.668030 198.636719,103.430763 189.403961,49.201199 C188.322113,42.846828 190.220596,40.511639 196.655640,40.464931 C202.986359,40.418980 209.322144,40.599537 215.647141,40.404003 C219.695663,40.278851 222.059082,41.815235 223.651093,45.620007 C244.699921,95.924660 265.850403,146.186783 286.990326,196.453293 C291.245209,206.570496 295.580414,216.653885 299.843781,226.767548 C302.441193,232.929153 300.406250,236.218506 293.900635,236.229828 C271.742004,236.268341 249.583206,236.264542 227.424683,236.199875 C225.840485,236.195236 224.258087,235.568802 222.367706,234.938370z"/>
+            <path stroke="#1E1E1E" stroke-width="4" fill="none" d="M351.540466,90.564682 C344.184326,108.983765 337.104462,127.100716 329.674561,145.072952 C328.767303,147.267471 325.989807,150.068359 324.063751,150.080109 C322.075500,150.092239 319.097382,147.436050 318.218506,145.270859 C308.343750,120.943436 298.795319,96.483604 289.148163,72.063690 C286.156464,64.490822 283.181793,56.910553 280.104370,49.372437 C277.947906,44.090336 279.779602,40.540268 285.332611,40.513504 C311.148468,40.389091 336.965485,40.398487 362.781494,40.508274 C368.126007,40.531002 370.075684,43.918831 368.080292,48.961662 C362.636566,62.719082 357.168671,76.466934 351.540466,90.564682z"/>
+            <path stroke="#1E1E1E" stroke-width="4" fill="none" d="M62.020603,46.058628 C62.500854,41.734257 64.992996,40.434837 68.633881,40.439350 C88.630119,40.464138 108.626564,40.407948 128.622589,40.477852 C134.379745,40.497974 136.577225,43.512955 134.611893,48.879398 C127.981255,66.984825 121.198761,85.034698 114.458076,103.099739 C111.029327,112.288803 107.747269,121.540695 103.969162,130.584671 C103.188316,132.453857 100.490883,134.666168 98.699219,134.646774 C96.917801,134.627518 94.254539,132.343918 93.535698,130.459137 C82.878853,102.517097 72.481400,74.476120 62.020603,46.058628z"/>
+            <path fill="#40A5D1" d="M395.345032,174.561111 C407.104126,182.444931 412.317657,193.349152 410.774384,206.861465 C409.299255,219.777115 402.083893,229.121811 389.901031,233.935974 C377.546295,238.818115 365.819305,236.892471 355.797302,228.239136 C345.111816,219.012924 341.462494,206.930679 345.462006,193.454483 C349.258209,180.663498 358.251251,172.626999 371.551056,169.997421 C379.902405,168.346237 387.757721,169.947525 395.345032,174.561111z"/>
+            <path stroke="#1E1E1E" stroke-width="4" fill="none" d="M123.752533,196.758636 C131.214005,178.743408 138.537903,161.087540 145.789886,143.402176 C147.005966,140.436508 148.711456,137.222061 152.054092,138.446106 C154.221069,139.239609 156.522797,142.461426 156.910034,144.890732 C161.278336,172.295151 165.296555,199.755447 169.386627,227.204056 C170.480118,234.542465 169.025436,236.241348 161.733749,236.246887 C147.077652,236.258011 132.421524,236.268829 117.765472,236.241104 C110.973801,236.228271 108.973885,233.375137 111.447182,227.177567 C115.453743,217.137909 119.538864,207.129639 123.752533,196.758636z"/>
+            <path stroke="#1E1E1E" stroke-width="4" fill="none" d="M68.676086,188.245529 C73.940529,201.753937 79.086349,214.892517 84.217888,228.036667 C86.044273,232.714859 84.031532,236.162430 79.103897,236.200500 C63.796017,236.318832 48.486538,236.271866 33.177887,236.223694 C28.491982,236.208954 27.209999,233.328705 27.805830,229.213928 C29.994091,214.102142 32.208584,198.994095 34.438068,183.888321 C36.158367,172.232513 37.915035,160.582077 39.657902,148.929611 C39.903881,147.285034 39.709988,145.356873 40.523106,144.066086 C41.733727,142.144272 43.535488,139.527283 45.316711,139.333893 C47.084282,139.142014 50.078938,141.151962 50.900631,142.945312 C54.215195,150.179367 56.921646,157.693680 59.807381,165.122101 C62.749866,172.696625 65.639214,180.291779 68.676086,188.245529z"/>
+          </svg>
+          <p style="margin-top: 0.5rem; font-family: var(--font-accent); font-size: 0.7rem; color: #666;">Outline Version</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>Photography Style</h3>
+      <p>Brand photography should feel warm, authentic, and professional. Images should convey calm confidence, strength, and approachability.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div style="position: relative; overflow: hidden; height: 300px;">
+          <img src="https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-headshot-landscape.png" alt="Molly Varangkounh - Professional headshot" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 1rem;">
+            <p style="font-family: var(--font-accent); font-size: 0.7rem; color: white; margin: 0;">Professional Headshot</p>
+          </div>
+        </div>
+        <div style="position: relative; overflow: hidden; height: 300px;">
+          <img src="https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-headshot-navy.png" alt="Molly Varangkounh - Navy background" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 1rem;">
+            <p style="font-family: var(--font-accent); font-size: 0.7rem; color: white; margin: 0;">Brand Portrait</p>
+          </div>
+        </div>
+        <div style="position: relative; overflow: hidden; height: 300px;">
+          <img src="/leona.png" alt="Leona - Ideal Client Profile" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 1rem;">
+            <p style="font-family: var(--font-accent); font-size: 0.7rem; color: white; margin: 0;">Leona — ICP Visualization</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+        <div style="position: relative; overflow: hidden; height: 200px;">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Woman leader in meeting" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 0.75rem;">
+            <p style="font-family: var(--font-accent); font-size: 0.65rem; color: white; margin: 0;">Leadership Moments</p>
+          </div>
+        </div>
+        <div style="position: relative; overflow: hidden; height: 200px;">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&q=80" alt="Confident professional woman" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 0.75rem;">
+            <p style="font-family: var(--font-accent); font-size: 0.65rem; color: white; margin: 0;">Confidence & Clarity</p>
+          </div>
+        </div>
+        <div style="position: relative; overflow: hidden; height: 200px;">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="Team collaboration" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 0.75rem;">
+            <p style="font-family: var(--font-accent); font-size: 0.65rem; color: white; margin: 0;">Authentic Connection</p>
+          </div>
+        </div>
+        <div style="position: relative; overflow: hidden; height: 200px;">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Peaceful reflection" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 0.75rem;">
+            <p style="font-family: var(--font-accent); font-size: 0.65rem; color: white; margin: 0;">Peace & Strength</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section style="background: var(--black); color: var(--white);">
+    <div class="container">
+      <h2>Conclusion</h2>
+      <p>Leadership is not defined by certainty, speed, or having all the answers. It is defined by the willingness to face reality honestly, take responsibility for difficult decisions, and lead with both conviction and care.</p>
+      <p>This manual reflects a brand built to support leaders when the weight feels heavy—when systems have been outgrown, roles are shifting, and the cost of delay is no longer acceptable. Every element outlined here exists to reinforce <strong style="color: var(--sky);">peace and strength, clear decision-making, and thoughtful action over reaction.</strong></p>
+      <p>Molly Varangkounh's work is not about fixing leaders or pushing them toward predetermined outcomes. It is about creating a trusted space for real conversation, where leaders can think clearly, care for themselves and their people, and make decisions they can stand behind.</p>
+
+      <div class="quote-block" style="background: transparent; border: 2px solid var(--sky); margin: 3rem 0;">
+        <p style="color: var(--sky);">When Leona finishes a conversation or experience with Molly, she feels <strong>calmer in her body</strong>, <strong>clearer in her thinking</strong>, and <strong>strong enough</strong> to walk back into the room, the meeting, or the hard conversation and lead without second-guessing herself.</p>
+      </div>
+
+      <p>The strategies, language, and experiences in this manual are designed to hold complexity without rushing it—and to support progress without sacrificing integrity.</p>
+      <p>As this brand continues to evolve through speaking, writing, workshops, and advisory work, the commitment remains the same: to walk alongside leaders as a steady, credible guide. One who understands the emotional and operational realities of leadership, honors responsibility, and believes that proactive conversations build stronger businesses and healthier futures.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <!-- MV Logo Mark -->
+      <svg width="60" height="38" viewBox="0 0 430 276" fill="none" style="margin-bottom: 1.5rem; opacity: 0.6;">
+        <path fill="#F7F7F7" d="M222.367706,234.938370 C220.405823,227.060471 218.457321,219.526154 217.143509,211.882767 C207.824615,157.668030 198.636719,103.430763 189.403961,49.201199 C188.322113,42.846828 190.220596,40.511639 196.655640,40.464931 C202.986359,40.418980 209.322144,40.599537 215.647141,40.404003 C219.695663,40.278851 222.059082,41.815235 223.651093,45.620007 C244.699921,95.924660 265.850403,146.186783 286.990326,196.453293 C291.245209,206.570496 295.580414,216.653885 299.843781,226.767548 C302.441193,232.929153 300.406250,236.218506 293.900635,236.229828 C271.742004,236.268341 249.583206,236.264542 227.424683,236.199875 C225.840485,236.195236 224.258087,235.568802 222.367706,234.938370z"/>
+        <path fill="#F7F7F7" d="M351.540466,90.564682 C344.184326,108.983765 337.104462,127.100716 329.674561,145.072952 C328.767303,147.267471 325.989807,150.068359 324.063751,150.080109 C322.075500,150.092239 319.097382,147.436050 318.218506,145.270859 C308.343750,120.943436 298.795319,96.483604 289.148163,72.063690 C286.156464,64.490822 283.181793,56.910553 280.104370,49.372437 C277.947906,44.090336 279.779602,40.540268 285.332611,40.513504 C311.148468,40.389091 336.965485,40.398487 362.781494,40.508274 C368.126007,40.531002 370.075684,43.918831 368.080292,48.961662 C362.636566,62.719082 357.168671,76.466934 351.540466,90.564682z"/>
+        <path fill="#F7F7F7" d="M62.020603,46.058628 C62.500854,41.734257 64.992996,40.434837 68.633881,40.439350 C88.630119,40.464138 108.626564,40.407948 128.622589,40.477852 C134.379745,40.497974 136.577225,43.512955 134.611893,48.879398 C127.981255,66.984825 121.198761,85.034698 114.458076,103.099739 C111.029327,112.288803 107.747269,121.540695 103.969162,130.584671 C103.188316,132.453857 100.490883,134.666168 98.699219,134.646774 C96.917801,134.627518 94.254539,132.343918 93.535698,130.459137 C82.878853,102.517097 72.481400,74.476120 62.020603,46.058628z"/>
+        <path fill="#ACE1FC" d="M395.345032,174.561111 C407.104126,182.444931 412.317657,193.349152 410.774384,206.861465 C409.299255,219.777115 402.083893,229.121811 389.901031,233.935974 C377.546295,238.818115 365.819305,236.892471 355.797302,228.239136 C345.111816,219.012924 341.462494,206.930679 345.462006,193.454483 C349.258209,180.663498 358.251251,172.626999 371.551056,169.997421 C379.902405,168.346237 387.757721,169.947525 395.345032,174.561111z"/>
+        <path fill="#F7F7F7" d="M123.752533,196.758636 C131.214005,178.743408 138.537903,161.087540 145.789886,143.402176 C147.005966,140.436508 148.711456,137.222061 152.054092,138.446106 C154.221069,139.239609 156.522797,142.461426 156.910034,144.890732 C161.278336,172.295151 165.296555,199.755447 169.386627,227.204056 C170.480118,234.542465 169.025436,236.241348 161.733749,236.246887 C147.077652,236.258011 132.421524,236.268829 117.765472,236.241104 C110.973801,236.228271 108.973885,233.375137 111.447182,227.177567 C115.453743,217.137909 119.538864,207.129639 123.752533,196.758636z"/>
+        <path fill="#F7F7F7" d="M68.676086,188.245529 C73.940529,201.753937 79.086349,214.892517 84.217888,228.036667 C86.044273,232.714859 84.031532,236.162430 79.103897,236.200500 C63.796017,236.318832 48.486538,236.271866 33.177887,236.223694 C28.491982,236.208954 27.209999,233.328705 27.805830,229.213928 C29.994091,214.102142 32.208584,198.994095 34.438068,183.888321 C36.158367,172.232513 37.915035,160.582077 39.657902,148.929611 C39.903881,147.285034 39.709988,145.356873 40.523106,144.066086 C41.733727,142.144272 43.535488,139.527283 45.316711,139.333893 C47.084282,139.142014 50.078938,141.151962 50.900631,142.945312 C54.215195,150.179367 56.921646,157.693680 59.807381,165.122101 C62.749866,172.696625 65.639214,180.291779 68.676086,188.245529z"/>
+      </svg>
+      
+      <p class="tagline" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Lead with clarity. <strong>Make bold moves.</strong></p>
+      
+      <p style="font-size: 0.85rem; opacity: 0.5; margin: 1.5rem 0 0.5rem;">© 2026 Molly Varangkounh</p>
+      
+      <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
+        <span style="font-family: var(--font-accent); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4;">Built by</span>
+        <a href="https://themakerai.app" target="_blank" rel="noopener" style="font-family: var(--font-primary); font-size: 0.85rem; font-weight: 500; color: var(--sky); text-decoration: none; opacity: 0.8; transition: opacity 0.2s;">The Maker</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,10 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Logo from './Logo'
-
-const SUPABASE_URL = 'https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images'
 
 export default function Footer() {
   return (
@@ -26,7 +23,7 @@ export default function Footer() {
                 <p className="font-swiss text-lg text-white font-medium tracking-tight">
                   Molly Varangkounh
                 </p>
-                <p className="font-script text-2xl text-accent italic mt-1">
+                <p className="font-tagline text-xl text-accent mt-1">
                   Make bold moves.
                 </p>
               </div>
@@ -38,8 +35,8 @@ export default function Footer() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="text-mid-grey text-sm mt-6 max-w-sm leading-relaxed"
             >
-              Helping leaders gain clarity and make bold, grounded decisions 
-              when the stakes are high.
+              Executive advisory for leaders facing hard decisions. 
+              Hiring, firing, exits, succession—when it matters most.
             </motion.p>
           </div>
 
@@ -53,15 +50,10 @@ export default function Footer() {
             >
               <p className="label-sm text-accent mb-6">Navigate</p>
               <nav className="flex flex-col gap-3">
-                {['About', 'Services', 'Approach', 'Contact'].map((link) => (
-                  <a 
-                    key={link}
-                    href={`#${link.toLowerCase()}`}
-                    className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300"
-                  >
-                    {link}
-                  </a>
-                ))}
+                <a href="/about" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">About</a>
+                <a href="/services" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Services</a>
+                <a href="/decision-room" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Decision Room</a>
+                <a href="/contact" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Contact</a>
               </nav>
             </motion.div>
           </div>
@@ -120,9 +112,22 @@ export default function Footer() {
           <p className="text-dark-grey text-xs tracking-wide">
             © {new Date().getFullYear()} Molly Varangkounh. All rights reserved.
           </p>
-          <p className="text-mid-grey text-xs tracking-wider uppercase">
-            Lead with clarity. Make bold moves.
-          </p>
+          <div className="flex items-center gap-6">
+            <p className="font-tagline text-mid-grey text-xs">
+              Lead with clarity. Make bold moves.
+            </p>
+            <div className="flex items-center gap-2">
+              <span className="text-dark-grey text-xs">Built by</span>
+              <a 
+                href="https://themakerai.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-accent text-xs font-medium hover:text-white transition-colors duration-300"
+              >
+                The Maker
+              </a>
+            </div>
+          </div>
         </motion.div>
       </div>
     </footer>

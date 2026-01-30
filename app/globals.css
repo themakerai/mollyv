@@ -3,17 +3,64 @@
 /* PP Frama - Premium Display Font */
 @font-face {
   font-family: 'PP Frama';
-  src: url('/PPFrama-Regular.woff') format('woff');
+  src: url('/PPFrama-Regular.woff2') format('woff2'),
+       url('/PPFrama-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-/* TT Gentlemens - Script Font */
 @font-face {
-  font-family: 'TT Gentlemens';
-  src: url('/TT_Gentlemens_Trial_Regular.ttf') format('truetype');
+  font-family: 'PP Frama';
+  src: url('/PPFrama-Medium.woff2') format('woff2'),
+       url('/PPFrama-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* PP Lettra Mono - Accent Font */
+@font-face {
+  font-family: 'PP Lettra Mono';
+  src: url('/lettra/PPLettraMono-Ultralight.woff2') format('woff2'),
+       url('/lettra/PPLettraMono-Ultralight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Lettra Mono';
+  src: url('/lettra/PPLettraMono-Regular.woff2') format('woff2'),
+       url('/lettra/PPLettraMono-Regular.woff') format('woff');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Lettra Mono';
+  src: url('/lettra/PPLettraMono-RegularItalic.woff2') format('woff2'),
+       url('/lettra/PPLettraMono-RegularItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Lettra Mono';
+  src: url('/lettra/PPLettraMono-Medium.woff2') format('woff2'),
+       url('/lettra/PPLettraMono-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Lettra Mono';
+  src: url('/lettra/PPLettraMono-Ultrabold.woff2') format('woff2'),
+       url('/lettra/PPLettraMono-Ultrabold.woff') format('woff');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
@@ -87,8 +134,25 @@ body {
   font-family: 'PP Frama', 'DM Sans', -apple-system, sans-serif;
 }
 
+/* Taglines: always Frama */
+.font-tagline {
+  font-family: 'PP Frama', 'DM Sans', -apple-system, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Lettra: accent only — heavier weight, close spacing */
 .font-script {
-  font-family: 'TT Gentlemens', cursive;
+  font-family: 'PP Lettra Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Lettra accent — strongest (for emphasis) */
+.font-script-strong {
+  font-family: 'PP Lettra Mono', monospace;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
 /* Oversized Swiss Headlines - Clean and Bold */
@@ -134,36 +198,37 @@ body {
   font-weight: 400;
 }
 
-/* Script accent - large and expressive */
+/* Lettra accent — large (heavier weight, close spacing) */
 .headline-script {
-  font-family: 'TT Gentlemens', cursive;
-  font-size: clamp(4rem, 14vw, 12rem);
-  line-height: 1.4;
-  letter-spacing: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.3em;
+  font-family: 'PP Lettra Mono', monospace;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  text-transform: lowercase;
 }
 
-/* Script inline - for use within headlines */
 .script-inline {
-  font-family: 'TT Gentlemens', cursive;
-  line-height: 1.4;
+  font-family: 'PP Lettra Mono', monospace;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
-/* Script large - standalone large script */
 .script-lg {
-  font-family: 'TT Gentlemens', cursive;
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 1.4;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  font-family: 'PP Lettra Mono', monospace;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
-/* Script medium */
 .script-md {
-  font-family: 'TT Gentlemens', cursive;
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1.4;
+  font-family: 'PP Lettra Mono', monospace;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .label-sm {
