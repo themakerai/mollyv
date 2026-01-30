@@ -7,21 +7,29 @@ import Logo from '@/components/Logo'
 
 export default function BrandAssetsPage() {
   const [darkMode, setDarkMode] = useState(false)
-  const [copiedSignature, setCopiedSignature] = useState(false)
+  const [copiedSignature, setCopiedSignature] = useState<string | null>(null)
   const [password, setPassword] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [error, setError] = useState('')
   const [downloading, setDownloading] = useState<string | null>(null)
+  const [activeSection, setActiveSection] = useState<string | null>(null)
   
   // Refs for downloadable elements
   const logoRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
   const businessCardFrontRef = useRef<HTMLDivElement>(null)
   const businessCardBackRef = useRef<HTMLDivElement>(null)
+  const businessCardAltFrontRef = useRef<HTMLDivElement>(null)
+  const businessCardAltBackRef = useRef<HTMLDivElement>(null)
   const letterheadRef = useRef<HTMLDivElement>(null)
+  const letterheadAltRef = useRef<HTMLDivElement>(null)
   const instagramSquareRef = useRef<HTMLDivElement>(null)
   const linkedinTwitterRef = useRef<HTMLDivElement>(null)
   const instagramStoryRef = useRef<HTMLDivElement>(null)
   const linkedinCoverRef = useRef<HTMLDivElement>(null)
+  const decisionRoomPostRef = useRef<HTMLDivElement>(null)
+  const guidePromoRef = useRef<HTMLDivElement>(null)
+  const quoteCardRef = useRef<HTMLDivElement>(null)
+  const announcementPostRef = useRef<HTMLDivElement>(null)
   
   const bgColor = darkMode ? '#1E1E1E' : '#F7F7F7'
   const textColor = darkMode ? '#F7F7F7' : '#1E1E1E'
@@ -93,7 +101,6 @@ export default function BrandAssetsPage() {
     )
   }
 
-  // Generate downloadable SVG
   const generateSVG = (variant: 'dark' | 'light', type: 'mark' | 'full' | 'horizontal' | 'badge') => {
     const fillColor = variant === 'dark' ? '#1E1E1E' : '#F7F7F7'
     const accentBlue = '#2D8FB5'
@@ -106,10 +113,6 @@ export default function BrandAssetsPage() {
       <path fill="${fillColor}" d="M123.752533,196.758636 C131.214005,178.743408 138.537903,161.087540 145.789886,143.402176 C147.005966,140.436508 148.711456,137.222061 152.054092,138.446106 C154.221069,139.239609 156.522797,142.461426 156.910034,144.890732 C161.278336,172.295151 165.296555,199.755447 169.386627,227.204056 C170.480118,234.542465 169.025436,236.241348 161.733749,236.246887 C147.077652,236.258011 132.421524,236.268829 117.765472,236.241104 C110.973801,236.228271 108.973885,233.375137 111.447182,227.177567 C115.453743,217.137909 119.538864,207.129639 123.752533,196.758636z"/>
       <path fill="${fillColor}" d="M68.676086,188.245529 C73.940529,201.753937 79.086349,214.892517 84.217888,228.036667 C86.044273,232.714859 84.031532,236.162430 79.103897,236.200500 C63.796017,236.318832 48.486538,236.271866 33.177887,236.223694 C28.491982,236.208954 27.209999,233.328705 27.805830,229.213928 C29.994091,214.102142 32.208584,198.994095 34.438068,183.888321 C36.158367,172.232513 37.915035,160.582077 39.657902,148.929611 C39.903881,147.285034 39.709988,145.356873 40.523106,144.066086 C41.733727,142.144272 43.535488,139.527283 45.316711,139.333893 C47.084282,139.142014 50.078938,141.151962 50.900631,142.945312 C54.215195,150.179367 56.921646,157.693680 59.807381,165.122101 C62.749866,172.696625 65.639214,180.291779 68.676086,188.245529z"/>
     `
-    
-    if (type === 'mark') {
-      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 276" fill="none">${markPaths}</svg>`
-    }
     
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 276" fill="none">${markPaths}</svg>`
   }
@@ -146,61 +149,42 @@ export default function BrandAssetsPage() {
     }
   }
 
-  const emailSignatureHTML = `
-<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'DM Sans', Arial, sans-serif; line-height: 1.5;">
+  const copyToClipboard = (text: string, id: string) => {
+    navigator.clipboard.writeText(text)
+    setCopiedSignature(id)
+    setTimeout(() => setCopiedSignature(null), 2000)
+  }
+
+  // Email Signatures HTML
+  const emailSignatureFullHTML = `<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'DM Sans', Arial, sans-serif; line-height: 1.5;">
   <tr>
     <td style="padding-right: 20px; vertical-align: top; border-right: 3px solid #2D8FB5;">
       <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td style="padding-bottom: 8px;">
-            <span style="font-size: 20px; font-weight: 700; color: #1E1E1E; letter-spacing: -0.02em;">Molly Varangkounh</span>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding-bottom: 12px;">
-            <span style="font-size: 12px; color: #2D8FB5; text-transform: uppercase; letter-spacing: 0.15em;">Executive Coach & Consultant</span>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding-bottom: 4px;">
-            <span style="font-size: 13px; color: #4A4A4A;">molly@mollyv.com</span>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding-bottom: 4px;">
-            <span style="font-size: 13px; color: #4A4A4A;">(555) 123-4567</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span style="font-size: 13px; color: #4A4A4A;">mollyv.com</span>
-          </td>
-        </tr>
+        <tr><td style="padding-bottom: 8px;"><span style="font-size: 20px; font-weight: 700; color: #1E1E1E; letter-spacing: -0.02em;">Molly Varangkounh</span></td></tr>
+        <tr><td style="padding-bottom: 12px;"><span style="font-size: 12px; color: #2D8FB5; text-transform: uppercase; letter-spacing: 0.15em;">Executive Advisory</span></td></tr>
+        <tr><td style="padding-bottom: 4px;"><span style="font-size: 13px; color: #4A4A4A;">molly@mollyv.com</span></td></tr>
+        <tr><td style="padding-bottom: 4px;"><span style="font-size: 13px; color: #4A4A4A;">mollyv.com</span></td></tr>
+        <tr><td style="padding-top: 8px;"><a href="https://mollyv.com/decision-room" style="font-size: 11px; color: #2D8FB5; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em;">→ The Decision Room</a></td></tr>
       </table>
     </td>
     <td style="padding-left: 20px; vertical-align: top;">
       <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td style="padding-bottom: 12px;">
-            <img src="https://mollyv.com/logo-mark.png" alt="MV." width="60" height="40" style="display: block;" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span style="font-family: 'TT Gentlemens', cursive; font-size: 20px; color: #2D8FB5;">Make Bold Moves.</span>
-          </td>
-        </tr>
+        <tr><td style="padding-bottom: 12px;"><img src="https://mollyv.com/logo-mark.png" alt="MV." width="60" height="40" style="display: block;" /></td></tr>
+        <tr><td><span style="font-size: 14px; font-weight: 500; color: #1E1E1E;">Lead with clarity.</span><br/><span style="font-size: 14px; font-weight: 500; color: #2D8FB5;">Make bold moves.</span></td></tr>
       </table>
     </td>
   </tr>
-</table>
-  `.trim()
+</table>`
 
-  const copySignature = () => {
-    navigator.clipboard.writeText(emailSignatureHTML)
-    setCopiedSignature(true)
-    setTimeout(() => setCopiedSignature(false), 2000)
-  }
+  const emailSignatureMinimalHTML = `<table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif;">
+  <tr>
+    <td style="vertical-align: top;">
+      <p style="margin: 0 0 4px 0; font-size: 16px; font-weight: 700; color: #1E1E1E;">Molly Varangkounh</p>
+      <p style="margin: 0 0 8px 0; font-size: 12px; color: #2D8FB5; text-transform: uppercase; letter-spacing: 0.1em;">Executive Advisory</p>
+      <p style="margin: 0; font-size: 13px; color: #4A4A4A;">molly@mollyv.com · mollyv.com</p>
+    </td>
+  </tr>
+</table>`
 
   const logoDownloads = [
     { name: 'Primary Mark', type: 'mark', description: 'Main MV. logo mark' },
@@ -209,52 +193,153 @@ export default function BrandAssetsPage() {
     { name: 'Badge', type: 'badge', description: 'Square badge format' },
   ]
 
+  const sections = [
+    { id: 'brand-overview', label: 'Brand Overview', icon: '📖' },
+    { id: 'logos', label: 'Logos', icon: '◇' },
+    { id: 'print', label: 'Print Assets', icon: '🖨' },
+    { id: 'email', label: 'Email', icon: '✉' },
+    { id: 'social', label: 'Social Media', icon: '📱' },
+    { id: 'lead-gen', label: 'Lead Generation', icon: '📊' },
+  ]
+
   return (
     <div className="min-h-screen transition-colors duration-500" style={{ backgroundColor: bgColor, color: textColor }}>
       {/* Header */}
-      <header className="py-8 px-6 lg:px-12 border-b" style={{ borderColor }}>
+      <header className="py-6 px-6 lg:px-12 border-b sticky top-0 z-50" style={{ borderColor, backgroundColor: bgColor }}>
         <div className="max-w-[1400px] mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <Logo variant="mark" size="sm" color={darkMode ? 'light' : 'dark'} />
             <div>
-              <h1 className="text-2xl font-bold tracking-tight font-swiss">Brand Assets</h1>
-              <p className="text-sm mt-1" style={{ color: mutedColor }}>Downloads & Templates</p>
+              <h1 className="text-xl font-bold tracking-tight font-swiss">Brand Assets</h1>
+              <p className="text-xs mt-0.5" style={{ color: mutedColor }}>Downloads & Templates</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
             <a href="/brand" className="text-sm hover:opacity-70 transition-opacity" style={{ color: accentColor }}>
-              ← Brand Guidelines
+              ← Guidelines
             </a>
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="px-4 py-2 text-sm font-medium border transition-colors"
+              className="px-3 py-1.5 text-xs font-medium border transition-colors"
               style={{ borderColor, backgroundColor: cardBg }}
             >
-              {darkMode ? '☀️ Light' : '🌙 Dark'}
+              {darkMode ? '☀️' : '🌙'}
             </button>
           </div>
         </div>
       </header>
 
-      <main className="py-16 px-6 lg:px-12">
-        <div className="max-w-[1400px] mx-auto space-y-24">
+      {/* Navigation */}
+      <nav className="py-4 px-6 lg:px-12 border-b overflow-x-auto" style={{ borderColor, backgroundColor: cardBg }}>
+        <div className="max-w-[1400px] mx-auto flex gap-2">
+          {sections.map((section) => (
+            <a
+              key={section.id}
+              href={`#${section.id}`}
+              className="px-4 py-2 text-xs font-medium whitespace-nowrap transition-all hover:opacity-80"
+              style={{ 
+                backgroundColor: activeSection === section.id ? accentColor : 'transparent',
+                color: activeSection === section.id ? '#fff' : mutedColor,
+                border: `1px solid ${borderColor}`
+              }}
+              onClick={() => setActiveSection(section.id)}
+            >
+              <span className="mr-2">{section.icon}</span>
+              {section.label}
+            </a>
+          ))}
+        </div>
+      </nav>
 
-          {/* Logo Downloads */}
-          <section>
+      <main className="py-12 px-6 lg:px-12">
+        <div className="max-w-[1400px] mx-auto space-y-20">
+
+          {/* ==================== SECTION 1: BRAND OVERVIEW ==================== */}
+          <section id="brand-overview">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-xs tracking-[0.2em] uppercase mb-8 font-swiss font-semibold" style={{ color: accentColor }}>
-                Logo Downloads
-              </h2>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-2xl">📖</span>
+                <h2 className="text-lg font-bold tracking-tight font-swiss">Brand Overview</h2>
+              </div>
+              <p className="text-sm mb-8" style={{ color: mutedColor }}>
+                Complete brand presentations and documentation
+              </p>
+              
+              {/* Maker Manual */}
+              <div className="p-8 border" style={{ borderColor, backgroundColor: cardBg }}>
+                <div className="flex flex-col lg:flex-row items-start gap-8">
+                  <div className="w-full lg:w-48 h-60 flex-shrink-0 flex items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#1E1E1E' }}>
+                    <div className="absolute left-0 top-0 bottom-0 w-1.5" style={{ backgroundColor: accentColor }} />
+                    <div className="text-center z-10 p-6">
+                      <div className="text-[10px] text-white/50 uppercase tracking-widest mb-3">Complete Brand</div>
+                      <div className="text-3xl font-bold text-white mb-1">Maker</div>
+                      <div className="text-3xl font-bold" style={{ color: accentColor }}>Manual</div>
+                      <div className="mt-4 w-12 h-0.5 mx-auto" style={{ backgroundColor: accentColor }} />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-2xl mb-3 font-swiss">The Maker Manual</h3>
+                    <p className="text-sm mb-6 leading-relaxed" style={{ color: mutedColor }}>
+                      The complete brand presentation including vision, mission, frameworks (B.U.I.L.D & BOLD), 
+                      brand guidelines, color palette, typography, logo usage, and marketing strategy. 
+                      Perfect for investor presentations, partner meetings, or internal alignment.
+                    </p>
+                    <div className="flex flex-wrap gap-3 mb-6">
+                      <a
+                        href="/Molly_V_Maker_Manual_Update.pdf"
+                        download="Molly_V_Maker_Manual.pdf"
+                        className="px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all hover:opacity-80"
+                        style={{ backgroundColor: accentColor, color: '#fff' }}
+                      >
+                        ↓ Download PDF
+                      </a>
+                      <a
+                        href="/maker-manual.html"
+                        target="_blank"
+                        className="px-6 py-3 text-sm font-semibold uppercase tracking-wider border transition-all hover:opacity-80"
+                        style={{ borderColor: textColor, color: textColor }}
+                      >
+                        View Digital Version
+                      </a>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      {['Brand Story & Vision', 'B.U.I.L.D Framework', 'BOLD Framework', 'Typography & Colors', 'Marketing Strategy'].map((tag) => (
+                        <span key={tag} className="px-3 py-1 text-xs border" style={{ borderColor, color: mutedColor }}>{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </section>
+
+          {/* ==================== SECTION 2: LOGOS ==================== */}
+          <section id="logos">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-2xl">◇</span>
+                <h2 className="text-lg font-bold tracking-tight font-swiss">Logos</h2>
+              </div>
+              <p className="text-sm mb-8" style={{ color: mutedColor }}>
+                Download logos in SVG and PNG formats
+              </p>
+              
               <div className="grid md:grid-cols-2 gap-6">
                 {logoDownloads.map((logo, i) => (
                   <motion.div
                     key={logo.name}
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     className="border"
                     style={{ borderColor, backgroundColor: cardBg }}
@@ -275,40 +360,14 @@ export default function BrandAssetsPage() {
                         <Logo variant={logo.type === 'mark' ? 'mark' : logo.type === 'horizontal' ? 'mark-horizontal' : logo.type === 'badge' ? 'mark-badge' : 'full'} size="md" color="light" />
                       </div>
                     </div>
-                    <div className="p-6">
-                      <h3 className="font-semibold text-lg mb-1 font-swiss">{logo.name}</h3>
-                      <p className="text-sm mb-4" style={{ color: mutedColor }}>{logo.description}</p>
-                      <div className="flex flex-wrap gap-3">
-                        <button
-                          onClick={() => downloadSVG('dark', logo.type)}
-                          className="px-4 py-2 text-xs font-semibold uppercase tracking-wider border transition-all hover:bg-[#1E1E1E] hover:text-white"
-                          style={{ borderColor: '#1E1E1E', color: darkMode ? '#F7F7F7' : '#1E1E1E' }}
-                        >
-                          SVG Dark
-                        </button>
-                        <button
-                          onClick={() => downloadSVG('light', logo.type)}
-                          className="px-4 py-2 text-xs font-semibold uppercase tracking-wider border transition-all hover:bg-[#1E1E1E] hover:text-white"
-                          style={{ borderColor: '#1E1E1E', color: darkMode ? '#F7F7F7' : '#1E1E1E' }}
-                        >
-                          SVG Light
-                        </button>
-                        <button
-                          onClick={() => downloadPNG(logoRefs.current[`${logo.type}-dark`], `mollyv-${logo.type}-dark`)}
-                          disabled={downloading === `mollyv-${logo.type}-dark`}
-                          className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
-                          style={{ backgroundColor: accentColor, color: '#fff' }}
-                        >
-                          {downloading === `mollyv-${logo.type}-dark` ? '...' : 'PNG Dark'}
-                        </button>
-                        <button
-                          onClick={() => downloadPNG(logoRefs.current[`${logo.type}-light`], `mollyv-${logo.type}-light`)}
-                          disabled={downloading === `mollyv-${logo.type}-light`}
-                          className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
-                          style={{ backgroundColor: accentColor, color: '#fff' }}
-                        >
-                          {downloading === `mollyv-${logo.type}-light` ? '...' : 'PNG Light'}
-                        </button>
+                    <div className="p-5">
+                      <h3 className="font-semibold text-base mb-1 font-swiss">{logo.name}</h3>
+                      <p className="text-xs mb-4" style={{ color: mutedColor }}>{logo.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        <button onClick={() => downloadSVG('dark', logo.type)} className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider border transition-all hover:bg-[#1E1E1E] hover:text-white" style={{ borderColor: '#1E1E1E', color: darkMode ? '#F7F7F7' : '#1E1E1E' }}>SVG Dark</button>
+                        <button onClick={() => downloadSVG('light', logo.type)} className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider border transition-all hover:bg-[#1E1E1E] hover:text-white" style={{ borderColor: '#1E1E1E', color: darkMode ? '#F7F7F7' : '#1E1E1E' }}>SVG Light</button>
+                        <button onClick={() => downloadPNG(logoRefs.current[`${logo.type}-dark`], `mollyv-${logo.type}-dark`)} disabled={downloading === `mollyv-${logo.type}-dark`} className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50" style={{ backgroundColor: accentColor, color: '#fff' }}>{downloading === `mollyv-${logo.type}-dark` ? '...' : 'PNG Dark'}</button>
+                        <button onClick={() => downloadPNG(logoRefs.current[`${logo.type}-light`], `mollyv-${logo.type}-light`)} disabled={downloading === `mollyv-${logo.type}-light`} className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50" style={{ backgroundColor: accentColor, color: '#fff' }}>{downloading === `mollyv-${logo.type}-light` ? '...' : 'PNG Light'}</button>
                       </div>
                     </div>
                   </motion.div>
@@ -317,459 +376,458 @@ export default function BrandAssetsPage() {
             </motion.div>
           </section>
 
-          {/* Email Signature */}
-          <section>
+          {/* ==================== SECTION 3: PRINT ASSETS ==================== */}
+          <section id="print">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-xs tracking-[0.2em] uppercase mb-8 font-swiss font-semibold" style={{ color: accentColor }}>
-                Email Signature
-              </h2>
-              <div className="grid lg:grid-cols-2 gap-8">
-                {/* Preview */}
-                <div className="p-8 border" style={{ borderColor, backgroundColor: '#FFFFFF' }}>
-                  <p className="text-xs tracking-[0.15em] uppercase mb-6 font-medium" style={{ color: mutedColor }}>Preview</p>
-                  <div className="flex gap-5">
-                    <div className="pr-5 border-r-[3px]" style={{ borderColor: accentColor }}>
-                      <p className="text-xl font-bold tracking-tight text-[#1E1E1E] mb-1">Molly Varangkounh</p>
-                      <p className="text-xs uppercase tracking-[0.15em] mb-3" style={{ color: accentColor }}>Executive Coach & Consultant</p>
-                      <div className="space-y-1 text-[13px] text-[#4A4A4A]">
-                        <p>molly@mollyv.com</p>
-                        <p>(555) 123-4567</p>
-                        <p>mollyv.com</p>
-                      </div>
-                    </div>
-                    <div className="pl-2">
-                      <div className="mb-3">
-                        <Logo variant="mark" size="sm" color="dark" />
-                      </div>
-                      <p className="font-script text-lg" style={{ color: accentColor }}>Make bold moves.</p>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Code */}
-                <div className="p-6 border" style={{ borderColor, backgroundColor: cardBg }}>
-                  <div className="flex justify-between items-center mb-4">
-                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>HTML Code</p>
-                    <button
-                      onClick={copySignature}
-                      className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all"
-                      style={{ backgroundColor: accentColor, color: '#fff' }}
-                    >
-                      {copiedSignature ? '✓ Copied!' : 'Copy HTML'}
-                    </button>
-                  </div>
-                  <pre 
-                    className="text-[10px] overflow-x-auto p-4 font-mono leading-relaxed max-h-[200px] overflow-y-auto"
-                    style={{ backgroundColor: darkMode ? '#1E1E1E' : '#F7F7F7' }}
-                  >
-                    {emailSignatureHTML}
-                  </pre>
-                </div>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-2xl">🖨</span>
+                <h2 className="text-lg font-bold tracking-tight font-swiss">Print Assets</h2>
               </div>
-            </motion.div>
-          </section>
-
-          {/* Business Card */}
-          <section>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-xs tracking-[0.2em] uppercase mb-8 font-swiss font-semibold" style={{ color: accentColor }}>
-                Business Card
-              </h2>
               <p className="text-sm mb-8" style={{ color: mutedColor }}>
-                Standard US business card (3.5" × 2" / 88.9mm × 50.8mm) • Print at 300 DPI with 0.125" bleed
+                Business cards and letterhead templates
               </p>
-              <div className="grid lg:grid-cols-2 gap-8">
-                {/* Front */}
-                <div>
-                  <div className="flex justify-between items-center mb-4">
-                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>Front</p>
-                    <button
-                      onClick={() => downloadPNG(businessCardFrontRef.current, 'business-card-front', 3)}
-                      disabled={downloading === 'business-card-front'}
-                      className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
-                      style={{ backgroundColor: accentColor, color: '#fff' }}
-                    >
-                      {downloading === 'business-card-front' ? 'Downloading...' : '↓ PNG'}
-                    </button>
-                  </div>
-                  <div 
-                    ref={businessCardFrontRef}
-                    className="relative w-full aspect-[3.5/2] shadow-2xl"
-                    style={{ backgroundColor: '#F7F7F7' }}
-                  >
-                    {/* Blue accent strip */}
-                    <div className="absolute left-0 top-0 bottom-0 w-3" style={{ backgroundColor: accentColor }} />
-                    
-                    {/* Content */}
-                    <div className="absolute inset-0 flex flex-col justify-between p-8 pl-10">
-                      <div className="flex justify-between items-start">
+
+              {/* Business Cards */}
+              <div className="mb-12">
+                <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: accentColor }}>Business Cards</h3>
+                <p className="text-xs mb-6" style={{ color: mutedColor }}>Standard US size (3.5" × 2") · Print at 300 DPI with 0.125" bleed</p>
+                
+                <div className="grid lg:grid-cols-2 gap-8 mb-8">
+                  {/* Classic Front */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <p className="text-xs font-medium" style={{ color: mutedColor }}>Classic · Front</p>
+                      <button onClick={() => downloadPNG(businessCardFrontRef.current, 'business-card-front', 3)} disabled={downloading === 'business-card-front'} className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50" style={{ backgroundColor: accentColor, color: '#fff' }}>{downloading === 'business-card-front' ? '...' : '↓ PNG'}</button>
+                    </div>
+                    <div ref={businessCardFrontRef} className="relative w-full aspect-[3.5/2] shadow-xl" style={{ backgroundColor: '#F7F7F7' }}>
+                      <div className="absolute left-0 top-0 bottom-0 w-3" style={{ backgroundColor: accentColor }} />
+                      <div className="absolute inset-0 flex flex-col justify-between p-6 pl-8">
                         <Logo variant="mark" size="sm" color="dark" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[#1E1E1E] mb-1">
-                          Molly Varangkounh
-                        </h3>
-                        <p className="text-xs uppercase tracking-[0.15em] mb-4" style={{ color: accentColor }}>
-                          Executive Coach & Consultant
-                        </p>
-                        <div className="flex gap-8 text-xs text-[#4A4A4A]">
-                          <span>molly@mollyv.com</span>
-                          <span>(555) 123-4567</span>
+                        <div>
+                          <h3 className="text-lg font-bold tracking-tight text-[#1E1E1E] mb-1">Molly Varangkounh</h3>
+                          <p className="text-[10px] uppercase tracking-[0.15em] mb-3" style={{ color: accentColor }}>Executive Advisory</p>
+                          <div className="flex gap-6 text-[10px] text-[#4A4A4A]">
+                            <span>molly@mollyv.com</span>
+                            <span>mollyv.com</span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Back */}
-                <div>
-                  <div className="flex justify-between items-center mb-4">
-                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>Back</p>
-                    <button
-                      onClick={() => downloadPNG(businessCardBackRef.current, 'business-card-back', 3)}
-                      disabled={downloading === 'business-card-back'}
-                      className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
-                      style={{ backgroundColor: accentColor, color: '#fff' }}
-                    >
-                      {downloading === 'business-card-back' ? 'Downloading...' : '↓ PNG'}
-                    </button>
-                  </div>
-                  <div 
-                    ref={businessCardBackRef}
-                    className="relative w-full aspect-[3.5/2] shadow-2xl flex items-center justify-center"
-                    style={{ backgroundColor: '#1E1E1E' }}
-                  >
-                    {/* Blue accent strip */}
-                    <div className="absolute right-0 top-0 bottom-0 w-3" style={{ backgroundColor: accentColor }} />
-                    
-                    {/* Content */}
-                    <div className="text-center">
+                  {/* Classic Back */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <p className="text-xs font-medium" style={{ color: mutedColor }}>Classic · Back</p>
+                      <button onClick={() => downloadPNG(businessCardBackRef.current, 'business-card-back', 3)} disabled={downloading === 'business-card-back'} className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50" style={{ backgroundColor: accentColor, color: '#fff' }}>{downloading === 'business-card-back' ? '...' : '↓ PNG'}</button>
+                    </div>
+                    <div ref={businessCardBackRef} className="relative w-full aspect-[3.5/2] shadow-xl flex items-center justify-center" style={{ backgroundColor: '#1E1E1E' }}>
+                      <div className="absolute right-0 top-0 bottom-0 w-3" style={{ backgroundColor: accentColor }} />
                       <Logo variant="full" size="md" color="light" />
                     </div>
                   </div>
+                  {/* Decision Room Front */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <p className="text-xs font-medium" style={{ color: mutedColor }}>Decision Room · Front</p>
+                      <button onClick={() => downloadPNG(businessCardAltFrontRef.current, 'business-card-dr-front', 3)} disabled={downloading === 'business-card-dr-front'} className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50" style={{ backgroundColor: accentColor, color: '#fff' }}>{downloading === 'business-card-dr-front' ? '...' : '↓ PNG'}</button>
+                    </div>
+                    <div ref={businessCardAltFrontRef} className="relative w-full aspect-[3.5/2] shadow-xl" style={{ backgroundColor: '#1E1E1E' }}>
+                      <div className="absolute right-0 top-0 w-16 h-16" style={{ backgroundColor: accentColor }} />
+                      <div className="absolute inset-0 flex flex-col justify-between p-6">
+                        <Logo variant="mark" size="sm" color="light" />
+                        <div>
+                          <h3 className="text-lg font-bold tracking-tight text-white mb-1">Molly Varangkounh</h3>
+                          <p className="text-[10px] uppercase tracking-[0.15em] text-white/60 mb-3">Executive Advisory</p>
+                          <div className="text-[10px] text-white/70 space-y-0.5">
+                            <p>molly@mollyv.com</p>
+                            <p>mollyv.com/decision-room</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Decision Room Back */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <p className="text-xs font-medium" style={{ color: mutedColor }}>Decision Room · Back</p>
+                      <button onClick={() => downloadPNG(businessCardAltBackRef.current, 'business-card-dr-back', 3)} disabled={downloading === 'business-card-dr-back'} className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50" style={{ backgroundColor: accentColor, color: '#fff' }}>{downloading === 'business-card-dr-back' ? '...' : '↓ PNG'}</button>
+                    </div>
+                    <div ref={businessCardAltBackRef} className="relative w-full aspect-[3.5/2] shadow-xl flex items-center justify-center" style={{ backgroundColor: accentColor }}>
+                      <div className="text-center text-white">
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-white/70 mb-2">Enter</p>
+                        <h3 className="text-xl font-bold tracking-tight">The Decision Room</h3>
+                        <p className="text-[10px] text-white/70 mt-3 max-w-[140px] mx-auto leading-relaxed">For leaders navigating high-stakes decisions</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          </section>
 
-          {/* Letterhead */}
-          <section>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-xs tracking-[0.2em] uppercase mb-8 font-swiss font-semibold" style={{ color: accentColor }}>
-                Letterhead
-              </h2>
-              <div className="flex justify-between items-center mb-8">
-                <p className="text-sm" style={{ color: mutedColor }}>
-                  US Letter (8.5" × 11") • 1" margins • Print on premium uncoated stock
-                </p>
-                <button
-                  onClick={() => downloadPNG(letterheadRef.current, 'letterhead', 2)}
-                  disabled={downloading === 'letterhead'}
-                  className="px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
-                  style={{ backgroundColor: accentColor, color: '#fff' }}
-                >
-                  {downloading === 'letterhead' ? 'Downloading...' : '↓ Download PNG'}
-                </button>
-              </div>
-              <div 
-                ref={letterheadRef}
-                className="relative w-full max-w-[700px] mx-auto aspect-[8.5/11] shadow-2xl"
-                style={{ backgroundColor: '#FFFFFF' }}
-              >
-                {/* Blue accent strip */}
-                <div className="absolute left-0 top-0 bottom-0 w-2" style={{ backgroundColor: accentColor }} />
+              {/* Letterheads */}
+              <div>
+                <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: accentColor }}>Letterhead</h3>
+                <p className="text-xs mb-6" style={{ color: mutedColor }}>US Letter (8.5" × 11") · 1" margins · Print on premium uncoated stock</p>
                 
-                {/* Header */}
-                <div className="absolute top-8 left-10 right-10 flex justify-between items-start">
-                  <Logo variant="mark-horizontal" size="sm" color="dark" />
-                  <div className="text-right text-[10px] text-[#7A7A7A] space-y-0.5">
-                    <p>molly@mollyv.com</p>
-                    <p>(555) 123-4567</p>
-                    <p>mollyv.com</p>
+                <div className="grid lg:grid-cols-2 gap-8">
+                  {/* Standard Letterhead */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <p className="text-xs font-medium" style={{ color: mutedColor }}>Standard</p>
+                      <button onClick={() => downloadPNG(letterheadRef.current, 'letterhead', 2)} disabled={downloading === 'letterhead'} className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50" style={{ backgroundColor: accentColor, color: '#fff' }}>{downloading === 'letterhead' ? '...' : '↓ PNG'}</button>
+                    </div>
+                    <div ref={letterheadRef} className="relative w-full aspect-[8.5/11] shadow-xl" style={{ backgroundColor: '#FFFFFF' }}>
+                      <div className="absolute left-0 top-0 bottom-0 w-1.5" style={{ backgroundColor: accentColor }} />
+                      <div className="absolute top-6 left-8 right-8 flex justify-between items-start">
+                        <Logo variant="mark-horizontal" size="sm" color="dark" />
+                        <div className="text-right text-[8px] text-[#7A7A7A] space-y-0.5">
+                          <p>molly@mollyv.com</p>
+                          <p>mollyv.com</p>
+                        </div>
+                      </div>
+                      <div className="absolute top-20 left-8 right-8 bottom-16">
+                        <p className="text-[8px] text-[#7A7A7A] mb-4">January 30, 2026</p>
+                        <p className="text-[8px] text-[#1E1E1E] mb-4">Dear Client,</p>
+                        <div className="text-[8px] text-[#4A4A4A] leading-relaxed space-y-2">
+                          <p>Thank you for your interest in working together...</p>
+                        </div>
+                      </div>
+                      <div className="absolute bottom-4 left-8 right-8 flex justify-between items-center border-t pt-3" style={{ borderColor: '#E0E0E0' }}>
+                        <p className="text-[8px]" style={{ color: accentColor }}>Make bold moves.</p>
+                        <p className="text-[8px] text-[#7A7A7A]">MOLLY V.</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-
-                {/* Content area */}
-                <div className="absolute top-28 left-10 right-10 bottom-20">
-                  <p className="text-[10px] text-[#7A7A7A] mb-6">January 16, 2026</p>
-                  <p className="text-[10px] text-[#1E1E1E] mb-6">
-                    Dear Client,
-                  </p>
-                  <div className="space-y-4 text-[10px] text-[#4A4A4A] leading-relaxed">
-                    <p>
-                      Thank you for your interest in working together. I'm excited about the opportunity to support you on your leadership journey.
-                    </p>
-                    <p>
-                      Our conversation highlighted several areas where executive coaching could help you achieve breakthrough results. I believe in leading with clarity and making bold moves—and I see that same drive in you.
-                    </p>
-                    <p>
-                      Enclosed you'll find the proposal we discussed. I'm confident this partnership will help you unlock your full potential as a leader.
-                    </p>
-                  </div>
-                  <div className="mt-8">
-                    <p className="text-[10px] text-[#1E1E1E] mb-1">Warmly,</p>
-                    <p className="font-script text-xl" style={{ color: accentColor }}>Molly Varangkounh</p>
-                    <p className="text-[10px] text-[#7A7A7A] mt-1">Executive Coach & Consultant</p>
-                  </div>
-                </div>
-
-                {/* Footer */}
-                <div className="absolute bottom-6 left-10 right-10 flex justify-between items-center border-t pt-4" style={{ borderColor: '#E0E0E0' }}>
-                  <p className="font-script text-sm" style={{ color: accentColor }}>Make bold moves.</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-8 h-1" style={{ backgroundColor: accentColor }} />
-                    <p className="text-[9px] text-[#7A7A7A] tracking-wide">MOLLY V.</p>
+                  {/* Minimal Letterhead */}
+                  <div>
+                    <div className="flex justify-between items-center mb-3">
+                      <p className="text-xs font-medium" style={{ color: mutedColor }}>Minimal</p>
+                      <button onClick={() => downloadPNG(letterheadAltRef.current, 'letterhead-minimal', 2)} disabled={downloading === 'letterhead-minimal'} className="px-3 py-1 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50" style={{ backgroundColor: accentColor, color: '#fff' }}>{downloading === 'letterhead-minimal' ? '...' : '↓ PNG'}</button>
+                    </div>
+                    <div ref={letterheadAltRef} className="relative w-full aspect-[8.5/11] shadow-xl" style={{ backgroundColor: '#FFFFFF' }}>
+                      <div className="absolute top-8 left-0 right-0 flex flex-col items-center">
+                        <Logo variant="mark" size="sm" color="dark" />
+                        <p className="text-[8px] text-[#7A7A7A] mt-2 uppercase tracking-[0.2em]">Executive Advisory</p>
+                      </div>
+                      <div className="absolute top-24 left-10 right-10 bottom-16">
+                        <p className="text-[8px] text-[#7A7A7A] mb-6">January 30, 2026</p>
+                        <p className="text-[8px] text-[#4A4A4A]">Dear [Name],</p>
+                      </div>
+                      <div className="absolute bottom-6 left-10 right-10 flex justify-between text-[8px] text-[#7A7A7A]">
+                        <span>molly@mollyv.com</span>
+                        <span>mollyv.com</span>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 h-1" style={{ backgroundColor: accentColor }} />
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
           </section>
 
-          {/* Social Announcement */}
-          <section>
+          {/* ==================== SECTION 4: EMAIL ==================== */}
+          <section id="email">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-xs tracking-[0.2em] uppercase mb-8 font-swiss font-semibold" style={{ color: accentColor }}>
-                Social Announcement Templates
-              </h2>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-2xl">✉</span>
+                <h2 className="text-lg font-bold tracking-tight font-swiss">Email</h2>
+              </div>
               <p className="text-sm mb-8" style={{ color: mutedColor }}>
-                Launch announcement graphics for Instagram, LinkedIn, and Twitter/X
+                Copy-paste HTML email signatures
               </p>
-              <div className="grid lg:grid-cols-3 gap-8">
+
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* Full Signature */}
+                <div className="border" style={{ borderColor, backgroundColor: cardBg }}>
+                  <div className="p-6 border-b" style={{ borderColor }}>
+                    <h3 className="font-semibold mb-1 font-swiss">Full Signature</h3>
+                    <p className="text-xs" style={{ color: mutedColor }}>With Decision Room link</p>
+                  </div>
+                  <div className="p-6" style={{ backgroundColor: '#FFFFFF' }}>
+                    <div className="flex gap-5">
+                      <div className="pr-5 border-r-[3px]" style={{ borderColor: accentColor }}>
+                        <p className="text-lg font-bold tracking-tight text-[#1E1E1E] mb-1">Molly Varangkounh</p>
+                        <p className="text-[10px] uppercase tracking-[0.15em] mb-2" style={{ color: accentColor }}>Executive Advisory</p>
+                        <div className="space-y-0.5 text-[11px] text-[#4A4A4A]">
+                          <p>molly@mollyv.com</p>
+                          <p>mollyv.com</p>
+                          <p className="pt-1"><span style={{ color: accentColor }}>→ The Decision Room</span></p>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="mb-2"><Logo variant="mark" size="sm" color="dark" /></div>
+                        <p className="text-xs font-medium text-[#1E1E1E]">Lead with clarity.</p>
+                        <p className="text-xs font-medium" style={{ color: accentColor }}>Make bold moves.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4 border-t" style={{ borderColor }}>
+                    <button onClick={() => copyToClipboard(emailSignatureFullHTML, 'full')} className="w-full py-2 text-xs font-semibold uppercase tracking-wider transition-all" style={{ backgroundColor: accentColor, color: '#fff' }}>
+                      {copiedSignature === 'full' ? '✓ Copied!' : 'Copy HTML'}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Minimal Signature */}
+                <div className="border" style={{ borderColor, backgroundColor: cardBg }}>
+                  <div className="p-6 border-b" style={{ borderColor }}>
+                    <h3 className="font-semibold mb-1 font-swiss">Minimal Signature</h3>
+                    <p className="text-xs" style={{ color: mutedColor }}>Clean and simple</p>
+                  </div>
+                  <div className="p-6" style={{ backgroundColor: '#FFFFFF' }}>
+                    <p className="text-base font-bold text-[#1E1E1E] mb-1">Molly Varangkounh</p>
+                    <p className="text-[10px] uppercase tracking-[0.1em] mb-2" style={{ color: accentColor }}>Executive Advisory</p>
+                    <p className="text-[11px] text-[#4A4A4A]">molly@mollyv.com · mollyv.com</p>
+                  </div>
+                  <div className="p-4 border-t" style={{ borderColor }}>
+                    <button onClick={() => copyToClipboard(emailSignatureMinimalHTML, 'minimal')} className="w-full py-2 text-xs font-semibold uppercase tracking-wider transition-all" style={{ backgroundColor: accentColor, color: '#fff' }}>
+                      {copiedSignature === 'minimal' ? '✓ Copied!' : 'Copy HTML'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </section>
+
+          {/* ==================== SECTION 5: SOCIAL MEDIA ==================== */}
+          <section id="social">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-2xl">📱</span>
+                <h2 className="text-lg font-bold tracking-tight font-swiss">Social Media</h2>
+              </div>
+              <p className="text-sm mb-8" style={{ color: mutedColor }}>
+                Post templates and cover images for all platforms
+              </p>
+
+              <div className="grid lg:grid-cols-3 gap-6">
                 {/* Instagram Square */}
                 <div>
-                  <div className="flex justify-between items-center mb-4">
-                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>
-                      Instagram (1:1)
-                    </p>
-                    <button
-                      onClick={() => downloadPNG(instagramSquareRef.current, 'instagram-square', 2)}
-                      disabled={downloading === 'instagram-square'}
-                      className="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
-                      style={{ backgroundColor: accentColor, color: '#fff' }}
-                    >
-                      {downloading === 'instagram-square' ? '...' : '↓ PNG'}
-                    </button>
+                  <div className="flex justify-between items-center mb-3">
+                    <p className="text-xs font-medium" style={{ color: mutedColor }}>Instagram Post (1:1)</p>
+                    <button onClick={() => downloadPNG(instagramSquareRef.current, 'instagram-square', 2)} className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider" style={{ backgroundColor: accentColor, color: '#fff' }}>↓</button>
                   </div>
-                  <div 
-                    ref={instagramSquareRef}
-                    className="relative w-full aspect-square shadow-2xl overflow-hidden"
-                    style={{ backgroundColor: '#1E1E1E' }}
-                  >
-                    {/* Background pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="absolute top-0 left-0 w-full h-full" 
-                        style={{ 
-                          backgroundImage: `repeating-linear-gradient(45deg, ${accentColor} 0, ${accentColor} 1px, transparent 0, transparent 50%)`,
-                          backgroundSize: '20px 20px'
-                        }} 
-                      />
-                    </div>
-                    
-                    {/* Blue accent circle */}
-                    <div 
-                      className="absolute -right-20 -top-20 w-64 h-64 rounded-full opacity-20"
-                      style={{ backgroundColor: accentColor }}
-                    />
-                    
-                    {/* Content */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                      <div className="mb-6">
-                        <Logo variant="mark" size="lg" color="light" />
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-2">
-                        Introducing
-                      </h3>
-                      <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4" style={{ color: accentColor }}>
-                        MOLLY V.
-                      </h2>
-                      <p className="font-script text-2xl md:text-3xl text-white/90">
-                        Make bold moves.
-                      </p>
-                      <div className="mt-6 w-16 h-1" style={{ backgroundColor: accentColor }} />
-                      <p className="text-xs text-white/60 uppercase tracking-[0.2em] mt-4">
-                        Executive Coaching
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* LinkedIn/Twitter Landscape */}
-                <div className="lg:col-span-2">
-                  <div className="flex justify-between items-center mb-4">
-                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>
-                      LinkedIn / Twitter (1.91:1)
-                    </p>
-                    <button
-                      onClick={() => downloadPNG(linkedinTwitterRef.current, 'linkedin-twitter', 2)}
-                      disabled={downloading === 'linkedin-twitter'}
-                      className="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
-                      style={{ backgroundColor: accentColor, color: '#fff' }}
-                    >
-                      {downloading === 'linkedin-twitter' ? '...' : '↓ PNG'}
-                    </button>
-                  </div>
-                  <div 
-                    ref={linkedinTwitterRef}
-                    className="relative w-full aspect-[1.91/1] shadow-2xl overflow-hidden"
-                    style={{ backgroundColor: '#F7F7F7' }}
-                  >
-                    {/* Blue accent strip */}
-                    <div className="absolute left-0 top-0 bottom-0 w-4" style={{ backgroundColor: accentColor }} />
-                    
-                    {/* Dark panel */}
-                    <div 
-                      className="absolute right-0 top-0 bottom-0 w-2/5"
-                      style={{ backgroundColor: '#1E1E1E' }}
-                    >
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Logo variant="mark" size="lg" color="light" />
-                      </div>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="absolute left-8 top-0 bottom-0 w-1/2 flex flex-col justify-center">
-                      <p className="text-xs uppercase tracking-[0.2em] mb-2" style={{ color: accentColor }}>
-                        Announcement
-                      </p>
-                      <h2 className="text-2xl md:text-4xl font-bold text-[#1E1E1E] tracking-tight mb-2">
-                        MOLLY V.
-                      </h2>
-                      <h3 className="text-lg md:text-xl font-medium text-[#4A4A4A] mb-4">
-                        Executive Coaching & Consulting
-                      </h3>
-                      <p className="font-script text-xl md:text-2xl" style={{ color: accentColor }}>
-                        Make bold moves.
-                      </p>
-                      <div className="flex gap-3 mt-6">
-                        <div className="w-3 h-3" style={{ backgroundColor: accentColor }} />
-                        <div className="w-3 h-3" style={{ backgroundColor: '#6BC1E0' }} />
-                        <div className="w-3 h-3" style={{ backgroundColor: '#1E1E1E' }} />
-                      </div>
+                  <div ref={instagramSquareRef} className="relative w-full aspect-square shadow-lg overflow-hidden" style={{ backgroundColor: '#1E1E1E' }}>
+                    <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full opacity-20" style={{ backgroundColor: accentColor }} />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                      <div className="mb-4"><Logo variant="mark" size="md" color="light" /></div>
+                      <h3 className="text-xl font-bold text-white tracking-tight mb-1">Introducing</h3>
+                      <h2 className="text-2xl font-bold tracking-tight mb-3" style={{ color: accentColor }}>MOLLY V.</h2>
+                      <p className="text-lg text-white/90">Make bold moves.</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Instagram Story */}
                 <div>
-                  <div className="flex justify-between items-center mb-4">
-                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>
-                      Instagram Story (9:16)
-                    </p>
-                    <button
-                      onClick={() => downloadPNG(instagramStoryRef.current, 'instagram-story', 2)}
-                      disabled={downloading === 'instagram-story'}
-                      className="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
-                      style={{ backgroundColor: accentColor, color: '#fff' }}
-                    >
-                      {downloading === 'instagram-story' ? '...' : '↓ PNG'}
-                    </button>
+                  <div className="flex justify-between items-center mb-3">
+                    <p className="text-xs font-medium" style={{ color: mutedColor }}>Instagram Story (9:16)</p>
+                    <button onClick={() => downloadPNG(instagramStoryRef.current, 'instagram-story', 2)} className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider" style={{ backgroundColor: accentColor, color: '#fff' }}>↓</button>
                   </div>
-                  <div 
-                    ref={instagramStoryRef}
-                    className="relative w-full max-w-[250px] aspect-[9/16] shadow-2xl overflow-hidden mx-auto"
-                    style={{ backgroundColor: '#1E1E1E' }}
-                  >
-                    {/* Gradient overlay */}
-                    <div 
-                      className="absolute inset-0"
-                      style={{ 
-                        background: `linear-gradient(180deg, transparent 0%, ${accentColor}20 50%, transparent 100%)`
-                      }}
-                    />
-                    
-                    {/* Content */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                      <p className="text-[10px] uppercase tracking-[0.3em] text-white/60 mb-8">
-                        Now Live
-                      </p>
-                      <div className="mb-6">
-                        <Logo variant="mark" size="md" color="light" />
+                  <div ref={instagramStoryRef} className="relative w-full max-w-[180px] aspect-[9/16] shadow-lg overflow-hidden mx-auto" style={{ backgroundColor: '#1E1E1E' }}>
+                    <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 0%, ${accentColor}20 50%, transparent 100%)` }} />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                      <p className="text-[8px] uppercase tracking-[0.3em] text-white/60 mb-4">Now Live</p>
+                      <div className="mb-4"><Logo variant="mark" size="sm" color="light" /></div>
+                      <h2 className="text-base font-bold text-white mb-1">MOLLY V.</h2>
+                      <p className="text-sm" style={{ color: accentColor }}>Make bold moves.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Quote Card */}
+                <div>
+                  <div className="flex justify-between items-center mb-3">
+                    <p className="text-xs font-medium" style={{ color: mutedColor }}>Quote Card (1:1)</p>
+                    <button onClick={() => downloadPNG(quoteCardRef.current, 'quote-card', 2)} className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider" style={{ backgroundColor: accentColor, color: '#fff' }}>↓</button>
+                  </div>
+                  <div ref={quoteCardRef} className="relative w-full aspect-square shadow-lg overflow-hidden" style={{ backgroundColor: '#F7F7F7' }}>
+                    <div className="absolute top-4 left-4 text-6xl font-serif opacity-10" style={{ color: accentColor }}>"</div>
+                    <div className="absolute inset-0 flex flex-col justify-center p-6">
+                      <p className="text-base text-[#1E1E1E] leading-relaxed mb-6 font-medium">You'll leave knowing exactly what to do—and <span style={{ color: accentColor }}>at peace</span> with the decision.</p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#1E1E1E' }}><span className="text-white text-[10px] font-bold">MV</span></div>
+                        <div>
+                          <p className="text-xs font-semibold text-[#1E1E1E]">Molly Varangkounh</p>
+                          <p className="text-[10px]" style={{ color: accentColor }}>Executive Advisory</p>
+                        </div>
                       </div>
-                      <h2 className="text-xl font-bold text-white tracking-tight mb-2">
-                        MOLLY V.
-                      </h2>
-                      <p className="font-script text-lg" style={{ color: accentColor }}>
-                        Make bold moves.
-                      </p>
-                      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-                        <div className="w-16 h-1" style={{ backgroundColor: accentColor }} />
-                        <p className="text-[9px] text-white/50 mt-3 tracking-wider">
-                          mollyv.com
-                        </p>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1" style={{ backgroundColor: accentColor }} />
+                  </div>
+                </div>
+
+                {/* Decision Room Post */}
+                <div>
+                  <div className="flex justify-between items-center mb-3">
+                    <p className="text-xs font-medium" style={{ color: mutedColor }}>Decision Room (1:1)</p>
+                    <button onClick={() => downloadPNG(decisionRoomPostRef.current, 'decision-room-post', 2)} className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider" style={{ backgroundColor: accentColor, color: '#fff' }}>↓</button>
+                  </div>
+                  <div ref={decisionRoomPostRef} className="relative w-full aspect-square shadow-lg overflow-hidden" style={{ backgroundColor: '#1E1E1E' }}>
+                    <div className="absolute left-0 top-0 bottom-0 w-1.5" style={{ background: `linear-gradient(180deg, ${accentColor} 0%, #1E4880 100%)` }} />
+                    <div className="absolute inset-0 flex flex-col justify-between p-6">
+                      <div><p className="text-[8px] uppercase tracking-[0.3em] text-white/50">Executive Advisory</p></div>
+                      <div className="text-center">
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-white/60 mb-2">Introducing</p>
+                        <h2 className="text-2xl font-bold text-white tracking-tight mb-1">The Decision</h2>
+                        <h2 className="text-2xl font-bold tracking-tight mb-4" style={{ color: accentColor }}>Room</h2>
+                        <p className="text-xs text-white/70 leading-relaxed max-w-[160px] mx-auto">A 30-minute confidential conversation about the decision in front of you.</p>
                       </div>
+                      <div className="text-center"><p className="text-[8px] text-white/40 uppercase tracking-wider">mollyv.com/decision-room</p></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Guide Promo */}
+                <div>
+                  <div className="flex justify-between items-center mb-3">
+                    <p className="text-xs font-medium" style={{ color: mutedColor }}>Guide Promo (1:1)</p>
+                    <button onClick={() => downloadPNG(guidePromoRef.current, 'guide-promo', 2)} className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider" style={{ backgroundColor: accentColor, color: '#fff' }}>↓</button>
+                  </div>
+                  <div ref={guidePromoRef} className="relative w-full aspect-square shadow-lg overflow-hidden" style={{ backgroundColor: accentColor }}>
+                    <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
+                      <p className="text-[10px] uppercase tracking-[0.3em] text-white/70 mb-3">Free Download</p>
+                      <h2 className="text-xl font-bold text-white tracking-tight mb-1">The Decision</h2>
+                      <h2 className="text-xl font-bold text-white tracking-tight mb-4">Clarity Guide</h2>
+                      <p className="text-xs text-white/80 leading-relaxed max-w-[160px] mb-4">5 questions to ask before any high-stakes decision</p>
+                      <div className="px-4 py-2 bg-white text-xs font-semibold uppercase tracking-wider" style={{ color: accentColor }}>Get It Free</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* LinkedIn/Twitter */}
+                <div className="lg:col-span-2">
+                  <div className="flex justify-between items-center mb-3">
+                    <p className="text-xs font-medium" style={{ color: mutedColor }}>LinkedIn / Twitter (1.91:1)</p>
+                    <button onClick={() => downloadPNG(linkedinTwitterRef.current, 'linkedin-twitter', 2)} className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider" style={{ backgroundColor: accentColor, color: '#fff' }}>↓</button>
+                  </div>
+                  <div ref={linkedinTwitterRef} className="relative w-full aspect-[1.91/1] shadow-lg overflow-hidden" style={{ backgroundColor: '#F7F7F7' }}>
+                    <div className="absolute left-0 top-0 bottom-0 w-3" style={{ backgroundColor: accentColor }} />
+                    <div className="absolute right-0 top-0 bottom-0 w-2/5" style={{ backgroundColor: '#1E1E1E' }}>
+                      <div className="absolute inset-0 flex items-center justify-center"><Logo variant="mark" size="md" color="light" /></div>
+                    </div>
+                    <div className="absolute left-6 top-0 bottom-0 w-1/2 flex flex-col justify-center">
+                      <p className="text-[10px] uppercase tracking-[0.2em] mb-1" style={{ color: accentColor }}>Announcement</p>
+                      <h2 className="text-2xl font-bold text-[#1E1E1E] tracking-tight mb-1">MOLLY V.</h2>
+                      <h3 className="text-sm font-medium text-[#4A4A4A] mb-3">Executive Coaching & Consulting</h3>
+                      <p className="text-lg" style={{ color: accentColor }}>Make bold moves.</p>
                     </div>
                   </div>
                 </div>
 
                 {/* LinkedIn Cover */}
-                <div className="lg:col-span-2">
-                  <div className="flex justify-between items-center mb-4">
-                    <p className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: mutedColor }}>
-                      LinkedIn Cover (4:1)
-                    </p>
-                    <button
-                      onClick={() => downloadPNG(linkedinCoverRef.current, 'linkedin-cover', 2)}
-                      disabled={downloading === 'linkedin-cover'}
-                      className="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all hover:opacity-80 disabled:opacity-50"
-                      style={{ backgroundColor: accentColor, color: '#fff' }}
-                    >
-                      {downloading === 'linkedin-cover' ? '...' : '↓ PNG'}
-                    </button>
+                <div className="lg:col-span-3">
+                  <div className="flex justify-between items-center mb-3">
+                    <p className="text-xs font-medium" style={{ color: mutedColor }}>LinkedIn Cover (4:1)</p>
+                    <button onClick={() => downloadPNG(linkedinCoverRef.current, 'linkedin-cover', 2)} className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider" style={{ backgroundColor: accentColor, color: '#fff' }}>↓</button>
                   </div>
-                  <div 
-                    ref={linkedinCoverRef}
-                    className="relative w-full aspect-[4/1] shadow-2xl overflow-hidden"
-                    style={{ backgroundColor: '#1E1E1E' }}
-                  >
-                    {/* Blue gradient overlay */}
-                    <div 
-                      className="absolute inset-0"
-                      style={{ 
-                        background: `linear-gradient(90deg, ${accentColor}30 0%, transparent 50%, ${accentColor}10 100%)`
-                      }}
-                    />
-                    
-                    {/* Pattern */}
-                    <div 
-                      className="absolute right-0 top-0 bottom-0 w-1/3 opacity-20"
-                      style={{ 
-                        backgroundImage: `repeating-linear-gradient(135deg, ${accentColor} 0, ${accentColor} 1px, transparent 0, transparent 40px)`,
-                      }}
-                    />
-                    
-                    {/* Content */}
-                    <div className="absolute inset-0 flex items-center justify-between px-12">
-                      <div className="flex items-center gap-6">
-                        <Logo variant="mark" size="md" color="light" />
+                  <div ref={linkedinCoverRef} className="relative w-full aspect-[4/1] shadow-lg overflow-hidden" style={{ backgroundColor: '#1E1E1E' }}>
+                    <div className="absolute inset-0" style={{ background: `linear-gradient(90deg, ${accentColor}30 0%, transparent 50%, ${accentColor}10 100%)` }} />
+                    <div className="absolute inset-0 flex items-center justify-between px-8">
+                      <div className="flex items-center gap-4">
+                        <Logo variant="mark" size="sm" color="light" />
                         <div>
-                          <h2 className="text-2xl font-bold text-white tracking-tight">MOLLY V.</h2>
-                          <p className="text-sm text-white/60">Executive Coaching & Consulting</p>
+                          <h2 className="text-lg font-bold text-white tracking-tight">MOLLY V.</h2>
+                          <p className="text-xs text-white/60">Executive Coaching & Consulting</p>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <p className="font-script text-2xl" style={{ color: accentColor }}>
-                          Make bold moves.
-                        </p>
+                      <p className="text-lg" style={{ color: accentColor }}>Make bold moves.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Announcement Banner */}
+                <div className="lg:col-span-3">
+                  <div className="flex justify-between items-center mb-3">
+                    <p className="text-xs font-medium" style={{ color: mutedColor }}>Announcement Banner (2:1)</p>
+                    <button onClick={() => downloadPNG(announcementPostRef.current, 'announcement-banner', 2)} className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider" style={{ backgroundColor: accentColor, color: '#fff' }}>↓</button>
+                  </div>
+                  <div ref={announcementPostRef} className="relative w-full aspect-[2/1] shadow-lg overflow-hidden" style={{ backgroundColor: '#1E1E1E' }}>
+                    <div className="absolute left-0 top-0 bottom-0 w-1.5" style={{ backgroundColor: accentColor }} />
+                    <div className="absolute inset-0 flex items-center px-8">
+                      <div className="flex-1">
+                        <p className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-2">Coming Soon</p>
+                        <h2 className="text-3xl font-bold text-white tracking-tight mb-2">The Decision Room</h2>
+                        <p className="text-sm text-white/60 mb-4 max-w-sm">For leaders navigating high-stakes decisions—with someone who's sat in the chair.</p>
+                        <div className="inline-block px-4 py-2 text-xs font-semibold uppercase tracking-wider" style={{ backgroundColor: accentColor, color: '#fff' }}>Learn More</div>
+                      </div>
+                      <div className="hidden lg:block"><Logo variant="mark" size="md" color="light" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </section>
+
+          {/* ==================== SECTION 6: LEAD GENERATION ==================== */}
+          <section id="lead-gen">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-2xl">📊</span>
+                <h2 className="text-lg font-bold tracking-tight font-swiss">Lead Generation</h2>
+              </div>
+              <p className="text-sm mb-8" style={{ color: mutedColor }}>
+                Downloadable guides and lead capture tools
+              </p>
+
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* Decision Clarity Guide */}
+                <div className="p-6 border" style={{ borderColor, backgroundColor: cardBg }}>
+                  <div className="flex items-start gap-5">
+                    <div className="w-20 h-28 flex-shrink-0 flex items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#1E1E1E' }}>
+                      <div className="absolute left-0 top-0 bottom-0 w-1" style={{ backgroundColor: accentColor }} />
+                      <div className="text-center">
+                        <div className="text-[8px] text-white/50 uppercase tracking-widest mb-1">Lead Magnet</div>
+                        <div className="text-xs font-bold" style={{ color: accentColor }}>Clarity</div>
+                        <div className="text-xs font-bold text-white">Guide</div>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-base mb-2 font-swiss">The Decision Clarity Guide</h3>
+                      <p className="text-xs mb-4" style={{ color: mutedColor }}>5 questions to ask before any high-stakes decision. Premium PDF format.</p>
+                      <div className="flex flex-wrap gap-2">
+                        <a href="/decision-clarity-guide.html" target="_blank" className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80" style={{ backgroundColor: accentColor, color: '#fff' }}>View Guide</a>
+                        <a href="/decision-clarity-guide.html" target="_blank" onClick={(e) => { e.preventDefault(); window.open('/decision-clarity-guide.html', '_blank'); alert('To save as PDF: Print (Cmd+P) → Save as PDF') }} className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider border transition-all hover:opacity-80" style={{ borderColor: textColor, color: textColor }}>Save PDF</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Lead Capture Page */}
+                <div className="p-6 border" style={{ borderColor, backgroundColor: cardBg }}>
+                  <div className="flex items-start gap-5">
+                    <div className="w-20 h-28 flex-shrink-0 flex items-center justify-center" style={{ backgroundColor: accentColor }}>
+                      <div className="text-center">
+                        <div className="text-[8px] text-white/70 uppercase tracking-widest mb-1">Capture</div>
+                        <div className="text-xs font-bold text-white">Lead</div>
+                        <div className="text-xs font-bold text-white/80">Form</div>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-base mb-2 font-swiss">Lead Capture Page</h3>
+                      <p className="text-xs mb-4" style={{ color: mutedColor }}>Landing page with email capture. Connects to Supabase for lead storage.</p>
+                      <div className="flex flex-wrap gap-2">
+                        <a href="/guide" target="_blank" className="px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider transition-all hover:opacity-80" style={{ backgroundColor: accentColor, color: '#fff' }}>View Page</a>
+                        <span className="px-3 py-1.5 text-[10px] uppercase tracking-wider" style={{ color: mutedColor }}>/guide</span>
                       </div>
                     </div>
                   </div>
@@ -778,19 +836,12 @@ export default function BrandAssetsPage() {
             </motion.div>
           </section>
 
-          {/* Back to main site */}
-          <div className="mt-24 pt-8 border-t" style={{ borderColor }}>
-            <a 
-              href="/"
-              className="inline-flex items-center gap-2 text-sm font-medium hover:opacity-70 transition-opacity font-swiss"
-              style={{ color: accentColor }}
-            >
-              ← Back to main site
-            </a>
+          {/* Footer */}
+          <div className="pt-8 border-t" style={{ borderColor }}>
+            <a href="/" className="inline-flex items-center gap-2 text-sm font-medium hover:opacity-70 transition-opacity font-swiss" style={{ color: accentColor }}>← Back to main site</a>
           </div>
         </div>
       </main>
     </div>
   )
 }
-

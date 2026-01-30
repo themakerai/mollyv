@@ -78,9 +78,8 @@ export default function Vision() {
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="headline-lg text-white leading-tight"
             >
-              A world where leaders hold{' '}
-              <span className="text-accent">open, proactive</span>{' '}
-              conversations
+              A world where leaders meet change with{' '}
+              <span className="text-accent">clarity and confidence</span>
             </motion.h2>
 
             <motion.p
@@ -89,8 +88,9 @@ export default function Vision() {
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="text-xl lg:text-2xl text-mid-grey mt-8 lg:mt-12 max-w-2xl font-light"
             >
-              and approach difficult decisions with clarity and confidence, 
-              strengthening both their businesses and their relationships through change.
+              They have the courage to hold open, proactive conversations and navigate complexity 
+              without losing themselves or second-guessing their authority. Their leadership strengthens 
+              both their businesses and their relationships through every season of change.
             </motion.p>
 
             {/* Geometric divider */}
@@ -111,7 +111,7 @@ export default function Vision() {
               transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="mt-12 lg:mt-16 flex items-start gap-6"
             >
-              <span className="text-6xl lg:text-8xl font-script text-accent leading-none">"</span>
+              <span className="text-5xl lg:text-6xl font-script text-accent leading-none tracking-normal">"</span>
               <div>
                 <p className="text-xl lg:text-2xl text-white leading-relaxed font-light">
                   Clarity changes the quality of your decisions.
