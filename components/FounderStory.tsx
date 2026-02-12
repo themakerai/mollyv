@@ -1,8 +1,8 @@
 'use client'
 
 import { useRef } from 'react'
-import Image from 'next/image'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import ImagePlaceholder from './ImagePlaceholder'
 
 export default function FounderStory() {
   const ref = useRef<HTMLDivElement>(null)
@@ -77,18 +77,12 @@ export default function FounderStory() {
               {/* Blue accent block behind image */}
               <div className="absolute -left-4 -top-4 w-full h-full bg-accent" />
               
-              <div className="relative aspect-[4/5] bg-light-grey overflow-hidden">
-                <Image
-                  src="https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-laughing.png"
-                  alt="Molly Varangkounh - Leadership Advisor"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                />
-                
-                {/* Subtle overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent" />
-              </div>
+              <ImagePlaceholder
+                variant="editorial"
+                theme="sand"
+                label="Molly — candid"
+                className="relative"
+              />
               
               {/* Caption - Swiss style */}
               <div className="mt-6 flex items-center justify-between">

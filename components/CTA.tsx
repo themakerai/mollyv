@@ -1,8 +1,8 @@
 'use client'
 
 import { useRef } from 'react'
-import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
+import ImagePlaceholder from './ImagePlaceholder'
 
 export default function CTA() {
   const ref = useRef<HTMLDivElement>(null)
@@ -170,21 +170,15 @@ export default function CTA() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0"
-            >
+            <div className="relative max-w-md mx-auto lg:mx-0">
               <div className="absolute -left-4 -top-4 w-full h-full border border-accent" />
-              <Image
-                src="/molly-v.png"
-                alt="Molly Varangkounh"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+              <ImagePlaceholder
+                variant="portrait"
+                theme="sky"
+                label="Molly — editorial"
+                className="relative"
               />
-            </motion.div>
+            </div>
 
             {/* Final statement */}
             <motion.div

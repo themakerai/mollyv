@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ImagePlaceholder from '@/components/ImagePlaceholder'
 
 const services = [
   {
@@ -79,41 +80,51 @@ export default function ServicesPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-white">
+      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 bg-white overflow-hidden">
         <div className="container-custom">
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <span className="inline-flex items-center gap-3 mb-6">
+                  <span className="w-8 h-px bg-accent" />
+                  <span className="text-xs tracking-[0.25em] uppercase text-dark-grey">Services</span>
+                </span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                className="text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] font-display text-charcoal mb-8"
+              >
+                One decision.
+                <br />
+                <span className="text-accent">Total clarity.</span>
+              </motion.h1>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="text-lg lg:text-xl text-dark-grey leading-relaxed max-w-2xl"
+              >
+                Every engagement starts the same way: understanding the story your business 
+                is telling you, and what that story demands next.
+              </motion.p>
+            </div>
+
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="lg:col-span-4 lg:col-start-9 hidden lg:block"
             >
-              <span className="inline-flex items-center gap-3 mb-6">
-                <span className="w-8 h-px bg-accent" />
-                <span className="text-xs tracking-[0.25em] uppercase text-dark-grey">Services</span>
-              </span>
+              <ImagePlaceholder variant="square" theme="sand" label="Molly — speaking" />
             </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] font-display text-charcoal mb-8"
-            >
-              One decision.
-              <br />
-              <span className="text-accent">Total clarity.</span>
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg lg:text-xl text-dark-grey leading-relaxed max-w-2xl"
-            >
-              Whether you need help with a single hard decision or ongoing support, 
-              every engagement starts the same way: understanding the story your business 
-              is telling you—and what that story demands next.
-            </motion.p>
           </div>
         </div>
       </section>

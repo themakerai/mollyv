@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ImagePlaceholder from '@/components/ImagePlaceholder'
 
 const decisions = [
   {
@@ -53,45 +54,56 @@ export default function DecisionRoomPage() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/10" />
         
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <span className="inline-flex items-center gap-3 mb-6">
+                  <span className="w-8 h-px bg-accent" />
+                  <span className="text-xs tracking-[0.25em] uppercase text-white/60">Let's Connect</span>
+                </span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                className="text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-display mb-8"
+              >
+                Let's <span className="text-accent">Connect</span>
+              </motion.h1>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="text-xl lg:text-2xl text-white/70 leading-relaxed max-w-2xl mb-4"
+              >
+                One conversation. Someone who's been there.
+              </motion.p>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg text-white/50 leading-relaxed max-w-xl"
+              >
+                A confidential conversation about the decision in front of you. 
+                No pitch. No pressure. Just clarity.
+              </motion.p>
+            </div>
+
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="lg:col-span-4 lg:col-start-9 hidden lg:block"
             >
-              <span className="inline-flex items-center gap-3 mb-6">
-                <span className="w-8 h-px bg-accent" />
-                <span className="text-xs tracking-[0.25em] uppercase text-white/60">The First Step</span>
-              </span>
+              <ImagePlaceholder variant="landscape" theme="dark" label="Molly — in conversation" />
             </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-display mb-8"
-            >
-              The <span className="text-accent">Decision Room</span>
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-xl lg:text-2xl text-white/70 leading-relaxed max-w-2xl mb-4"
-            >
-              30 minutes. One decision. Someone who's been there.
-            </motion.p>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg text-white/50 leading-relaxed max-w-xl"
-            >
-              A confidential conversation about the decision in front of you. 
-              No pitch. No pressure. Just clarity.
-            </motion.p>
           </div>
         </div>
       </section>
