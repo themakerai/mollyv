@@ -113,7 +113,7 @@ export default function FounderStory() {
                 After more than two decades leading a family-owned manufacturing business, Molly Varangkounh understands firsthand what it means to carry <strong className="text-charcoal">full responsibility for people, performance, and outcomes</strong>. She served as President, accountable for the P&L, total business performance, and the decisions that determined the company&apos;s future.
               </p>
               <p className="body-text">
-                She navigated growth pressure, operational complexity, succession dynamics, and emotionally charged decisions where business outcomes and personal relationships were deeply intertwined.
+                She led through growth pressure, operational complexity, succession dynamics, and emotionally charged decisions where business outcomes and personal relationships couldn't be separated.
               </p>
             </motion.div>
 
@@ -136,10 +136,10 @@ export default function FounderStory() {
               className="space-y-6"
             >
               <p className="body-text">
-                Avoided conversations, misread signals, and delayed decisions quietly eroded momentum long before problems showed up on paper. <strong className="text-charcoal">Molly brings a rare combination of business acumen and emotional intelligence.</strong>
+                Avoided conversations, misread signals, and delayed decisions quietly eroded momentum long before problems showed up on paper. <strong className="text-charcoal">Molly understands the numbers and the people behind them.</strong>
               </p>
               <p className="body-text">
-                As a former CPA with CFO-level experience, she helps leaders <strong className="text-charcoal">understand the story their business is telling them</strong>—translating financial insight into clarity about leadership decisions, organizational capacity, and long-term sustainability.
+                As a former CPA with CFO-level experience, she helps leaders <strong className="text-charcoal">understand the story their business is telling them</strong>. She translates financial insight into clarity about leadership decisions, organizational capacity, and long-term sustainability.
               </p>
             </motion.div>
           </div>
@@ -164,7 +164,7 @@ export default function FounderStory() {
                   Molly has led and influenced <strong className="text-charcoal">high-stakes decision-making in male-dominated industries</strong> including agriculture and manufacturing. She brings calm authority into complex rooms, challenges assumptions with confidence, and guides leaders through difficult conversations.
                 </p>
                 <p className="body-text">
-                  She led through uncertainty, resistance, and change—in environments where clarity, credibility, and decisiveness were non-negotiable.
+                  She led through uncertainty, resistance, and change. In those environments, clarity, credibility, and decisiveness were the only currency that worked.
                 </p>
               </div>
 
@@ -178,7 +178,7 @@ export default function FounderStory() {
                   Today, Molly brings that lived leadership experience into her advisory work. She serves as a <strong className="text-charcoal">steady, trusted guide</strong> for leaders facing high-stakes decisions they cannot afford to get wrong.
                 </p>
                 <p className="body-text">
-                  She creates the space for leaders to <strong className="text-charcoal">face reality honestly, ask the hard questions</strong>, and move forward with clarity, confidence, and a renewed sense of steadiness.
+                  She helps leaders <strong className="text-charcoal">face reality honestly, ask the hard questions</strong>, and move forward with clarity, confidence, and steadiness.
                 </p>
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function FounderStory() {
             <div className="col-span-12 lg:col-span-8">
               <span className="label-sm text-accent mb-4 block">The Outcome</span>
               <p className="text-xl lg:text-2xl font-light leading-relaxed">
-                Leaders leave with the ability to <strong className="text-white">settle into their thinking</strong>, <strong className="text-white">regulate the weight they're carrying</strong>, and <strong className="text-white">move forward with confidence</strong> rather than hesitation—grounded, clear-headed, and empowered.
+                Leaders leave with the ability to <strong className="text-white">settle into their thinking</strong>, <strong className="text-white">carry the weight more honestly</strong>, and <strong className="text-white">move forward with confidence</strong> rather than hesitation. Grounded and clear-headed.
               </p>
             </div>
             <div className="col-span-12 lg:col-span-3 lg:col-start-10 mt-8 lg:mt-0">

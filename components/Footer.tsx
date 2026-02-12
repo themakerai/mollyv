@@ -35,8 +35,8 @@ export default function Footer() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="text-mid-grey text-sm mt-6 max-w-sm leading-relaxed"
             >
-              Executive advisory for leaders facing hard decisions. 
-              Hiring, firing, exits, succession—when it matters most.
+              Advisory for family business owners and leaders facing hard decisions. 
+              Succession, exits, and the conversations that can't wait.
             </motion.p>
           </div>
 
@@ -48,12 +48,11 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <p className="label-sm text-accent mb-6">Navigate</p>
+              <p className="label-sm text-accent mb-6">Explore</p>
               <nav className="flex flex-col gap-3">
                 <a href="/about" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">About</a>
-                <a href="/services" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Services</a>
-                <a href="/decision-room" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Decision Room</a>
-                <a href="/contact" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Contact</a>
+                <a href="/services" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Work With Me</a>
+                <a href="/contact" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Let's Connect</a>
               </nav>
             </motion.div>
           </div>
@@ -78,7 +77,7 @@ export default function Footer() {
                   <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
                 </a>
                 <a 
-                  href="mailto:molly@mollyv.com"
+                  href="mailto:molly@mollyvarangkounh.com"
                   className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300 flex items-center gap-2 group"
                 >
                   Email

@@ -65,12 +65,12 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* CTA Button - Decision Room */}
+            {/* CTA Button - Let's Connect */}
             <Link
-              href="/decision-room"
+              href="/contact"
               className="hidden lg:flex items-center gap-3 px-5 py-2.5 bg-accent text-white text-[12px] tracking-widest uppercase font-medium hover:bg-charcoal transition-colors duration-300"
             >
-              <span>Decision Room</span>
+              <span>Let's Connect</span>
               <span>→</span>
             </Link>
 

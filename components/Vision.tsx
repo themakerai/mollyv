@@ -88,7 +88,7 @@ export default function Vision() {
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="text-xl lg:text-2xl text-mid-grey mt-8 lg:mt-12 max-w-2xl font-light"
             >
-              They have the courage to hold open, proactive conversations and navigate complexity 
+              They have the courage to hold open, proactive conversations and work through complexity 
               without losing themselves or second-guessing their authority. Their leadership strengthens 
               both their businesses and their relationships through every season of change.
             </motion.p>

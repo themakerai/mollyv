@@ -30,7 +30,7 @@ export default function Mission() {
             transition={{ duration: 1, delay: 0.1 }}
             className="text-3xl lg:text-4xl font-display text-charcoal leading-tight mb-8"
           >
-            You'll leave knowing exactly what to do—
+            You'll leave knowing exactly what to do,
             <br />
             <span className="text-accent">and at peace with the decision.</span>
           </motion.h2>
@@ -42,7 +42,7 @@ export default function Mission() {
             className="text-lg text-dark-grey leading-relaxed max-w-2xl mx-auto mb-12"
           >
             No more spinning. No more sleepless nights. Just clarity on the decision in front of you 
-            and the conviction to act. That's what The Decision Room delivers.
+            and the conviction to act. That's what this work delivers.
           </motion.p>
 
           {/* Three outcomes */}
@@ -55,7 +55,7 @@ export default function Mission() {
             {[
               {
                 title: 'Clarity',
-                desc: 'Know exactly what to do next—no ambiguity, no waffling.',
+                desc: 'Know exactly what to do next. No ambiguity, no waffling.',
               },
               {
                 title: 'Conviction',

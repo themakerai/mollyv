@@ -27,59 +27,51 @@ export default function Hero() {
         >
           <div className="container-custom py-16 lg:py-32 lg:pr-12">
             <div className="max-w-xl">
-              {/* Label */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="mb-6"
-              >
-                <span className="inline-flex items-center gap-3">
-                  <span className="w-8 h-px bg-accent" />
-                  <span className="text-xs tracking-[0.2em] uppercase text-dark-grey font-medium">Executive Advisory</span>
-                </span>
-              </motion.div>
-
-              {/* Aspirational headline */}
+              {/* Headline */}
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.08] font-display font-normal tracking-tight text-charcoal"
               >
-                Lead with clarity.
-                <br />
-                <span className="text-accent">Decide with conviction.</span>
+                Some decisions are too personal to think through alone.
               </motion.h1>
 
-              {/* Empathy + positioning */}
+              {/* Subheadline */}
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-8 text-lg lg:text-xl text-dark-grey leading-relaxed"
               >
-                For leaders navigating high-stakes decisions—succession, exits, difficult conversations—
-                with someone who's sat in the chair.
+                I work with family business owners and the leaders stepping into, through, or out of transition. The decisions that are too complicated, too personal, or too high-stakes to process internally. That's exactly why I'm here.
               </motion.p>
 
-              {/* CTA - Executive Counsel */}
+              {/* CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-10"
               >
-                <a 
-                  href="#contact"
-                  className="group inline-flex flex-col sm:flex-row sm:items-center gap-4"
-                >
-                  <span className="px-8 py-4 bg-charcoal text-white text-sm font-semibold tracking-wider uppercase transition-all duration-500 group-hover:bg-accent">
-                    Request a Confidential Conversation
-                  </span>
-                </a>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                  <a 
+                    href="/contact"
+                    className="group inline-flex"
+                  >
+                    <span className="px-8 py-4 bg-charcoal text-white text-sm font-semibold tracking-wider uppercase transition-all duration-500 group-hover:bg-accent">
+                      Let's Grab a Virtual Coffee
+                    </span>
+                  </a>
+                  <a 
+                    href="#services"
+                    className="text-sm font-medium text-accent hover:text-charcoal transition-colors duration-300"
+                  >
+                    See How We Work Together →
+                  </a>
+                </div>
                 <p className="mt-4 text-sm text-mid-grey">
-                  30 minutes · Completely private · No obligation
+                  Start with a few questions. No pitch. No pressure.
                 </p>
               </motion.div>
 
@@ -90,7 +82,7 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-16 font-tagline text-sm text-mid-grey"
               >
-                Make bold moves.
+                Lead with clarity. Make bold moves.
               </motion.p>
             </div>
           </div>
