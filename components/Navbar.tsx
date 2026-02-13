@@ -26,8 +26,8 @@ export default function Navbar() {
         initial={{ y: 0 }}
         animate={{ y: hidden ? -100 : 0 }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white ${
-          scrolled ? 'shadow-sm' : ''
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled ? 'backdrop-blur-md bg-white/90' : 'bg-transparent'
         }`}
       >
         <div className="container-custom">
