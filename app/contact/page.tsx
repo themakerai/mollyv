@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ImagePlaceholder from '@/components/ImagePlaceholder'
 
 export default function ContactPage() {
   return (
@@ -141,32 +142,44 @@ export default function ContactPage() {
       {/* What to Expect */}
       <section className="py-24 lg:py-32 bg-white">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-3xl lg:text-4xl font-display text-charcoal mb-8">
-              What to expect
-            </h2>
-            <p className="text-lg text-dark-grey leading-relaxed mb-12">
-              When you reach out, I'll respond within 24 hours. If The Decision Room is right 
-              for you, we'll schedule a 30-minute session. If you need something else, 
-              we'll figure that out together.
-            </p>
-            
-            <div className="p-8 bg-[#FAFAFA] border-l-4 border-accent text-left">
-              <p className="text-xl font-display text-charcoal leading-relaxed">
-                "You'll leave knowing exactly what to do—and at peace with the decision."
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-7"
+            >
+              <h2 className="text-3xl lg:text-4xl font-display text-charcoal mb-8">
+                What to expect
+              </h2>
+              <p className="text-lg text-dark-grey leading-relaxed mb-12">
+                When you reach out, I'll respond personally. If a conversation makes sense, 
+                we'll set one up. If you need something else, 
+                we'll figure that out together.
               </p>
-              <div className="flex items-center gap-4 mt-4">
-                <span className="w-8 h-px bg-accent" />
-                <span className="text-sm text-dark-grey">Molly Varangkounh</span>
+              
+              <div className="p-8 bg-[#FAFAFA] border-l-4 border-accent text-left">
+                <p className="text-xl font-display text-charcoal leading-relaxed">
+                  "Strong leadership changes the trajectory of a family, a company, and a community."
+                </p>
+                <div className="flex items-center gap-4 mt-4">
+                  <span className="w-8 h-px bg-accent" />
+                  <span className="text-sm text-dark-grey">Molly Varangkounh</span>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-4 lg:col-start-9 flex justify-center"
+            >
+              <ImagePlaceholder variant="circle" theme="outline" label="" initials="MV" className="w-48 h-48 lg:w-64 lg:h-64" />
+            </motion.div>
+          </div>
         </div>
       </section>
 

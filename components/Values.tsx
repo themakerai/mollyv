@@ -8,7 +8,7 @@ const values = [
     id: 'loving',
     title: 'Loving',
     short: 'Care & Connection',
-    description: 'Leading with deep care for people, relationships, and the long-term impact of decisions. Deep respect for the human side of leadership and a commitment to protecting trust, dignity, and connection—even when conversations are difficult.',
+    description: 'Leading with deep care for people, relationships, and the long-term impact of decisions. Deep respect for the human side of leadership and a commitment to protecting trust, dignity, and connection, even when conversations are difficult.',
     detail: 'Loving leadership does not avoid hard truths, but delivers them with compassion and intention.',
     icon: '♡'
   },
@@ -32,15 +32,15 @@ const values = [
     id: 'inspiring',
     title: 'Inspiring',
     short: 'Confidence & Growth',
-    description: 'Work that inspires confidence, not dependency. Empowering leaders to trust themselves, strengthen their voice, and step fully into their role with conviction.',
-    detail: 'Inspiration comes from helping clients see what is possible when alignment, clarity, and leadership courage come together.',
+    description: 'Work that inspires confidence, not dependency. Helping leaders trust themselves, strengthen their voice, and lead with conviction.',
+    detail: 'Inspiration comes from helping clients see what is possible when clarity, conviction, and leadership courage come together.',
     icon: '★'
   },
   {
     id: 'authentic',
     title: 'Authentic',
     short: 'Truth & Trust',
-    description: 'Valuing honesty, transparency, and real conversations over performative leadership. Bringing lived experience into the work and inviting clients to show up as they are, not who they think they should be.',
+    description: 'Valuing honesty, transparency, and real conversations over performative leadership. Bringing lived experience into the work and inviting clients to be themselves, not who they think they should be.',
     detail: 'Authenticity creates trust and allows meaningful progress to happen without pretense or pressure.',
     icon: '○'
   }
@@ -100,7 +100,7 @@ export default function Values() {
               <span className="text-accent font-semibold">conversation</span>
             </h2>
             <p className="body-text text-dark-grey max-w-2xl">
-              These values aren't just words—they're the foundation of how I show up, 
+              These values are the foundation of how I work, 
               what I believe about leadership, and what guides every conversation and decision.
             </p>
           </motion.div>

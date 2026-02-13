@@ -1,11 +1,11 @@
 'use client'
 
 import { useRef } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ImagePlaceholder from '@/components/ImagePlaceholder'
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -73,23 +73,23 @@ export default function AboutPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-[80vh] flex items-end overflow-hidden">
+      <section ref={heroRef} className="relative min-h-[80vh] flex items-end overflow-hidden bg-charcoal">
         <motion.div 
           style={{ y: heroY, opacity: heroOpacity }}
           className="absolute inset-0"
         >
-          <Image
-            src="https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-laughing.png"
-            alt="Molly Varangkounh"
-            fill
-            className="object-cover object-top"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-[#1E1E1E]/50 to-transparent" />
+          {/* Placeholder for hero background image */}
+          <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-accent/20" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10">
+            <span className="font-display text-[20vw] text-white select-none">MV</span>
+          </div>
+          <div className="absolute bottom-0 right-0 w-1/3 h-2/3 hidden lg:block">
+            <ImagePlaceholder variant="portrait" theme="dark" label="Molly — hero bg" initials="" className="h-full border-0" />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent" />
         </motion.div>
         
-        <div className="container-custom relative z-10 pb-16 lg:pb-24">
+        <div className="container-custom relative z-10 pb-16 lg:pb-24 pt-32">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ export default function AboutPage() {
               <span className="text-accent">That's why I can help.</span>
             </h1>
             <p className="mt-6 text-xl text-white/80 max-w-2xl">
-              A trusted advisor who helps leaders understand the story their business is telling them—so they can make clear, confident decisions when the stakes are high.
+              A trusted advisor who helps leaders understand the story their business is telling them, so they can make clear, confident decisions when the stakes are high.
             </p>
           </motion.div>
         </div>
@@ -166,19 +166,13 @@ export default function AboutPage() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative"
             >
-              <div className="relative aspect-[4/5]">
+              <div className="relative">
                 <div className="absolute -left-4 -top-4 w-full h-full border border-accent" />
-                <Image
-                  src="https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-laughing.png"
-                  alt="Molly Varangkounh"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+                <ImagePlaceholder variant="editorial" theme="blue" label="Molly — professional" className="relative" />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-accent p-6 lg:p-8">
+              <div className="absolute -bottom-6 -right-6 bg-accent p-6 lg:p-8 z-10">
                 <p className="font-tagline text-white text-lg">CPA + President</p>
-                <p className="text-white/80 text-sm mt-1">Business & Emotional Intelligence</p>
+                <p className="text-white/80 text-sm mt-1">Twenty years of lived experience</p>
               </div>
             </motion.div>
 
