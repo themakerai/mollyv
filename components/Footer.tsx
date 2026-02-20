@@ -24,7 +24,7 @@ export default function Footer() {
                   Molly Varangkounh
                 </p>
                 <p className="font-tagline text-xl text-accent mt-1">
-                  Make bold moves.
+                  Lead with clarity. Make bold moves.
                 </p>
               </div>
             </motion.div>
@@ -52,6 +52,7 @@ export default function Footer() {
               <nav className="flex flex-col gap-3">
                 <a href="/about" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">About</a>
                 <a href="/work-with-me" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Work With Me</a>
+                <a href="/writing" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Writing</a>
                 <a href="/connect" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Let's Connect</a>
               </nav>
             </motion.div>
