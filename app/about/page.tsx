@@ -504,7 +504,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The Decision Room CTA */}
+      {/* Let's Connect CTA */}
       <section className="py-24 lg:py-32 bg-[#FAFAFA]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -530,7 +530,7 @@ export default function AboutPage() {
                   You'll leave knowing exactly what to do, and at peace with the choice.
                 </p>
                 <Link 
-                  href="/decision-room"
+                  href="/connect"
                   className="inline-flex items-center gap-4 group"
                 >
                   <span className="px-8 py-4 bg-charcoal text-white text-sm font-medium tracking-wider uppercase transition-all duration-500 group-hover:bg-accent">

@@ -53,7 +53,7 @@ export default function ContactPage() {
       <section className="py-24 lg:py-32 bg-[#FAFAFA]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-            {/* Decision Room */}
+            {/* Let's Connect */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -62,15 +62,15 @@ export default function ContactPage() {
               className="bg-charcoal text-white p-10 lg:p-12"
             >
               <span className="text-xs tracking-[0.2em] uppercase text-accent">The First Step</span>
-              <h2 className="text-3xl font-display mt-4 mb-6">The Decision Room</h2>
+              <h2 className="text-3xl font-display mt-4 mb-6">Let's Connect</h2>
               <p className="text-white/70 leading-relaxed mb-8">
-                A 30-minute confidential conversation about the decision in front of you. 
+                A confidential conversation about what's in front of you. 
                 No pitch, no pressure. Just clarity.
               </p>
               <div className="space-y-4 mb-10">
                 {[
                   'Completely confidential',
-                  '30 minutes, focused',
+                  'No obligation',
                   'Leave with clarity',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
@@ -80,11 +80,11 @@ export default function ContactPage() {
                 ))}
               </div>
               <a 
-                href="mailto:molly@mollyv.com?subject=Decision%20Room%20Request"
+                href="/connect"
                 className="inline-flex items-center gap-4 group"
               >
                 <span className="px-8 py-4 bg-accent text-white text-sm font-semibold tracking-wider uppercase transition-all duration-500 group-hover:bg-white group-hover:text-charcoal">
-                  Request a Session
+                  Fill Out the Intro Form
                 </span>
               </a>
             </motion.div>
@@ -108,10 +108,10 @@ export default function ContactPage() {
                 <div>
                   <span className="text-xs tracking-[0.2em] uppercase text-mid-grey block mb-2">Email</span>
                   <a 
-                    href="mailto:molly@mollyv.com"
+                    href="mailto:molly@mollyvarangkounh.com"
                     className="text-2xl font-display text-accent hover:text-charcoal transition-colors duration-300"
                   >
-                    molly@mollyv.com
+                    molly@mollyvarangkounh.com
                   </a>
                 </div>
                 

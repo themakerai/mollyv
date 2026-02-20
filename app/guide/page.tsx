@@ -295,15 +295,15 @@ export default function GuidePage() {
               Need more than a guide?
             </h2>
             <p className="text-lg text-white/70 max-w-xl mx-auto mb-10">
-              If you're facing a decision that needs more than questions on a page, 
-              The Decision Room is where we talk it through.
+              If you're facing something that needs more than questions on a page, 
+              let's talk it through.
             </p>
             <Link 
-              href="/decision-room"
+              href="/connect"
               className="inline-flex items-center gap-4 group"
             >
               <span className="px-8 py-4 bg-accent text-white text-sm font-medium tracking-wider uppercase transition-all duration-500 group-hover:bg-white group-hover:text-charcoal">
-                Enter The Decision Room
+                Let's Connect
               </span>
               <span className="w-12 h-12 flex items-center justify-center border border-white/30 text-white transition-all duration-500 group-hover:bg-white group-hover:text-charcoal">
                 →

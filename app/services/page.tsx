@@ -9,19 +9,18 @@ import ImagePlaceholder from '@/components/ImagePlaceholder'
 
 const services = [
   {
-    id: 'decision-room',
+    id: 'connect',
     number: '01',
-    title: 'The Decision Room',
-    subtitle: '30-Minute Confidential Session',
-    description: 'A single, focused conversation about the decision in front of you. Come with the thing that\'s keeping you up at night. Leave with clarity.',
+    title: 'Virtual Coffee',
+    subtitle: 'A Confidential Conversation',
+    description: 'A focused conversation about what\'s in front of you. Come with the thing that\'s keeping you up at night. Leave with clarity.',
     features: [
-      'One decision, one session',
       'Completely confidential',
       'No pitch, no pressure',
-      'Leave knowing exactly what to do',
+      'Leave knowing what comes next',
     ],
     ideal: 'Leaders facing something specific. Hiring, firing, an exit, a difficult conversation. You need clarity now.',
-    cta: 'Request a Session',
+    cta: 'Let\'s Connect',
   },
   {
     id: 'advisory',
@@ -60,7 +59,7 @@ const services = [
     subtitle: 'Leadership That Moves People',
     description: 'Keynotes and workshops rooted in lived experience. For organizations that want their leaders to leave inspired and equipped to act.',
     features: [
-      '"The Decision Room" keynote',
+      'Lead with Clarity keynote',
       'BOLD Leadership Framework workshop',
       'Executive team offsites',
       'Custom content for your organization',
@@ -71,7 +70,7 @@ const services = [
 ]
 
 export default function ServicesPage() {
-  const [activeService, setActiveService] = useState<string | null>('decision-room')
+  const [activeService, setActiveService] = useState<string | null>('connect')
   const frameworkRef = useRef<HTMLDivElement>(null)
   const isFrameworkInView = useInView(frameworkRef, { once: true, margin: '-100px' })
 
@@ -150,7 +149,7 @@ export default function ServicesPage() {
                     <span className="text-sm text-accent font-medium">{service.number}</span>
                     <div>
                       <h2 className={`text-2xl lg:text-3xl font-display transition-colors duration-300 ${
-                        service.id === 'decision-room' ? 'text-accent' : 'text-charcoal group-hover:text-accent'
+                        service.id === 'connect' ? 'text-accent' : 'text-charcoal group-hover:text-accent'
                       }`}>
                         {service.title}
                       </h2>
@@ -265,7 +264,7 @@ export default function ServicesPage() {
               The <span className="text-accent">BOLD</span> Leadership Framework
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              The approach behind every conversation in The Decision Room.
+              The approach behind every conversation.
             </p>
           </motion.div>
 
@@ -312,7 +311,7 @@ export default function ServicesPage() {
               className="inline-flex items-center gap-4 group"
             >
               <span className="px-8 py-4 bg-charcoal text-white text-sm font-medium tracking-wider uppercase transition-all duration-500 group-hover:bg-accent">
-                Enter The Decision Room
+                Let's Connect
               </span>
               <span className="w-12 h-12 flex items-center justify-center border border-charcoal text-charcoal transition-all duration-500 group-hover:bg-charcoal group-hover:text-white">
                 →

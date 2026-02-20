@@ -68,7 +68,7 @@ export default function Navbar() {
 
             {/* CTA Button - Let's Connect */}
             <Link
-              href="/contact"
+              href="/connect"
               className="hidden lg:flex items-center gap-3 px-5 py-2.5 bg-accent text-white text-[12px] tracking-widest uppercase font-medium hover:bg-charcoal transition-colors duration-300"
             >
               <span>Let's Connect</span>
