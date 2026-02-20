@@ -3,25 +3,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
-// The 3-Step Plan
-const plan = [
-  {
-    step: '01',
-    title: 'Start a Conversation',
-    description: 'Tell me what you\'re facing. Succession, a personnel change, a strategic pivot, a conversation you\'ve been putting off.',
-  },
-  {
-    step: '02',
-    title: 'Explore What\'s at Stake',
-    description: 'We dig into the real complexity. The business implications. The personal weight. The thing you haven\'t said out loud.',
-  },
-  {
-    step: '03',
-    title: 'Leave with Clarity',
-    description: 'You walk out with a decision you can stand behind, and the conviction to act on it.',
-  },
-]
-
 export default function Approach() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
@@ -109,73 +90,7 @@ export default function Approach() {
         </div>
       </div>
 
-      {/* Section 3: The Plan - Simple 3 steps */}
-      <div className="py-24 lg:py-32 bg-white">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-center mb-16"
-          >
-            <span className="inline-flex items-center gap-3 mb-6 justify-center">
-              <span className="w-8 h-px bg-accent" />
-              <span className="text-xs tracking-[0.2em] uppercase text-dark-grey">The Plan</span>
-              <span className="w-8 h-px bg-accent" />
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-display text-charcoal">
-              Three steps to clarity
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {plan.map((item, i) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.6 + i * 0.1 }}
-                className="relative"
-              >
-                {/* Connector line */}
-                {i < plan.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-px bg-light-grey -translate-x-1/2 z-0" />
-                )}
-                
-                <div className="relative z-10 text-center">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-accent text-white flex items-center justify-center">
-                    <span className="text-xl font-display">{item.step}</span>
-                  </div>
-                  <h3 className="text-xl font-display text-charcoal mb-4">{item.title}</h3>
-                  <p className="text-sm text-dark-grey leading-relaxed">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-16 text-center"
-          >
-            <a 
-              href="#contact"
-              className="inline-flex items-center gap-4 group"
-            >
-              <span className="px-8 py-4 bg-charcoal text-white text-sm font-semibold tracking-wider uppercase transition-all duration-500 group-hover:bg-accent">
-                Let's Connect
-              </span>
-              <span className="w-12 h-12 flex items-center justify-center border border-charcoal text-charcoal transition-all duration-500 group-hover:bg-charcoal group-hover:text-white">
-                →
-              </span>
-            </a>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Section 4: The conversations that don't happen */}
+      {/* Section 3: The conversations that don't happen */}
       <div className="py-16 lg:py-20 bg-[#FAFAFA] border-y border-light-grey">
         <div className="container-custom">
           <motion.div

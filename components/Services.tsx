@@ -235,7 +235,7 @@ export default function Services() {
                           </div>
                           
                           <motion.a
-                            href="#contact"
+                            href="/connect"
                             className="inline-flex items-center gap-3 text-accent font-medium group/link"
                             whileHover={{ x: 4 }}
                             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}

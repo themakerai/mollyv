@@ -52,7 +52,7 @@ export default function Footer() {
               <nav className="flex flex-col gap-3">
                 <a href="/about" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">About</a>
                 <a href="/services" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Work With Me</a>
-                <a href="/contact" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Let's Connect</a>
+                <a href="/connect" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Let's Connect</a>
               </nav>
             </motion.div>
           </div>

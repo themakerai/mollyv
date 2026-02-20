@@ -51,7 +51,7 @@ export default function CTA() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-xl lg:text-2xl text-white/70 mb-4 max-w-2xl mx-auto"
             >
-              A confidential conversation about the decision in front of you.
+              A confidential conversation about what's in front of you.
             </motion.p>
 
             <motion.p
@@ -72,7 +72,7 @@ export default function CTA() {
               className="mb-16"
             >
               <a 
-                href="/contact"
+                href="/connect"
                 className="inline-flex flex-col sm:flex-row items-center gap-4 group"
               >
                 <span className="px-10 py-5 bg-accent text-white text-lg font-semibold tracking-wider uppercase transition-all duration-500 group-hover:bg-white group-hover:text-charcoal">
@@ -115,8 +115,8 @@ export default function CTA() {
                 Not ready to talk yet?
               </h3>
               <p className="text-dark-grey leading-relaxed mb-6">
-                That's fine. Start with the Decision Clarity Guide. Five questions to help you 
-                cut through the noise and find clarity on the decision in front of you.
+                That's fine. Start with the Clarity Guide. Five questions to help you 
+                cut through the noise and find clarity on what's in front of you.
               </p>
               <a 
                 href="/guide"

@@ -26,10 +26,13 @@ export default function Hero() {
           className="relative lg:w-[45%] order-1 lg:order-1 h-[50vh] lg:h-auto flex items-end justify-center lg:justify-end"
         >
           <div className="relative h-full w-full flex items-center justify-center p-8 lg:p-12">
+            {/* TODO: Replace this placeholder with a real, warm, professional photo of Molly.
+                Use a high-quality image that feels approachable and confident.
+                Recommended: transparent-background cutout PNG at /public/molly-hero.png */}
             <ImagePlaceholder
               variant="editorial"
               theme="sand"
-              label="Molly — hero cutout"
+              label="Molly — hero photo"
               className="w-full max-w-md h-full max-h-[600px]"
             />
           </div>
@@ -49,7 +52,7 @@ export default function Hero() {
                 transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.08] font-display font-normal tracking-tight text-charcoal"
               >
-                You don't have to figure it out alone.
+                You don't have to do hard things alone.
               </motion.h1>
 
               {/* Subheadline */}
@@ -59,7 +62,7 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-8 text-lg lg:text-xl text-dark-grey leading-relaxed"
               >
-                I work with family business owners and leaders stepping into, through, or out of transition. The things that are too complicated, too personal, or too high-stakes to process internally. That's exactly why I'm here.
+                I work with leaders and business owners navigating the moments that ask the most of them. The ones that are too personal, too complicated, or too heavy to carry without someone who actually gets it.
               </motion.p>
 
               {/* CTAs */}
@@ -71,7 +74,7 @@ export default function Hero() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   <a
-                    href="/contact"
+                    href="/connect"
                     className="group inline-flex"
                   >
                     <span className="px-8 py-4 bg-charcoal text-white text-sm font-semibold tracking-wider uppercase transition-all duration-500 group-hover:bg-accent">
@@ -86,7 +89,7 @@ export default function Hero() {
                   </a>
                 </div>
                 <p className="mt-4 text-sm text-mid-grey">
-                  Start with a few questions. No pitch. No pressure.
+                  A few questions. No pitch. No pressure.
                 </p>
               </motion.div>
 

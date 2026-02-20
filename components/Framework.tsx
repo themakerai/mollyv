@@ -116,7 +116,7 @@ export default function Framework() {
             Ready to talk it through?
           </p>
           <motion.a
-            href="#contact"
+            href="/connect"
             className="inline-flex items-center gap-4 px-8 py-4 bg-charcoal text-white group hover:bg-accent transition-colors duration-300"
             whileHover={{ x: 4 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
