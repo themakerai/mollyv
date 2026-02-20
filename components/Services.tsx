@@ -9,12 +9,12 @@ const services = [
     number: '01',
     title: 'Leadership Advisory',
     subtitle: 'Your Trusted Thinking Partner',
-    description: 'For leaders carrying significant responsibility without a trusted space to think or speak openly. A confidential partnership that provides clarity, perspective, and accountability.',
+    description: 'For leaders carrying significant responsibility without a confidential place to think or speak openly. A thinking partnership that provides clarity, perspective, and accountability.',
     painPoints: [
       'Carrying the weight of leadership alone',
       'Decisions feel too complex to process internally',
       'Need clarity on what really matters',
-      'Want alignment, not just consensus'
+      'Need someone to help you get your team moving in the same direction'
     ],
     details: [
       'Weekly or bi-weekly sessions',
@@ -29,8 +29,8 @@ const services = [
     id: 'succession',
     number: '02',
     title: 'Succession & Transition',
-    subtitle: 'Navigating What\'s Next',
-    description: 'Navigate the complex emotional and business realities of leadership transition. Whether passing to family, developing next-gen leaders, or preparing for your own next chapter.',
+    subtitle: 'Working Through What\'s Next',
+    description: 'The emotional and business realities of leadership transition are tangled together. Passing to family, developing next-gen leaders, preparing for your own next chapter. It all has to be worked through honestly.',
     painPoints: [
       'Succession feels overwhelming or unclear',
       'Family dynamics complicate decisions',
@@ -51,12 +51,12 @@ const services = [
     number: '03',
     title: 'Understanding Your Financial Story',
     subtitle: 'Clarity Beyond the Numbers',
-    description: 'Your financials tell a story—about where you\'ve been, what you\'ve built, and what\'s possible. Learn to read that story with confidence and use it to make better decisions.',
+    description: 'Your financials tell a story about where you\'ve been, what you\'ve built, and what\'s possible. Learn to read that story with confidence and use it to make better decisions.',
     painPoints: [
       'Financial reports feel overwhelming or confusing',
       'Disconnected from the numbers that drive your business',
       'Decisions feel like guesswork without financial clarity',
-      'Want to understand, not just delegate, your finances'
+      'Want to understand your finances yourself'
     ],
     details: [
       'Financial literacy coaching',
@@ -64,7 +64,7 @@ const services = [
       'Connecting numbers to business decisions',
       'Building financial confidence'
     ],
-    audience: 'Leaders and business owners who want to understand their numbers, not just receive reports',
+    audience: 'Leaders and business owners who want to understand their numbers for themselves',
     outcome: 'Confidence in financial conversations and decisions'
   },
   {
@@ -72,11 +72,11 @@ const services = [
     number: '04',
     title: 'Speaking & Workshops',
     subtitle: 'Keynotes That Move Leaders',
-    description: 'Engaging presentations on leadership clarity, succession planning, and making bold decisions when stakes are high. Rooted in lived experience, not theory.',
+    description: 'Engaging presentations on leadership clarity, succession planning, and making bold decisions when stakes are high. Everything I bring to a room is grounded in experience. That\'s what makes it land differently.',
     painPoints: [
       'Need a speaker who understands real leadership challenges',
       'Want content that resonates with experienced leaders',
-      'Looking for practical insights, not motivation alone'
+      'Looking for practical insights grounded in experience'
     ],
     details: [
       '"Lead with Clarity" keynote',
@@ -135,8 +135,8 @@ export default function Services() {
               <span className="text-accent font-semibold">together</span>
             </h2>
             <p className="body-text text-dark-grey max-w-2xl">
-              Every engagement begins with understanding where you are, what you're navigating, 
-              and what clarity would make possible. From there, we design the support that fits.
+              Every engagement begins with understanding where you are, what you're facing, 
+              and what clarity would make possible. We build the support around what you actually need.
             </p>
           </motion.div>
         </div>
@@ -235,12 +235,12 @@ export default function Services() {
                           </div>
                           
                           <motion.a
-                            href="#contact"
+                            href="/connect"
                             className="inline-flex items-center gap-3 text-accent font-medium group/link"
                             whileHover={{ x: 4 }}
                             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                           >
-                            <span>Enter The Decision Room</span>
+                            <span>Let's Connect</span>
                             <span className="group-hover/link:translate-x-1 transition-transform duration-300">→</span>
                           </motion.a>
                         </div>

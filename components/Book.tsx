@@ -79,7 +79,7 @@ export default function Book() {
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-2xl lg:text-3xl font-semibold text-white mb-8"
           >
-            The story I never planned to tell.
+            This is the book I didn't plan to write.
           </motion.h3>
 
           {/* Description */}
@@ -90,12 +90,10 @@ export default function Book() {
             className="space-y-4 mb-12"
           >
             <p className="body-lg text-white/80">
-              A raw, personal account of leading through succession, finding my voice, 
-              and learning that the hardest business decisions are rarely about business at all.
+              It's about succession that didn't go the way anyone expected. About identity that gets wrapped up in a business you've given twenty years to. About realizing the plan you had and the future you're actually building aren't pointing in the same direction, and what happens when you finally face that honestly.
             </p>
             <p className="body-text text-white/60">
-              For anyone navigating family dynamics, identity shifts, or the courage it takes 
-              to lead authentically.
+              If you've led a family business through a transition that no one outside the room fully understood, this book is for you.
             </p>
           </motion.div>
 

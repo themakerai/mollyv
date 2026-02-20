@@ -88,7 +88,7 @@ export default function Vision() {
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="text-xl lg:text-2xl text-mid-grey mt-8 lg:mt-12 max-w-2xl font-light"
             >
-              They have the courage to hold open, proactive conversations and navigate complexity 
+              They have the courage to hold open, proactive conversations and work through complexity 
               without losing themselves or second-guessing their authority. Their leadership strengthens 
               both their businesses and their relationships through every season of change.
             </motion.p>
@@ -114,7 +114,7 @@ export default function Vision() {
               <span className="text-5xl lg:text-6xl font-script text-accent leading-none tracking-normal">"</span>
               <div>
                 <p className="text-xl lg:text-2xl text-white leading-relaxed font-light">
-                  Clarity changes the quality of your decisions.
+                  Clarity changes everything.
                 </p>
                 <div className="flex items-center gap-4 mt-6">
                   <div className="w-8 h-px bg-accent" />

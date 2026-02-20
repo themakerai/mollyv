@@ -1,8 +1,8 @@
 'use client'
 
 import { useRef } from 'react'
-import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
+import ImagePlaceholder from './ImagePlaceholder'
 
 export default function CTA() {
   const ref = useRef<HTMLDivElement>(null)
@@ -42,7 +42,7 @@ export default function CTA() {
               transition={{ duration: 1, delay: 0.2 }}
               className="text-4xl lg:text-6xl font-display text-white mb-6"
             >
-              The <span className="text-accent">Decision Room</span>
+              Let's <span className="text-accent">Connect</span>
             </motion.h2>
 
             <motion.p
@@ -51,7 +51,7 @@ export default function CTA() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-xl lg:text-2xl text-white/70 mb-4 max-w-2xl mx-auto"
             >
-              A confidential conversation about the decision in front of you.
+              A confidential conversation about what's in front of you.
             </motion.p>
 
             <motion.p
@@ -60,8 +60,8 @@ export default function CTA() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-white/50 mb-12 max-w-xl mx-auto"
             >
-              Letting someone go. Navigating succession. Having a conversation you've been avoiding.
-              30 minutes with someone who's been in your chair.
+              Letting someone go. Working through succession. Having a conversation you've been avoiding.
+              Someone who's been in your chair, ready to think it through with you.
             </motion.p>
 
             {/* Primary CTA Button */}
@@ -72,11 +72,11 @@ export default function CTA() {
               className="mb-16"
             >
               <a 
-                href="mailto:molly@mollyv.com?subject=Decision%20Room%20Request"
+                href="/connect"
                 className="inline-flex flex-col sm:flex-row items-center gap-4 group"
               >
                 <span className="px-10 py-5 bg-accent text-white text-lg font-semibold tracking-wider uppercase transition-all duration-500 group-hover:bg-white group-hover:text-charcoal">
-                  Request Your Session
+                  Let's Grab a Virtual Coffee
                 </span>
                 <span className="hidden sm:flex w-14 h-14 items-center justify-center bg-white text-charcoal transition-all duration-500 group-hover:bg-accent group-hover:text-white">
                   <span className="text-2xl">→</span>
@@ -115,8 +115,8 @@ export default function CTA() {
                 Not ready to talk yet?
               </h3>
               <p className="text-dark-grey leading-relaxed mb-6">
-                Start with The Decision Clarity Guide—5 questions to help you cut through 
-                the noise and find clarity on the decision in front of you.
+                That's fine. Start with the Clarity Guide. Five questions to help you 
+                cut through the noise and find clarity on what's in front of you.
               </p>
               <a 
                 href="/guide"
@@ -150,10 +150,10 @@ export default function CTA() {
                 Write me directly. Tell me what's on your mind.
               </p>
               <a 
-                href="mailto:molly@mollyv.com" 
+                href="mailto:molly@mollyvarangkounh.com" 
                 className="text-xl font-display text-accent hover:text-charcoal transition-colors duration-300"
               >
-                molly@mollyv.com
+                molly@mollyvarangkounh.com
               </a>
               <div className="mt-6 pt-6 border-t border-light-grey">
                 <p className="font-tagline text-sm text-mid-grey">
@@ -170,21 +170,15 @@ export default function CTA() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0"
-            >
+            <div className="relative max-w-md mx-auto lg:mx-0">
               <div className="absolute -left-4 -top-4 w-full h-full border border-accent" />
-              <Image
-                src="/molly-v.png"
-                alt="Molly Varangkounh"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+              <ImagePlaceholder
+                variant="portrait"
+                theme="sky"
+                label="Molly — editorial"
+                className="relative"
               />
-            </motion.div>
+            </div>
 
             {/* Final statement */}
             <motion.div
@@ -194,9 +188,8 @@ export default function CTA() {
               className="text-center lg:text-left"
             >
               <p className="text-2xl lg:text-3xl font-display text-charcoal leading-relaxed">
-                "You'll leave knowing 
-                <span className="text-accent"> exactly what to do</span>—
-                and at peace with the decision."
+                "Strong leadership changes the trajectory of a family, a company, and a community.
+                <span className="text-accent"> That's why I show up.</span>"
               </p>
               <div className="flex items-center justify-center lg:justify-start gap-4 mt-6">
                 <span className="w-12 h-px bg-accent" />

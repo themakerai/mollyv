@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ImagePlaceholder from '@/components/ImagePlaceholder'
 
 export default function GuidePage() {
   const [email, setEmail] = useState('')
@@ -71,7 +72,7 @@ export default function GuidePage() {
               </h1>
               
               <p className="text-lg text-dark-grey leading-relaxed mb-6">
-                5 questions to ask yourself before any high-stakes decision—and how to know 
+                5 questions to ask yourself before any high-stakes moment, and how to know 
                 when you're avoiding one.
               </p>
 
@@ -90,7 +91,7 @@ export default function GuidePage() {
               </div>
 
               <p className="text-sm text-mid-grey">
-                Based on 20+ years of helping leaders navigate decisions that keep them up at night.
+                Based on twenty years of helping leaders find clarity on the things that keep them up at night.
               </p>
             </motion.div>
 
@@ -209,7 +210,7 @@ export default function GuidePage() {
               },
               {
                 title: 'Warning Signs Checklist',
-                desc: '6 patterns that indicate you\'re avoiding a decision—and what to do about each one.',
+                desc: '6 patterns that indicate you\'re avoiding something important, and what to do about each one.',
               },
               {
                 title: 'The BOLD Framework',
@@ -238,26 +239,36 @@ export default function GuidePage() {
       {/* About Author */}
       <section className="py-24 lg:py-32 bg-white">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-4 flex justify-center"
+            >
+              <ImagePlaceholder variant="portrait" theme="sand" label="Molly — author" className="max-w-xs w-full" />
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="lg:col-span-7 lg:col-start-6"
             >
-              <span className="inline-flex items-center gap-3 mb-6 justify-center">
+              <span className="inline-flex items-center gap-3 mb-6">
                 <span className="w-8 h-px bg-accent" />
                 <span className="text-xs tracking-[0.25em] uppercase text-dark-grey">About the Author</span>
-                <span className="w-8 h-px bg-accent" />
               </span>
               <h2 className="text-3xl font-display text-charcoal mb-6">
                 Written from the inside, not the outside
               </h2>
               <p className="text-lg text-dark-grey leading-relaxed mb-6">
-                Molly Varangkounh spent 20+ years as president of a family business, navigating 
-                succession, letting people go, and making decisions that affected real lives. 
-                A former CPA with CFO-level experience, she now helps leaders find clarity 
-                on the decisions that keep them up at night.
+                Molly Varangkounh spent twenty years as president of a family business, 
+                working through succession, letting people go, and carrying the weight of choices that affected real lives. 
+                She now helps leaders find clarity 
+                on the things that keep them up at night.
               </p>
               <Link 
                 href="/about"
@@ -284,15 +295,15 @@ export default function GuidePage() {
               Need more than a guide?
             </h2>
             <p className="text-lg text-white/70 max-w-xl mx-auto mb-10">
-              If you're facing a decision that needs more than questions on a page, 
-              The Decision Room is where we talk it through.
+              If you're facing something that needs more than questions on a page, 
+              let's talk it through.
             </p>
             <Link 
-              href="/decision-room"
+              href="/connect"
               className="inline-flex items-center gap-4 group"
             >
               <span className="px-8 py-4 bg-accent text-white text-sm font-medium tracking-wider uppercase transition-all duration-500 group-hover:bg-white group-hover:text-charcoal">
-                Enter The Decision Room
+                Let's Connect
               </span>
               <span className="w-12 h-12 flex items-center justify-center border border-white/30 text-white transition-all duration-500 group-hover:bg-white group-hover:text-charcoal">
                 →

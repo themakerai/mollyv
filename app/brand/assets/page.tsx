@@ -162,14 +162,14 @@ export default function BrandAssetsPage() {
       <table cellpadding="0" cellspacing="0" border="0">
         <tr><td style="padding-bottom: 8px;"><span style="font-size: 20px; font-weight: 700; color: #1E1E1E; letter-spacing: -0.02em;">Molly Varangkounh</span></td></tr>
         <tr><td style="padding-bottom: 12px;"><span style="font-size: 12px; color: #2D8FB5; text-transform: uppercase; letter-spacing: 0.15em;">Executive Advisory</span></td></tr>
-        <tr><td style="padding-bottom: 4px;"><span style="font-size: 13px; color: #4A4A4A;">molly@mollyv.com</span></td></tr>
-        <tr><td style="padding-bottom: 4px;"><span style="font-size: 13px; color: #4A4A4A;">mollyv.com</span></td></tr>
-        <tr><td style="padding-top: 8px;"><a href="https://mollyv.com/decision-room" style="font-size: 11px; color: #2D8FB5; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em;">→ The Decision Room</a></td></tr>
+        <tr><td style="padding-bottom: 4px;"><span style="font-size: 13px; color: #4A4A4A;">molly@mollyvarangkounh.com</span></td></tr>
+        <tr><td style="padding-bottom: 4px;"><span style="font-size: 13px; color: #4A4A4A;">mollyvarangkounh.com</span></td></tr>
+        <tr><td style="padding-top: 8px;"><a href="https://mollyvarangkounh.com/decision-room" style="font-size: 11px; color: #2D8FB5; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em;">→ The Decision Room</a></td></tr>
       </table>
     </td>
     <td style="padding-left: 20px; vertical-align: top;">
       <table cellpadding="0" cellspacing="0" border="0">
-        <tr><td style="padding-bottom: 12px;"><img src="https://mollyv.com/logo-mark.png" alt="MV." width="60" height="40" style="display: block;" /></td></tr>
+        <tr><td style="padding-bottom: 12px;"><img src="https://mollyvarangkounh.com/logo-mark.png" alt="MV." width="60" height="40" style="display: block;" /></td></tr>
         <tr><td><span style="font-size: 14px; font-weight: 500; color: #1E1E1E;">Lead with clarity.</span><br/><span style="font-size: 14px; font-weight: 500; color: #2D8FB5;">Make bold moves.</span></td></tr>
       </table>
     </td>
@@ -181,7 +181,7 @@ export default function BrandAssetsPage() {
     <td style="vertical-align: top;">
       <p style="margin: 0 0 4px 0; font-size: 16px; font-weight: 700; color: #1E1E1E;">Molly Varangkounh</p>
       <p style="margin: 0 0 8px 0; font-size: 12px; color: #2D8FB5; text-transform: uppercase; letter-spacing: 0.1em;">Executive Advisory</p>
-      <p style="margin: 0; font-size: 13px; color: #4A4A4A;">molly@mollyv.com · mollyv.com</p>
+      <p style="margin: 0; font-size: 13px; color: #4A4A4A;">molly@mollyvarangkounh.com · mollyvarangkounh.com</p>
     </td>
   </tr>
 </table>`
@@ -559,8 +559,8 @@ export default function BrandAssetsPage() {
                           <h3 className="text-lg font-bold tracking-tight text-[#1E1E1E] mb-1">Molly Varangkounh</h3>
                           <p className="text-[10px] uppercase tracking-[0.15em] mb-3" style={{ color: accentColor }}>Executive Advisory</p>
                           <div className="flex gap-6 text-[10px] text-[#4A4A4A]">
-                            <span>molly@mollyv.com</span>
-                            <span>mollyv.com</span>
+                            <span>molly@mollyvarangkounh.com</span>
+                            <span>mollyvarangkounh.com</span>
                           </div>
                         </div>
                       </div>
@@ -591,8 +591,8 @@ export default function BrandAssetsPage() {
                           <h3 className="text-lg font-bold tracking-tight text-white mb-1">Molly Varangkounh</h3>
                           <p className="text-[10px] uppercase tracking-[0.15em] text-white/60 mb-3">Executive Advisory</p>
                           <div className="text-[10px] text-white/70 space-y-0.5">
-                            <p>molly@mollyv.com</p>
-                            <p>mollyv.com/decision-room</p>
+                            <p>molly@mollyvarangkounh.com</p>
+                            <p>mollyvarangkounh.com/decision-room</p>
                           </div>
                         </div>
                       </div>
@@ -632,8 +632,8 @@ export default function BrandAssetsPage() {
                       <div className="absolute top-6 left-8 right-8 flex justify-between items-start">
                         <Logo variant="mark-horizontal" size="sm" color="dark" />
                         <div className="text-right text-[8px] text-[#7A7A7A] space-y-0.5">
-                          <p>molly@mollyv.com</p>
-                          <p>mollyv.com</p>
+                          <p>molly@mollyvarangkounh.com</p>
+                          <p>mollyvarangkounh.com</p>
                         </div>
                       </div>
                       <div className="absolute top-20 left-8 right-8 bottom-16">
@@ -665,8 +665,8 @@ export default function BrandAssetsPage() {
                         <p className="text-[8px] text-[#4A4A4A]">Dear [Name],</p>
                       </div>
                       <div className="absolute bottom-6 left-10 right-10 flex justify-between text-[8px] text-[#7A7A7A]">
-                        <span>molly@mollyv.com</span>
-                        <span>mollyv.com</span>
+                        <span>molly@mollyvarangkounh.com</span>
+                        <span>mollyvarangkounh.com</span>
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 h-1" style={{ backgroundColor: accentColor }} />
                     </div>
@@ -705,8 +705,8 @@ export default function BrandAssetsPage() {
                         <p className="text-lg font-bold tracking-tight text-[#1E1E1E] mb-1">Molly Varangkounh</p>
                         <p className="text-[10px] uppercase tracking-[0.15em] mb-2" style={{ color: accentColor }}>Executive Advisory</p>
                         <div className="space-y-0.5 text-[11px] text-[#4A4A4A]">
-                          <p>molly@mollyv.com</p>
-                          <p>mollyv.com</p>
+                          <p>molly@mollyvarangkounh.com</p>
+                          <p>mollyvarangkounh.com</p>
                           <p className="pt-1"><span style={{ color: accentColor }}>→ The Decision Room</span></p>
                         </div>
                       </div>
@@ -733,7 +733,7 @@ export default function BrandAssetsPage() {
                   <div className="p-6" style={{ backgroundColor: '#FFFFFF' }}>
                     <p className="text-base font-bold text-[#1E1E1E] mb-1">Molly Varangkounh</p>
                     <p className="text-[10px] uppercase tracking-[0.1em] mb-2" style={{ color: accentColor }}>Executive Advisory</p>
-                    <p className="text-[11px] text-[#4A4A4A]">molly@mollyv.com · mollyv.com</p>
+                    <p className="text-[11px] text-[#4A4A4A]">molly@mollyvarangkounh.com · mollyvarangkounh.com</p>
                   </div>
                   <div className="p-4 border-t" style={{ borderColor }}>
                     <button onClick={() => copyToClipboard(emailSignatureMinimalHTML, 'minimal')} className="w-full py-2 text-xs font-semibold uppercase tracking-wider transition-all" style={{ backgroundColor: accentColor, color: '#fff' }}>
@@ -834,7 +834,7 @@ export default function BrandAssetsPage() {
                         <h2 className="text-2xl font-bold tracking-tight mb-4" style={{ color: accentColor }}>Room</h2>
                         <p className="text-xs text-white/70 leading-relaxed max-w-[160px] mx-auto">A 30-minute confidential conversation about the decision in front of you.</p>
                       </div>
-                      <div className="text-center"><p className="text-[8px] text-white/40 uppercase tracking-wider">mollyv.com/decision-room</p></div>
+                      <div className="text-center"><p className="text-[8px] text-white/40 uppercase tracking-wider">mollyvarangkounh.com/decision-room</p></div>
                     </div>
                   </div>
                 </div>

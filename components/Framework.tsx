@@ -6,27 +6,23 @@ import { motion, useInView } from 'framer-motion'
 const framework = [
   {
     letter: 'B',
-    title: 'Be Clear Before You Act',
-    description: 'Bold leadership starts with clarity. Clear direction, clear priorities, clear expectations. Define where you\'re going before asking people to follow.',
-    detail: 'Clarity reduces friction and speeds decisions.'
+    title: 'Be Clear',
+    description: 'You can\'t lead what you haven\'t named. Start there.',
   },
   {
     letter: 'O',
-    title: 'Own the Hard Things',
-    description: 'Bold leaders step into difficult conversations, accountability issues, and unpopular decisions when the business needs it. Ownership replaces blame and excuses.',
-    detail: 'Leadership is taking responsibility, even when uncomfortable.'
+    title: 'Own Hard Things',
+    description: 'The conversation you\'ve been putting off is usually the most important one.',
   },
   {
     letter: 'L',
     title: 'Listen to Understand',
-    description: 'Bold leadership doesn\'t mean being loud. It means creating space for dissent, perspective, and truth. Leaders who listen well make better decisions and earn trust.',
-    detail: 'You don\'t have to agree to be aligned, but you do have to listen.'
+    description: 'Not to respond. Not to manage. To actually understand what\'s being said.',
   },
   {
     letter: 'D',
     title: 'Decide and Move Forward',
-    description: 'Bold leaders decide. They recognize that indecision is still a decision—often the most expensive one. Gather input, weigh risk, then move forward.',
-    detail: 'Decisions made with clarity and courage build momentum.'
+    description: 'Clarity is the goal. Action is what follows.',
   }
 ]
 
@@ -70,8 +66,7 @@ export default function Framework() {
               The <span className="text-accent font-bold">BOLD</span> Leadership Framework
             </h2>
             <p className="body-text text-dark-grey mt-6 max-w-2xl">
-              A framework for leading with clarity, courage, and conviction. Because bold leadership 
-              requires both peace in yourself and strength to act decisively.
+              A framework for leading with clarity, courage, and conviction.
             </p>
           </motion.div>
         </div>
@@ -103,13 +98,7 @@ export default function Framework() {
                   </div>
 
                   <h3 className="headline-sm text-charcoal mb-4">{item.title}</h3>
-                  <p className="body-text text-dark-grey mb-6">{item.description}</p>
-                  
-                  {/* Question prompt */}
-                  <div className="pt-6 border-t border-light-grey">
-                    <span className="label-sm text-mid-grey block mb-2">Key Question</span>
-                    <p className="text-sm text-charcoal italic">"{item.detail}"</p>
-                  </div>
+                  <p className="body-text text-dark-grey">{item.description}</p>
                 </div>
               </div>
             </motion.div>
@@ -124,15 +113,15 @@ export default function Framework() {
           className="mt-16 lg:mt-24 text-center"
         >
           <p className="body-lg text-dark-grey mb-8 max-w-2xl mx-auto">
-            Have a decision you're wrestling with?
+            Ready to talk it through?
           </p>
           <motion.a
-            href="#contact"
+            href="/connect"
             className="inline-flex items-center gap-4 px-8 py-4 bg-charcoal text-white group hover:bg-accent transition-colors duration-300"
             whileHover={{ x: 4 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="font-medium">Enter The Decision Room</span>
+            <span className="font-medium">Let's Connect</span>
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </motion.a>
         </motion.div>

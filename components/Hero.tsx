@@ -1,10 +1,8 @@
 'use client'
 
 import { useRef } from 'react'
-import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
-
-const HERO_IMAGE_URL = 'https://cgcdiiksjmubatinthdr.supabase.co/storage/v1/object/public/site-images/molly-headshot-landscape.png'
+import ImagePlaceholder from './ImagePlaceholder'
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,68 +16,80 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative min-h-screen overflow-hidden bg-[#FAFAFA]">
-      {/* Two-column layout */}
+      {/* Two-column layout: Image left, Content right */}
       <div className="min-h-screen flex flex-col lg:flex-row">
-        {/* Left column - Content */}
-        <motion.div 
-          style={{ y, opacity }}
-          className="relative z-10 flex items-center lg:w-1/2 order-2 lg:order-1"
+        {/* Left column - Image placeholder */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="relative lg:w-[45%] order-1 lg:order-1 h-[50vh] lg:h-auto flex items-end justify-center lg:justify-end"
         >
-          <div className="container-custom py-16 lg:py-32 lg:pr-12">
-            <div className="max-w-xl">
-              {/* Label */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="mb-6"
-              >
-                <span className="inline-flex items-center gap-3">
-                  <span className="w-8 h-px bg-accent" />
-                  <span className="text-xs tracking-[0.2em] uppercase text-dark-grey font-medium">Executive Advisory</span>
-                </span>
-              </motion.div>
+          <div className="relative h-full w-full flex items-center justify-center p-8 lg:p-12">
+            {/* TODO: Replace this placeholder with a real, warm, professional photo of Molly.
+                Use a high-quality image that feels approachable and confident.
+                Recommended: transparent-background cutout PNG at /public/molly-hero.png */}
+            <ImagePlaceholder
+              variant="editorial"
+              theme="sand"
+              label="Molly — hero photo"
+              className="w-full max-w-md h-full max-h-[600px]"
+            />
+          </div>
+        </motion.div>
 
-              {/* Aspirational headline */}
+        {/* Right column - Content */}
+        <motion.div
+          style={{ y, opacity }}
+          className="relative z-10 flex items-center lg:w-[55%] order-2 lg:order-2"
+        >
+          <div className="container-custom py-16 lg:py-32 lg:pl-16 lg:pr-12">
+            <div className="max-w-xl">
+              {/* Headline */}
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.08] font-display font-normal tracking-tight text-charcoal"
               >
-                Lead with clarity.
-                <br />
-                <span className="text-accent">Decide with conviction.</span>
+                You don't have to do hard things alone.
               </motion.h1>
 
-              {/* Empathy + positioning */}
+              {/* Subheadline */}
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-8 text-lg lg:text-xl text-dark-grey leading-relaxed"
               >
-                For leaders navigating high-stakes decisions—succession, exits, difficult conversations—
-                with someone who's sat in the chair.
+                I work with leaders and business owners navigating the moments that ask the most of them. The ones that are too personal, too complicated, or too heavy to carry without someone who actually gets it.
               </motion.p>
 
-              {/* CTA - Executive Counsel */}
+              {/* CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-10"
               >
-                <a 
-                  href="#contact"
-                  className="group inline-flex flex-col sm:flex-row sm:items-center gap-4"
-                >
-                  <span className="px-8 py-4 bg-charcoal text-white text-sm font-semibold tracking-wider uppercase transition-all duration-500 group-hover:bg-accent">
-                    Request a Confidential Conversation
-                  </span>
-                </a>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                  <a
+                    href="/connect"
+                    className="group inline-flex"
+                  >
+                    <span className="px-8 py-4 bg-charcoal text-white text-sm font-semibold tracking-wider uppercase transition-all duration-500 group-hover:bg-accent">
+                      Let's Grab a Virtual Coffee
+                    </span>
+                  </a>
+                  <a
+                    href="#services"
+                    className="text-sm font-medium text-accent hover:text-charcoal transition-colors duration-300"
+                  >
+                    See How We Work Together →
+                  </a>
+                </div>
                 <p className="mt-4 text-sm text-mid-grey">
-                  30 minutes · Completely private · No obligation
+                  A few questions. No pitch. No pressure.
                 </p>
               </motion.div>
 
@@ -90,32 +100,9 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-16 font-tagline text-sm text-mid-grey"
               >
-                Make bold moves.
+                Lead with clarity. Make bold moves.
               </motion.p>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Right column - Image */}
-        <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative lg:w-1/2 order-1 lg:order-2 h-[50vh] lg:h-auto"
-        >
-          <div className="relative h-full w-full">
-            <Image
-              src={HERO_IMAGE_URL}
-              alt="Molly Varangkounh"
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
-            {/* Subtle gradient fade on left edge for desktop */}
-            <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#FAFAFA] to-transparent" />
-            {/* Bottom gradient for mobile */}
-            <div className="lg:hidden absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FAFAFA] to-transparent" />
           </div>
         </motion.div>
       </div>

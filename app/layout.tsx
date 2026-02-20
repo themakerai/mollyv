@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Molly Varangkounh | Leadership Clarity & Strategic Advisory',
-  description: 'Molly Varangkounh helps leaders gain clarity and make bold, grounded decisions when the stakes are high and the path forward feels uncertain.',
+  description: 'Molly Varangkounh is a leadership advisor, speaker, and guide for leaders carrying more than most people know. You don\'t have to do hard things alone.',
   icons: {
     icon: '/icon.svg',
     apple: '/apple-icon.png',
