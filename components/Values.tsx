@@ -8,15 +8,15 @@ const values = [
     id: 'loving',
     title: 'Loving',
     short: 'Care & Connection',
-    description: 'Leading with deep care for people, relationships, and the long-term impact of decisions. Deep respect for the human side of leadership and a commitment to protecting trust, dignity, and connection, even when conversations are difficult.',
-    detail: 'Loving leadership does not avoid hard truths, but delivers them with compassion and intention.',
+    description: 'Leading with deep care for people, relationships, and the long-term impact of what leaders choose. Deep respect for the human side of leadership and a commitment to protecting trust, dignity, and connection, even when conversations are difficult.',
+    detail: 'Loving leadership delivers hard truths with compassion and intention.',
     icon: '♡'
   },
   {
     id: 'brave',
     title: 'Brave',
     short: 'Courage & Clarity',
-    description: 'Courage is required to lead well, especially in moments of uncertainty or transition. Encouraging leaders to face reality honestly, name what others avoid, and make decisions that move the business forward.',
+    description: 'Courage is required to lead well, especially in moments of uncertainty or transition. Encouraging leaders to face reality honestly, name what others avoid, and move the business forward.',
     detail: 'Bravery in this work means choosing clarity over comfort and action over prolonged hesitation.',
     icon: '◆'
   },
@@ -101,7 +101,7 @@ export default function Values() {
             </h2>
             <p className="body-text text-dark-grey max-w-2xl">
               These values are the foundation of how I work, 
-              what I believe about leadership, and what guides every conversation and decision.
+              what I believe about leadership, and what guides every conversation.
             </p>
           </motion.div>
         </div>
@@ -187,7 +187,7 @@ export default function Values() {
             "You can lead with conviction while caring for people."
           </p>
           <p className="text-sm text-mid-grey">
-            Clarity changes the quality of your decisions.
+            Clarity changes everything.
           </p>
         </motion.div>
       </div>

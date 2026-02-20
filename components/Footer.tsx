@@ -35,7 +35,7 @@ export default function Footer() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="text-mid-grey text-sm mt-6 max-w-sm leading-relaxed"
             >
-              Advisory for family business owners and leaders facing hard decisions. 
+              Advisory for family business owners and leaders carrying hard things. 
               Succession, exits, and the conversations that can't wait.
             </motion.p>
           </div>

@@ -49,7 +49,7 @@ export default function Hero() {
                 transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.08] font-display font-normal tracking-tight text-charcoal"
               >
-                Some decisions are too personal to think through alone.
+                You don't have to figure it out alone.
               </motion.h1>
 
               {/* Subheadline */}
@@ -59,7 +59,7 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="mt-8 text-lg lg:text-xl text-dark-grey leading-relaxed"
               >
-                I work with family business owners and the leaders stepping into, through, or out of transition. The decisions that are too complicated, too personal, or too high-stakes to process internally. That's exactly why I'm here.
+                I work with family business owners and leaders stepping into, through, or out of transition. The things that are too complicated, too personal, or too high-stakes to process internally. That's exactly why I'm here.
               </motion.p>
 
               {/* CTAs */}

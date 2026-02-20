@@ -76,7 +76,7 @@ export default function Approach() {
               </h2>
               <p className="text-lg text-white/70 leading-relaxed mb-8">
                 Twenty years as a leader in a family business. President with full P&L. 
-                CPA who understands what numbers reveal about people. I've been through succession, 
+                I understand what numbers reveal about people. I've been through succession, 
                 identity shifts, and hard conversations that didn't go as planned.
               </p>
               <p className="text-lg text-white leading-relaxed font-medium">
@@ -93,7 +93,7 @@ export default function Approach() {
               {[
                 { number: '20+', label: 'Years Leading' },
                 { number: '100+', label: 'Leaders Guided' },
-                { number: 'CPA', label: 'Financial Expertise' },
+                { number: 'P&L', label: 'Full Ownership' },
                 { number: '∞', label: 'Hard Conversations' },
               ].map((stat, i) => (
                 <div 

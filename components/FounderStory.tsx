@@ -133,7 +133,7 @@ export default function FounderStory() {
                 Avoided conversations, misread signals, and delayed decisions quietly eroded momentum long before problems showed up on paper. <strong className="text-charcoal">Molly understands the numbers and the people behind them.</strong>
               </p>
               <p className="body-text">
-                As a former CPA with CFO-level experience, she helps leaders <strong className="text-charcoal">understand the story their business is telling them</strong>. She translates financial insight into clarity about leadership decisions, organizational capacity, and long-term sustainability.
+                She understands what a business's financials are really saying, and she helps leaders <strong className="text-charcoal">see the full picture</strong>. She translates that insight into clarity about what leadership requires next.
               </p>
             </motion.div>
           </div>
@@ -155,7 +155,7 @@ export default function FounderStory() {
                   <span className="label-sm text-accent">Leadership Experience</span>
                 </div>
                 <p className="body-text">
-                  Molly has led and influenced <strong className="text-charcoal">high-stakes decision-making in male-dominated industries</strong> including agriculture and manufacturing. She brings calm authority into complex rooms, challenges assumptions with confidence, and guides leaders through difficult conversations.
+                  Molly has led through <strong className="text-charcoal">high-stakes moments in male-dominated industries</strong> including agriculture and manufacturing. She brings calm authority into complex rooms, challenges assumptions with confidence, and guides leaders through difficult conversations.
                 </p>
                 <p className="body-text">
                   She led through uncertainty, resistance, and change. In those environments, clarity, credibility, and decisiveness were the only currency that worked.
@@ -169,7 +169,7 @@ export default function FounderStory() {
                   <span className="label-sm text-accent">The Call to Guide</span>
                 </div>
                 <p className="body-text">
-                  Today, Molly brings that lived leadership experience into her advisory work. She serves as a <strong className="text-charcoal">steady, trusted guide</strong> for leaders facing high-stakes decisions they cannot afford to get wrong.
+                  Today, Molly brings that lived leadership experience into her advisory work. She serves as a <strong className="text-charcoal">steady, trusted guide</strong> for leaders in moments they can't afford to get wrong.
                 </p>
                 <p className="body-text">
                   She helps leaders <strong className="text-charcoal">face reality honestly, ask the hard questions</strong>, and move forward with clarity, confidence, and steadiness.
@@ -217,12 +217,12 @@ export default function FounderStory() {
                 {[
                   '20+ Years Leading',
                   'President & P&L Owner',
-                  'Former CPA',
-                  'CFO-Level Experience',
-                  'Emotional Intelligence',
+                  'Family Business',
+                  'Succession Planning',
                   'Lived Experience',
-                  'Family Business Navigation',
-                  'Succession Planning'
+                  'Leadership Transitions',
+                  'Hard Conversations',
+                  'Trusted Guide'
                 ].map((item) => (
                   <span 
                     key={item}

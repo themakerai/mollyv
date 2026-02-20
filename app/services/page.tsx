@@ -20,7 +20,7 @@ const services = [
       'No pitch, no pressure',
       'Leave knowing exactly what to do',
     ],
-    ideal: 'Leaders facing a specific hard decision—hiring, firing, an exit, a difficult conversation—who need clarity now.',
+    ideal: 'Leaders facing something specific. Hiring, firing, an exit, a difficult conversation. You need clarity now.',
     cta: 'Request a Session',
   },
   {
@@ -28,7 +28,7 @@ const services = [
     number: '02',
     title: 'Ongoing Advisory',
     subtitle: 'Your Trusted Thinking Partner',
-    description: 'For leaders who want an ongoing relationship with someone who can help them navigate multiple decisions over time. A confidential sounding board on retainer.',
+    description: 'For leaders who want an ongoing relationship with someone who can help them think through what matters most. A confidential sounding board on retainer.',
     features: [
       'Regular sessions (weekly or bi-weekly)',
       'On-demand access between sessions',
@@ -42,7 +42,7 @@ const services = [
     id: 'succession',
     number: '03',
     title: 'Succession & Transition',
-    subtitle: 'Navigate What\'s Next',
+    subtitle: 'Working Through What\'s Next',
     description: 'Guidance through the emotional and strategic complexity of leadership transitions. Whether you\'re passing the torch, taking it, or watching from the sidelines.',
     features: [
       'Succession planning that addresses family and business',
@@ -58,7 +58,7 @@ const services = [
     number: '04',
     title: 'Speaking & Workshops',
     subtitle: 'Leadership That Moves People',
-    description: 'Keynotes and workshops rooted in lived experience, not theory. For organizations that want their leaders to leave inspired and equipped to act.',
+    description: 'Keynotes and workshops rooted in lived experience. For organizations that want their leaders to leave inspired and equipped to act.',
     features: [
       '"The Decision Room" keynote',
       'BOLD Leadership Framework workshop',
@@ -101,9 +101,9 @@ export default function ServicesPage() {
                 transition={{ duration: 1, delay: 0.3 }}
                 className="text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] font-display text-charcoal mb-8"
               >
-                One decision.
-                <br />
-                <span className="text-accent">Total clarity.</span>
+              One conversation.
+              <br />
+              <span className="text-accent">Total clarity.</span>
               </motion.h1>
               
               <motion.p
@@ -272,9 +272,9 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { letter: 'B', title: 'Be Clear', desc: 'Clarity first. Know where you\'re going before asking people to follow.' },
-              { letter: 'O', title: 'Own It', desc: 'Step into hard things. Ownership replaces blame and excuses.' },
+              { letter: 'O', title: 'Own It', desc: 'Take on the hard things. Ownership replaces blame and excuses.' },
               { letter: 'L', title: 'Listen', desc: 'Create space for truth. You don\'t have to agree to be aligned.' },
-              { letter: 'D', title: 'Decide', desc: 'Move forward. Indecision is still a decision—often the most expensive one.' },
+              { letter: 'D', title: 'Decide', desc: 'Move forward. Waiting is usually the most expensive option.' },
             ].map((item, i) => (
               <motion.div
                 key={item.letter}
@@ -302,10 +302,10 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl lg:text-4xl font-display text-charcoal mb-6">
-              Have a decision you're wrestling with?
+              Ready to talk it through?
             </h2>
             <p className="text-lg text-dark-grey max-w-xl mx-auto mb-10">
-              The first step is a conversation. No pitch, no pressure—just clarity.
+              The first step is a conversation. No pitch, no pressure. Just clarity.
             </p>
             <Link 
               href="/#contact"

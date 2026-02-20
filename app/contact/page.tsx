@@ -33,7 +33,7 @@ export default function ContactPage() {
             >
               Let's talk about
               <br />
-              <span className="text-accent">your decision.</span>
+              <span className="text-accent">what's ahead.</span>
             </motion.h1>
             
             <motion.p
@@ -42,7 +42,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg lg:text-xl text-dark-grey leading-relaxed max-w-2xl"
             >
-              Whether you're ready for The Decision Room or just have a question, 
+              Whether you're ready for a conversation or just have a question, 
               I'd love to hear from you.
             </motion.p>
           </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-display mt-4 mb-6">The Decision Room</h2>
               <p className="text-white/70 leading-relaxed mb-8">
                 A 30-minute confidential conversation about the decision in front of you. 
-                No pitch, no pressure—just clarity.
+                No pitch, no pressure. Just clarity.
               </p>
               <div className="space-y-4 mb-10">
                 {[

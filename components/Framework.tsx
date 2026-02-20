@@ -113,7 +113,7 @@ export default function Framework() {
           className="mt-16 lg:mt-24 text-center"
         >
           <p className="body-lg text-dark-grey mb-8 max-w-2xl mx-auto">
-            Have a decision you're wrestling with?
+            Ready to talk it through?
           </p>
           <motion.a
             href="#contact"

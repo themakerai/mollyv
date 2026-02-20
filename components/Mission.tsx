@@ -32,7 +32,7 @@ export default function Mission() {
           >
             You'll leave knowing exactly what to do,
             <br />
-            <span className="text-accent">and at peace with the decision.</span>
+            <span className="text-accent">and at peace with the choice.</span>
           </motion.h2>
 
           <motion.p
@@ -41,7 +41,7 @@ export default function Mission() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg text-dark-grey leading-relaxed max-w-2xl mx-auto mb-12"
           >
-            No more spinning. No more sleepless nights. Just clarity on the decision in front of you 
+            No more spinning. No more sleepless nights. Just clarity on what's in front of you 
             and the conviction to act. That's what this work delivers.
           </motion.p>
 
@@ -59,7 +59,7 @@ export default function Mission() {
               },
               {
                 title: 'Conviction',
-                desc: 'Feel confident in your decision, even when it\'s hard.',
+                desc: 'Feel confident in your choice, even when it\'s hard.',
               },
               {
                 title: 'Calm',

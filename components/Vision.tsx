@@ -114,7 +114,7 @@ export default function Vision() {
               <span className="text-5xl lg:text-6xl font-script text-accent leading-none tracking-normal">"</span>
               <div>
                 <p className="text-xl lg:text-2xl text-white leading-relaxed font-light">
-                  Clarity changes the quality of your decisions.
+                  Clarity changes everything.
                 </p>
                 <div className="flex items-center gap-4 mt-6">
                   <div className="w-8 h-px bg-accent" />

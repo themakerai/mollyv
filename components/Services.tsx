@@ -56,7 +56,7 @@ const services = [
       'Financial reports feel overwhelming or confusing',
       'Disconnected from the numbers that drive your business',
       'Decisions feel like guesswork without financial clarity',
-      'Want to understand, not just delegate, your finances'
+      'Want to understand your finances yourself'
     ],
     details: [
       'Financial literacy coaching',
@@ -64,7 +64,7 @@ const services = [
       'Connecting numbers to business decisions',
       'Building financial confidence'
     ],
-    audience: 'Leaders and business owners who want to understand their numbers, not just receive reports',
+    audience: 'Leaders and business owners who want to understand their numbers for themselves',
     outcome: 'Confidence in financial conversations and decisions'
   },
   {
@@ -76,7 +76,7 @@ const services = [
     painPoints: [
       'Need a speaker who understands real leadership challenges',
       'Want content that resonates with experienced leaders',
-      'Looking for practical insights, not motivation alone'
+      'Looking for practical insights grounded in experience'
     ],
     details: [
       '"Lead with Clarity" keynote',

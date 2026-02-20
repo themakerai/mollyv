@@ -72,7 +72,7 @@ export default function GuidePage() {
               </h1>
               
               <p className="text-lg text-dark-grey leading-relaxed mb-6">
-                5 questions to ask yourself before any high-stakes decision—and how to know 
+                5 questions to ask yourself before any high-stakes moment, and how to know 
                 when you're avoiding one.
               </p>
 
@@ -91,7 +91,7 @@ export default function GuidePage() {
               </div>
 
               <p className="text-sm text-mid-grey">
-                Based on 20+ years of helping leaders navigate decisions that keep them up at night.
+                Based on twenty years of helping leaders find clarity on the things that keep them up at night.
               </p>
             </motion.div>
 
@@ -210,7 +210,7 @@ export default function GuidePage() {
               },
               {
                 title: 'Warning Signs Checklist',
-                desc: '6 patterns that indicate you\'re avoiding a decision—and what to do about each one.',
+                desc: '6 patterns that indicate you\'re avoiding something important, and what to do about each one.',
               },
               {
                 title: 'The BOLD Framework',
@@ -266,9 +266,9 @@ export default function GuidePage() {
               </h2>
               <p className="text-lg text-dark-grey leading-relaxed mb-6">
                 Molly Varangkounh spent twenty years as president of a family business, 
-                working through succession, letting people go, and making decisions that affected real lives. 
-                A former CPA with CFO-level experience, she now helps leaders find clarity 
-                on the decisions that keep them up at night.
+                working through succession, letting people go, and carrying the weight of choices that affected real lives. 
+                She now helps leaders find clarity 
+                on the things that keep them up at night.
               </p>
               <Link 
                 href="/about"

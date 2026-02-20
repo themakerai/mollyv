@@ -32,7 +32,7 @@ const decisions = [
     category: 'Transitions',
     items: [
       'Selling the business',
-      'Succession—passing it on or stepping back',
+      'Succession. Passing it on or stepping back.',
       'Stepping into a new role',
       'Stepping out of one',
       'Walking away entirely',
@@ -128,7 +128,7 @@ export default function DecisionRoomPage() {
               {
                 step: '01',
                 title: 'Name the Decision',
-                desc: 'Tell me what you\'re wrestling with. Hiring, firing, selling, staying—whatever\'s keeping you up at night.',
+                desc: 'Tell me what you\'re wrestling with. Hiring, firing, selling, staying. Whatever is keeping you up at night.',
               },
               {
                 step: '02',
@@ -138,7 +138,7 @@ export default function DecisionRoomPage() {
               {
                 step: '03',
                 title: 'Leave with Clarity',
-                desc: 'You walk out knowing exactly what to do—and at peace with the decision.',
+                desc: 'You walk out knowing exactly what to do, and at peace with the choice.',
               },
             ].map((item, i) => (
               <motion.div
@@ -175,7 +175,7 @@ export default function DecisionRoomPage() {
               <span className="w-8 h-px bg-accent" />
             </span>
             <h2 className="text-3xl lg:text-4xl font-display text-charcoal">
-              The decisions you can't talk to anyone else about
+              The things you can't talk to anyone else about
             </h2>
           </motion.div>
 
@@ -214,12 +214,12 @@ export default function DecisionRoomPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-display mb-8">
-                You'll leave knowing exactly what to do—
+                You'll leave knowing exactly what to do,
                 <br />
-                <span className="text-accent">and at peace with the decision.</span>
+                <span className="text-accent">and at peace with the choice.</span>
               </h2>
               <p className="text-lg text-white/70 mb-12 max-w-xl mx-auto">
-                Not theory. Not motivation. Real clarity on the decision in front of you, 
+                Real clarity on what's in front of you, 
                 from someone who's sat in your chair.
               </p>
               
