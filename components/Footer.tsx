@@ -51,7 +51,7 @@ export default function Footer() {
               <p className="label-sm text-accent mb-6">Explore</p>
               <nav className="flex flex-col gap-3">
                 <a href="/about" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">About</a>
-                <a href="/services" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Work With Me</a>
+                <a href="/work-with-me" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Work With Me</a>
                 <a href="/connect" className="text-mid-grey hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">Let's Connect</a>
               </nav>
             </motion.div>
