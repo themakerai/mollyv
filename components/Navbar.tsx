@@ -47,6 +47,7 @@ export default function Navbar() {
               {[
                 { label: 'About', href: '/about' },
                 { label: 'Work With Me', href: '/work-with-me' },
+                { label: 'Writing', href: '/writing' },
                 { label: 'Contact', href: '/contact' },
               ].map((item) => (
                 <Link
